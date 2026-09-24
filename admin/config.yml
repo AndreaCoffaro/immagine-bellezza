@@ -239,7 +239,7 @@ collections:
 
       # ------------------------------------------------------------------ GALLERIA
       - name: galleria
-        label: "📷 Il centro: ambienti, apparecchiature e prodotti"
+        label: "📷 Dentro il centro (ambienti, apparecchiature e prodotti)"
         file: content/galleria.json
         fields:
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
