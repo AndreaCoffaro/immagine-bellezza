@@ -1,23 +1,20 @@
 {
-  "nome_centro": "Immagine & Bellezza",
-  "telefono": "+39 347 009 6504",
-  "whatsapp": "+39 347 009 6504",
-  "email": "mariarita170776@gmail.com",
-  "indirizzo": "Via Caltanissetta 66",
-  "cap": "93014",
-  "citta": "Mussomeli",
-  "provincia": "CL",
-  "mappa_embed": "",
-  "instagram": "https://www.instagram.com/mariaritamantio/",
-  "facebook": "https://www.facebook.com/mariarita.mantio.centroestetico",
-  "partita_iva": "",
-  "privacy": "",
   "cookie": "",
+  "facebook": "https://www.facebook.com/mariarita.mantio.centroestetico",
+  "mappa_embed": "",
+  "privacy": "",
+  "nome_centro": "Immagine & Bellezza",
+  "provincia": "CL",
+  "indirizzo": "Via Caltanissetta 66",
+  "whatsapp": "+39 347 009 6504",
+  "instagram": "https://www.instagram.com/mariaritamantio/",
+  "cap": "93014",
+  "telefono": "+39 347 009 6504",
   "orari": {
     "lunedi": {
-      "aperto": false,
-      "dalle": "",
-      "alle": "",
+      "aperto": true,
+      "dalle": "09:00",
+      "alle": "19:00",
       "dalle_2": "",
       "alle_2": ""
     },
@@ -63,5 +60,8 @@
       "dalle_2": "",
       "alle_2": ""
     }
-  }
+  },
+  "partita_iva": "",
+  "citta": "Mussomeli",
+  "email": "mariarita170776@gmail.com"
 }
