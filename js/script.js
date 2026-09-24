@@ -84,13 +84,15 @@ function applicaContatti(){
   const legali = $("[data-legali]");
   if(legali) legali.hidden = !k.privacy && !k.cookie;
 
-  // Mappa: se nel pannello è stato incollato il link di Google Maps "Incorpora", mostra la mappa vera
   const mappa = $("#mappa");
-  const query = encodeURIComponent([k.nome_centro, k.indirizzo, k.citta].filter(Boolean).join(" "));
+  const query = encodeURIComponent([k.indirizzo, k.cap, k.citta, k.provincia].filter(Boolean).join(", ") || k.nome_centro);
   $("#link-maps")?.setAttribute("href", `https://www.google.com/maps/search/?api=1&query=${query}`);
-  const embed = (k.mappa_embed || "").match(/https:\/\/www\.google\.com\/maps\/embed\?[^"'\s]+/);
-  if(mappa && embed){
-    mappa.innerHTML = `<iframe src="${esc(embed[0])}" loading="lazy" title="Mappa ${esc(k.nome_centro || "")}" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
+  // Mappa: quella incollata dal pannello (Google Maps → Condividi → Incorpora), altrimenti generata dall'indirizzo
+  const incollata = (k.mappa_embed || "").match(/https:\/\/www\.google\.com\/maps\/embed\?[^"'\s]+/);
+  const dove = [k.indirizzo, k.cap, k.citta, k.provincia].filter(Boolean).join(", ");
+  const src = incollata ? incollata[0] : (k.indirizzo ? `https://www.google.com/maps?q=${encodeURIComponent(dove)}&output=embed` : "");
+  if(mappa && src){
+    mappa.innerHTML = `<iframe src="${esc(src)}" loading="lazy" title="Mappa ${esc(k.nome_centro || "")}" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
   }
 
   datiStrutturati(k, indirizzo);

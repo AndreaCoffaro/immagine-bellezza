@@ -300,7 +300,7 @@ collections:
             name: mappa_embed
             widget: text
             required: false
-            hint: "Su Google Maps cerca il centro → Condividi → Incorpora una mappa → Copia HTML, e incollalo qui"
+            hint: "Facoltativo: la mappa si crea da sola dall'indirizzo. Se preferisci quella della scheda Google: Google Maps → Condividi → Incorpora una mappa → Copia HTML, e incollalo qui"
           - { label: "Link Instagram", name: instagram, widget: string, required: false }
           - { label: "Link Facebook", name: facebook, widget: string, required: false }
           - { label: "Partita IVA", name: partita_iva, widget: string, required: false }
