@@ -421,8 +421,8 @@ body.menu-open{overflow:hidden}
   .grid-galleria button:last-child:nth-child(even){grid-column:span 2}
 }
 
-/* ---------- Apparecchiature (sotto la galleria) ---------- */
-.tecnologie{margin-top:clamp(72px,9vw,112px);padding-top:clamp(56px,7vw,88px);border-top:1px solid var(--bordo)}
+/* ---------- Tecnologie e prodotti (subito dopo il listino) ---------- */
+.tecnologie{background:var(--bianco)}
 .grid-tecnologie{display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
 .tecno{
   flex:0 1 calc((100% - 48px) / 3);min-width:0;
