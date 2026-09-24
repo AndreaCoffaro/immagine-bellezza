@@ -24,9 +24,9 @@
       "pos": ""
     }
   ],
-  "tecnologie_eyebrow": "Tecnologie professionali",
-  "tecnologie_titolo": "Le nostre *apparecchiature*",
-  "tecnologie_testo": "Strumenti professionali per trattamenti viso e corpo mirati. Ti spieghiamo sempre come funzionano e quale percorso è più adatto a te.",
+  "tecnologie_eyebrow": "Professionali, per viso e corpo",
+  "tecnologie_titolo": "Tecnologie e *prodotti*",
+  "tecnologie_testo": "Apparecchiature e prodotti professionali per trattamenti mirati. Ti spieghiamo sempre come funzionano e quale percorso è più adatto a te.",
   "tecnologie": [
     {
       "nome": "Laser a diodo 808 nm",
@@ -56,6 +56,21 @@
         "Gambe più leggere e sgonfie",
         "Aiuta a eliminare i liquidi in eccesso",
         "Disponibile anche con protocollo Selvert"
+      ]
+    },
+    {
+      "nome": "Selvert Thermal · Corporelle PRO",
+      "categoria": "Trattamenti snellenti",
+      "foto": {
+        "src": "/images/web/struttura/snellente.jpg",
+        "alt": "Creme snellenti professionali Selvert Thermal Corporelle PRO",
+        "pos": ""
+      },
+      "descrizione": "Creme e prodotti professionali della linea snellente Selvert Thermal, applicati in cabina da soli o abbinati alla pressoterapia con protocollo Selvert.",
+      "benefici": [
+        "Aiuta a ridurre adiposità localizzate e cellulite",
+        "Pelle più compatta, tonica e levigata",
+        "Potenzia i risultati della pressoterapia"
       ]
     },
     {

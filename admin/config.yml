@@ -239,7 +239,7 @@ collections:
 
       # ------------------------------------------------------------------ GALLERIA
       - name: galleria
-        label: "📷 Il centro: ambienti e apparecchiature"
+        label: "📷 Il centro: ambienti, apparecchiature e prodotti"
         file: content/galleria.json
         fields:
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
@@ -260,7 +260,7 @@ collections:
             widget: list
             label_singular: "apparecchiatura"
             summary: "{{fields.nome}}"
-            hint: "Una scheda per ogni macchinario. Trascina per cambiare l'ordine"
+            hint: "Una scheda per ogni macchinario o linea di prodotti. Trascina per cambiare l'ordine"
             fields:
               - { label: "Nome", name: nome, widget: string }
               - { label: "Tipo di trattamento", name: categoria, widget: string, required: false, hint: "Scritta piccola sopra il nome, es. Epilazione" }
