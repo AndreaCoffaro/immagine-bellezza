@@ -1,11 +1,11 @@
 {
   "eyebrow": "Il nostro spazio",
   "titolo": "Dentro il centro",
-  "testo": "Cabine trattamento e le tecnologie che usiamo ogni giorno: laser a diodo, pressoterapia, Cocoon e molto altro. Tocca una foto per ingrandirla.",
+  "testo": "L'ingresso e le cabine dove ci prendiamo cura di te: ambienti curati, luminosi e pensati per il tuo relax. Tocca una foto per ingrandirla.",
   "foto": [
     {
       "src": "/images/web/struttura/ingresso.jpg",
-      "alt": "Ingresso del centro Immagine & Bellezza a Mussomeli",
+      "alt": "Ingresso del centro Immagine & Bellezza in Via Caltanissetta a Mussomeli",
       "pos": ""
     },
     {
@@ -19,29 +19,89 @@
       "pos": ""
     },
     {
-      "src": "/images/web/struttura/laser-al-diodo-808nm.jpg",
-      "alt": "Laser a diodo 808 nm per l'epilazione",
-      "pos": ""
-    },
-    {
-      "src": "/images/web/struttura/cocoon.jpg",
-      "alt": "Cocoon per trattamenti corpo",
-      "pos": ""
-    },
-    {
-      "src": "/images/web/struttura/emsculpt.jpg",
-      "alt": "Macchinario Emsculpt per la tonificazione muscolare",
-      "pos": ""
-    },
-    {
       "src": "/images/web/struttura/presso22.jpg",
       "alt": "Cabina per la pressoterapia",
       "pos": ""
+    }
+  ],
+  "tecnologie_eyebrow": "Tecnologie professionali",
+  "tecnologie_titolo": "Le nostre *apparecchiature*",
+  "tecnologie_testo": "Strumenti professionali per trattamenti viso e corpo mirati. Ti spieghiamo sempre come funzionano e quale percorso è più adatto a te.",
+  "tecnologie": [
+    {
+      "nome": "Laser a diodo 808 nm",
+      "categoria": "Epilazione",
+      "foto": {
+        "src": "/images/web/struttura/laser-al-diodo-808nm.jpg",
+        "alt": "Laser a diodo 808 nm per l'epilazione",
+        "pos": "center top"
+      },
+      "descrizione": "La luce laser raggiunge la radice del pelo e ne indebolisce il bulbo, seduta dopo seduta. Un manipolo raffreddato rende il trattamento più confortevole.",
+      "benefici": [
+        "Riduzione progressiva e duratura dei peli superflui",
+        "Addio a irritazioni e peli incarniti da ceretta e rasoio",
+        "Per viso e corpo: gambe, inguine, ascelle e altre zone"
+      ]
     },
     {
-      "src": "/images/web/struttura/presso.jpg",
-      "alt": "Pressoterapia con protocollo Selvert",
-      "pos": ""
+      "nome": "Pressoterapia",
+      "categoria": "Drenaggio",
+      "foto": {
+        "src": "/images/web/struttura/presso.jpg",
+        "alt": "Pressoterapia con gambali a compressione e prodotti Selvert",
+        "pos": ""
+      },
+      "descrizione": "Gambali e fascia si gonfiano e si sgonfiano in sequenza, con una pressione che risale dai piedi verso l'alto e accompagna la circolazione.",
+      "benefici": [
+        "Gambe più leggere e sgonfie",
+        "Aiuta a eliminare i liquidi in eccesso",
+        "Disponibile anche con protocollo Selvert"
+      ]
+    },
+    {
+      "nome": "Konmison",
+      "categoria": "Rimodellamento corpo",
+      "foto": {
+        "src": "/images/web/struttura/konmison.jpg",
+        "alt": "Apparecchiatura Konmison per il rimodellamento del corpo con vacuum e rulli",
+        "pos": "center top"
+      },
+      "descrizione": "Manipoli con rulli motorizzati e aspirazione (vacuum) lavorano i tessuti in profondità, come un massaggio meccanico mirato su addome, fianchi, cosce e glutei.",
+      "benefici": [
+        "Contrasta cellulite e adiposità localizzate",
+        "Pelle più tonica ed elastica",
+        "Silhouette più definita"
+      ]
+    },
+    {
+      "nome": "Emsculpt",
+      "categoria": "Tonificazione",
+      "foto": {
+        "src": "/images/web/struttura/emsculpt.jpg",
+        "alt": "Macchinario Emsculpt per la tonificazione muscolare",
+        "pos": ""
+      },
+      "descrizione": "Campi elettromagnetici ad alta intensità provocano contrazioni muscolari profonde, molto più numerose di quelle di un allenamento, senza alcuno sforzo.",
+      "benefici": [
+        "Tonifica addome, glutei, braccia e cosce",
+        "Rinforza e rassoda la muscolatura",
+        "Nessuno sforzo e nessun tempo di recupero"
+      ]
+    },
+    {
+      "nome": "Cocoon",
+      "categoria": "Benessere corpo",
+      "foto": {
+        "src": "/images/web/struttura/cocoon.jpg",
+        "alt": "Capsula Cocoon per trattamenti corpo",
+        "pos": ""
+      },
+      "descrizione": "Una capsula che avvolge il corpo in un calore dolce e costante, mentre la testa resta fuori e libera. Un momento di benessere completo.",
+      "benefici": [
+        "Favorisce la sudorazione e la depurazione",
+        "Aiuta a contrastare ritenzione e inestetismi",
+        "Profondo relax per corpo e mente"
+      ]
     }
   ]
 }

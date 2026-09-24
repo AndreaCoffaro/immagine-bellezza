@@ -347,6 +347,26 @@ function renderGalleria(){
   }).join("");
 }
 
+/* ---------- Apparecchiature (schede sotto la galleria) ---------- */
+function renderTecnologie(){
+  const lista = (get("galleria.tecnologie") || []).filter(t => t.nome);
+  $("#tecnologie").hidden = lista.length === 0;
+  $("#grid-tecnologie").innerHTML = lista.map(t => `
+    <article class="tecno reveal">
+      ${t.foto?.src ? `
+      <button class="tecno-img" data-gallery="${imgUrl(t.foto.src, 2000)}" aria-label="Ingrandisci: ${esc(t.foto.alt || t.nome)}">
+        ${imgTag({ ...t.foto, alt:t.foto.alt || t.nome }, 800, 'loading="lazy"')}
+      </button>` : ""}
+      <div class="tecno-body">
+        ${t.categoria ? `<span class="tecno-cat">${esc(t.categoria)}</span>` : ""}
+        <h3>${esc(t.nome)}</h3>
+        <p>${esc(t.descrizione)}</p>
+        ${t.benefici?.length ? `<ul class="tecno-benefici">${t.benefici.map(b => `<li>${esc(b)}</li>`).join("")}</ul>` : ""}
+        <a class="tecno-cta" href="${waLink(`Ciao! Vorrei informazioni sui trattamenti con ${t.nome}.`)}" target="_blank" rel="noopener">${icon("whatsapp")}Chiedi informazioni</a>
+      </div>
+    </article>`).join("");
+}
+
 /* ---------- Recensioni ---------- */
 function renderRecensioni(){
   const rec = (get("recensioni.recensioni") || []).filter(r => r.testo);
@@ -514,7 +534,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await caricaContenuti();
   const passi = [applicaContatti, applicaTesti, renderListe, renderOrari, renderPromozioni, renderSpa, renderServizi,
-                 renderFotoSpa, renderGalleria, renderRecensioni, initHero, initRegalo, initSpaRotazione, initWhatsappLinks];
+                 renderFotoSpa, renderGalleria, renderTecnologie, renderRecensioni, initHero, initRegalo, initSpaRotazione, initWhatsappLinks];
   // se una sezione ha dati incompleti, le altre vengono comunque mostrate
   passi.forEach(f => { try { f(); } catch(e){ console.error(`Errore in ${f.name}:`, e); } });
   initReveal();
