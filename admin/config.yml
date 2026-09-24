@@ -16,6 +16,11 @@ backend:
     uploadMedia: "Carica foto «{{path}}»"
     deleteMedia: "Elimina foto «{{path}}»"
 
+# Modalità prova sul Mac: su localhost il pannello salva nei file locali tramite anteprima.py
+# (online questa riga viene ignorata e si usa il login GitHub)
+local_backend:
+  url: http://localhost:8000/api/v1
+
 locale: it
 logo_url: /images/web/logo.png
 media_folder: images/uploads
