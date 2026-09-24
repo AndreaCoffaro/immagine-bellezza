@@ -1,0 +1,36 @@
+{
+  "eyebrow": "Feste & piccoli eventi",
+  "titolo": "Festeggia *in SPA*",
+  "testo": "Un compleanno diverso dal solito, un addio al nubilato, una serata tra amiche: la nostra area SPA diventa la cornice della vostra festa. Acqua calda, luci soffuse e un brindisi tutti insieme.",
+  "occasioni": [
+    "Compleanni",
+    "Addio al nubilato",
+    "Anniversari",
+    "Serate tra amiche"
+  ],
+  "punti": [
+    {
+      "icona": "wave",
+      "titolo": "Percorso SPA di gruppo",
+      "testo": "Sauna, bagno turco e vasca idromassaggio per te e i tuoi ospiti."
+    },
+    {
+      "icona": "glass",
+      "titolo": "Aperitivo offerto",
+      "testo": "Bollicine e stuzzichini per brindare insieme."
+    },
+    {
+      "icona": "candle",
+      "titolo": "Atmosfera da ricordare",
+      "testo": "Candele, luci cromatiche e un ambiente curato in ogni dettaglio."
+    }
+  ],
+  "pulsante": "Organizza la tua festa",
+  "messaggio_whatsapp": "Ciao! Vorrei organizzare una festa in SPA. Mi date qualche informazione su prezzi e disponibilità?",
+  "nota": "Prezzi e disponibilità su richiesta",
+  "foto": {
+    "src": "/images/web/spa/compleanno.jpg",
+    "alt": "Gruppo di amiche che brinda nella vasca idromassaggio, con aperitivo di stuzzichini e bollicine",
+    "pos": ""
+  }
+}

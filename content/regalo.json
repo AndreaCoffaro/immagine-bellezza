@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Buono regalo",
+  "titolo": "Regala un momento di *puro benessere*",
+  "testo": "Compleanno, anniversario, San Valentino o semplicemente un grazie: un buono per il Percorso SPA, un massaggio o un trattamento a scelta è il regalo che si ricorda.",
+  "punti": [
+    "Percorso SPA, massaggio o trattamento a scelta",
+    "Perfetto anche da vivere in coppia",
+    "Pronto da ritirare in centro"
+  ],
+  "pulsante": "Richiedi il tuo buono",
+  "messaggio_whatsapp": "Ciao! Vorrei regalare un buono. Mi date qualche informazione?",
+  "foto": [
+    {
+      "src": "/images/web/spa/massaggi.jpg",
+      "alt": "Cabina massaggi allestita con cigni di asciugamani e petali di rosa",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/vasca.jpg",
+      "alt": "Vasca idromassaggio con cascate e luci blu",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/vasca4.jpg",
+      "alt": "Vasca idromassaggio con cromoterapia rossa",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/sauna-bagno.jpg",
+      "alt": "Sauna, bagno turco e lettino relax",
+      "pos": ""
+    }
+  ]
+}

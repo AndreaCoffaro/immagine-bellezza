@@ -1,0 +1,9 @@
+.DS_Store
+# Foto originali (pesanti): il sito usa le copie leggere in images/web e le foto caricate dal pannello
+images/ragazze/
+images/spa/
+images/struttura/
+images/massaggi.jpeg_files/
+# Varianti di prova dell'hero (solo locali)
+_variante_*/
+.claude/

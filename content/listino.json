@@ -1,0 +1,243 @@
+{
+  "eyebrow": "Listino trattamenti",
+  "titolo": "Servizi estetici",
+  "testo": "Scegli una categoria per vedere trattamenti e prezzi. Per qualsiasi dubbio siamo felici di consigliarti il percorso più adatto a te.",
+  "categorie": [
+    {
+      "categoria": "Trattamento viso",
+      "descrizione": "Pulizie profonde, ossigenoterapia, radiofrequenza e needling per una pelle luminosa, compatta e visibilmente più giovane.",
+      "servizi": [
+        {
+          "nome": "Pulizia viso classica",
+          "prezzo": "€ 30,00"
+        },
+        {
+          "nome": "Pulizia viso con peeling chimico",
+          "prezzo": "€ 35,00"
+        },
+        {
+          "nome": "Ossigenoterapia",
+          "prezzo": "€ 35,00"
+        },
+        {
+          "nome": "Ossigenoterapia con acido glicolico",
+          "prezzo": "€ 40,00"
+        },
+        {
+          "nome": "Ossigenoterapia con acido ialuronico",
+          "prezzo": "€ 70,00"
+        },
+        {
+          "nome": "Radiofrequenza",
+          "prezzo": "€ 50,00"
+        },
+        {
+          "nome": "Needling",
+          "prezzo": "€ 60,00"
+        },
+        {
+          "nome": "Needling con esosomi",
+          "prezzo": "€ 70,00"
+        },
+        {
+          "nome": "Tintura sopracciglia",
+          "prezzo": "€ 8,00"
+        },
+        {
+          "nome": "Laminazione ciglia",
+          "prezzo": "€ 40,00"
+        }
+      ]
+    },
+    {
+      "categoria": "Trattamento corpo",
+      "descrizione": "Pressoterapia e trattamenti modellanti per gambe leggere, drenaggio e una silhouette più definita.",
+      "servizi": [
+        {
+          "nome": "Pressoterapia",
+          "prezzo": "€ 28,00"
+        },
+        {
+          "nome": "Pressoterapia con protocollo Selvert",
+          "prezzo": "€ 50,00"
+        },
+        {
+          "nome": "Cocoon",
+          "prezzo": "€ 40,00"
+        },
+        {
+          "nome": "V shape",
+          "prezzo": "€ 50,00"
+        }
+      ]
+    },
+    {
+      "categoria": "Epilazione",
+      "descrizione": "Epilazione con cera per viso e corpo, delicata sulla pelle e dal risultato duraturo.",
+      "servizi": [
+        {
+          "nome": "Cera intera (gambe, cosce, inguine parziale)",
+          "prezzo": "€ 25,00"
+        },
+        {
+          "nome": "Cera intera (gambe, cosce, inguine totale)",
+          "prezzo": "€ 28,00"
+        },
+        {
+          "nome": "Inguine parziale",
+          "prezzo": "€ 8,00"
+        },
+        {
+          "nome": "Inguine totale",
+          "prezzo": "€ 10,00"
+        },
+        {
+          "nome": "1/2 cera gambe",
+          "prezzo": "€ 10,00"
+        },
+        {
+          "nome": "1/2 cera cosce",
+          "prezzo": "€ 10,00"
+        },
+        {
+          "nome": "Braccia intere",
+          "prezzo": "€ 15,00"
+        },
+        {
+          "nome": "Mezzo braccio",
+          "prezzo": "€ 10,00"
+        },
+        {
+          "nome": "Ascelle",
+          "prezzo": "€ 7,00"
+        },
+        {
+          "nome": "Schiena uomo",
+          "prezzo": "€ 20,00"
+        },
+        {
+          "nome": "Petto e addome uomo",
+          "prezzo": "€ 20,00"
+        },
+        {
+          "nome": "Glutei",
+          "prezzo": "€ 5,00"
+        },
+        {
+          "nome": "Pancia",
+          "prezzo": "€ 5,00"
+        },
+        {
+          "nome": "Sopracciglia",
+          "prezzo": "€ 6,00"
+        },
+        {
+          "nome": "Sopracciglia + baffetti",
+          "prezzo": "€ 6,00"
+        },
+        {
+          "nome": "Baffetto",
+          "prezzo": "€ 2,00"
+        }
+      ]
+    },
+    {
+      "categoria": "Laser",
+      "descrizione": "Epilazione con laser a diodo 808 nm per ridurre progressivamente i peli superflui, zona per zona.",
+      "servizi": [
+        {
+          "nome": "Laser a zona",
+          "prezzo": "€ 30,00"
+        }
+      ]
+    },
+    {
+      "categoria": "Elettrocoagulazione",
+      "descrizione": "Rimozione mirata di piccoli inestetismi cutanei con ago, a tempo.",
+      "servizi": [
+        {
+          "nome": "Ago al minuto",
+          "prezzo": "€ 1,50"
+        }
+      ]
+    },
+    {
+      "categoria": "Manicure",
+      "descrizione": "Mani curate e unghie perfette: dal semipermanente alla ricostruzione in gel.",
+      "servizi": [
+        {
+          "nome": "Manicure semplice",
+          "prezzo": "€ 12,00"
+        },
+        {
+          "nome": "Ricostruzione",
+          "prezzo": "€ 55,00"
+        },
+        {
+          "nome": "Semipermanente",
+          "prezzo": "€ 22,00"
+        },
+        {
+          "nome": "Rinforzato",
+          "prezzo": "€ 24,00"
+        },
+        {
+          "nome": "Copertura in gel / refill",
+          "prezzo": "€ 30,00"
+        },
+        {
+          "nome": "Aggiunta baby boomer",
+          "prezzo": "€ 3,00"
+        },
+        {
+          "nome": "Aggiunta french",
+          "prezzo": "€ 2,00"
+        }
+      ]
+    },
+    {
+      "categoria": "Pedicure",
+      "descrizione": "Pedicure estetica e curativa per piedi sani, morbidi e in ordine.",
+      "servizi": [
+        {
+          "nome": "Pedicure curativa",
+          "prezzo": "€ 25,00"
+        },
+        {
+          "nome": "Pedicure curativa + semipermanente",
+          "prezzo": "€ 35,00"
+        },
+        {
+          "nome": "Semipermanente unghie",
+          "prezzo": "€ 20,00"
+        },
+        {
+          "nome": "Rimozione semipermanente",
+          "prezzo": "€ 8,00"
+        },
+        {
+          "nome": "Rimozione callo",
+          "prezzo": "€ 5,00"
+        },
+        {
+          "nome": "Taglio unghie",
+          "prezzo": "€ 10,00"
+        }
+      ]
+    },
+    {
+      "categoria": "Trucco",
+      "descrizione": "Make-up professionale per ogni occasione, fino al giorno più importante.",
+      "servizi": [
+        {
+          "nome": "Trucco giorno o sera",
+          "prezzo": "€ 28,00"
+        },
+        {
+          "nome": "Trucco sposa",
+          "prezzo": "€ 180,00"
+        }
+      ]
+    }
+  ]
+}

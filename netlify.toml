@@ -1,0 +1,16 @@
+# Configurazione per Netlify (hosting del sito)
+[build]
+  publish = "."
+  command = ""
+
+# I contenuti e il pannello non devono restare in cache: le modifiche si vedono subito
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+    X-Robots-Tag = "noindex"

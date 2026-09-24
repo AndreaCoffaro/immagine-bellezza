@@ -1,0 +1,67 @@
+{
+  "nome_centro": "Immagine & Bellezza",
+  "telefono": "+39 347 009 6504",
+  "whatsapp": "+39 347 009 6504",
+  "email": "",
+  "indirizzo": "",
+  "cap": "93014",
+  "citta": "Mussomeli",
+  "provincia": "CL",
+  "mappa_embed": "",
+  "instagram": "",
+  "facebook": "",
+  "partita_iva": "",
+  "privacy": "",
+  "cookie": "",
+  "orari": {
+    "lunedi": {
+      "aperto": false,
+      "dalle": "",
+      "alle": "",
+      "dalle_2": "",
+      "alle_2": ""
+    },
+    "martedi": {
+      "aperto": true,
+      "dalle": "09:00",
+      "alle": "19:00",
+      "dalle_2": "",
+      "alle_2": ""
+    },
+    "mercoledi": {
+      "aperto": true,
+      "dalle": "09:00",
+      "alle": "19:00",
+      "dalle_2": "",
+      "alle_2": ""
+    },
+    "giovedi": {
+      "aperto": true,
+      "dalle": "09:00",
+      "alle": "19:00",
+      "dalle_2": "",
+      "alle_2": ""
+    },
+    "venerdi": {
+      "aperto": true,
+      "dalle": "09:00",
+      "alle": "19:00",
+      "dalle_2": "",
+      "alle_2": ""
+    },
+    "sabato": {
+      "aperto": true,
+      "dalle": "09:00",
+      "alle": "13:00",
+      "dalle_2": "",
+      "alle_2": ""
+    },
+    "domenica": {
+      "aperto": false,
+      "dalle": "",
+      "alle": "",
+      "dalle_2": "",
+      "alle_2": ""
+    }
+  }
+}

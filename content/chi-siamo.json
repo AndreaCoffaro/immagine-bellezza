@@ -1,0 +1,16 @@
+{
+  "eyebrow": "Chi siamo",
+  "titolo": "L'esperienza di *Maria Rita Mantio*",
+  "testo": "Immagine & Bellezza nasce dalla passione di Maria Rita per l'estetica e il benessere della persona. Ogni trattamento unisce competenza professionale, prodotti di qualità e la massima cura dell'igiene.\n\nQui non sei un appuntamento in agenda: ti accogliamo, ti ascoltiamo e ti accompagniamo in un percorso pensato per farti sentire a tuo agio dal primo momento.",
+  "firma": "Maria Rita Mantio",
+  "foto_grande": {
+    "src": "/images/web/ragazze/rossa.jpg",
+    "alt": "Trucco professionale in corso nel centro Immagine & Bellezza",
+    "pos": "38% center"
+  },
+  "foto_piccola": {
+    "src": "/images/web/struttura/prima-stanza.jpg",
+    "alt": "Cabina trattamenti viso e corpo",
+    "pos": ""
+  }
+}

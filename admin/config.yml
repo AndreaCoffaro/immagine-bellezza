@@ -1,0 +1,328 @@
+# =============================================================================
+# PANNELLO DI GESTIONE — Immagine & Bellezza (Decap CMS)
+# Ogni sezione qui sotto corrisponde a un file in /content.
+# Ogni volta che si preme "Pubblica", la modifica viene salvata su GitHub e
+# Netlify ripubblica il sito da solo in circa un minuto.
+# =============================================================================
+
+backend:
+  name: github
+  repo: UTENTE-GITHUB/immagine-bellezza   # DA COMPLETARE dopo aver creato il repository
+  branch: main
+  commit_messages:
+    create: "Crea {{collection}} «{{slug}}»"
+    update: "Aggiorna {{collection}} «{{slug}}»"
+    delete: "Elimina {{collection}} «{{slug}}»"
+    uploadMedia: "Carica foto «{{path}}»"
+    deleteMedia: "Elimina foto «{{path}}»"
+
+locale: it
+logo_url: /images/web/logo.png
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: sito
+    label: "Contenuti del sito"
+    editor: { preview: false }
+    extension: json
+    format: json
+    files:
+
+      # ------------------------------------------------------------------ LISTINO
+      - name: listino
+        label: "💆 Listino trattamenti e prezzi"
+        file: content/listino.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string }
+          - { label: "Testo introduttivo", name: testo, widget: text }
+          - label: "Categorie"
+            name: categorie
+            widget: list
+            summary: "{{fields.categoria}}"
+            label_singular: "categoria"
+            hint: "Trascina per cambiare l'ordine delle schede"
+            fields:
+              - { label: "Nome categoria", name: categoria, widget: string }
+              - { label: "Descrizione", name: descrizione, widget: text, required: false }
+              - label: "Trattamenti"
+                name: servizi
+                widget: list
+                label_singular: "trattamento"
+                summary: "{{fields.nome}} — {{fields.prezzo}}"
+                fields:
+                  - { label: "Nome del trattamento", name: nome, widget: string }
+                  - { label: "Prezzo", name: prezzo, widget: string, hint: "es. € 30,00 oppure «da € 30»" }
+
+      # ------------------------------------------------------------------ SPA
+      - name: spa
+        label: "🧖 Area SPA (percorsi, prezzi e foto)"
+        file: content/spa.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string, hint: &titolo-hint "Metti tra asterischi le parole da evidenziare in corsivo colorato, es. scrivendo  Festeggia \\*in SPA\\*  le parole «in SPA» diventano in corsivo" }
+          - { label: "Testo", name: testo, widget: text }
+          - label: "Cosa trovi nella SPA"
+            name: caratteristiche
+            widget: list
+            label_singular: "elemento"
+            summary: "{{fields.titolo}}"
+            fields:
+              - &icona
+                label: Icona
+                name: icona
+                widget: select
+                options:
+                  - { label: "Sauna", value: sauna }
+                  - { label: "Bagno turco (vapore)", value: steam }
+                  - { label: "Idromassaggio (onde)", value: wave }
+                  - { label: "Fiore di loto (massaggi, relax)", value: lotus }
+                  - { label: "Foglia (prodotti naturali)", value: leaf }
+                  - { label: "Scudo (igiene, sicurezza)", value: shield }
+                  - { label: "Cuore", value: heart }
+                  - { label: "WhatsApp", value: whatsapp }
+                  - { label: "Calice (aperitivo)", value: glass }
+                  - { label: "Candela (atmosfera)", value: candle }
+                  - { label: "Persone (gruppi)", value: users }
+                  - { label: "Regalo", value: gift }
+                  - { label: "Stella", value: star }
+              - { label: "Titolo", name: titolo, widget: string }
+              - { label: "Testo", name: testo, widget: string }
+          - label: "Foto (mosaico che si alterna)"
+            name: foto
+            widget: list
+            label_singular: "foto"
+            summary: "{{fields.alt}}"
+            hint: "Le prime 4 compaiono subito, poi si alternano tutte"
+            fields: &foto-campi
+              - { label: "Foto", name: src, widget: image, choose_url: false }
+              - { label: "Descrizione della foto", name: alt, widget: string, required: false,
+                  hint: "Breve descrizione di cosa si vede (serve a Google e a chi usa lettori vocali)" }
+              - label: "Inquadratura"
+                name: pos
+                widget: select
+                required: false
+                hint: "Se nel riquadro si vede la parte sbagliata della foto (es. teste tagliate), scegli dove centrarla"
+                options:
+                  - { label: "Centro", value: "center" }
+                  - { label: "In alto", value: "center top" }
+                  - { label: "In basso", value: "center bottom" }
+                  - { label: "A sinistra", value: "left center" }
+                  - { label: "A destra", value: "right center" }
+          - label: "Percorsi e prezzi"
+            name: percorsi
+            widget: list
+            label_singular: "percorso"
+            summary: "{{fields.nome}} — {{fields.prezzo}}"
+            hint: "Il primo percorso compare anche nella card in alto nella home"
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Descrizione", name: descrizione, widget: string }
+              - { label: "Cosa comprende", name: include, widget: list, field: { label: "Voce", name: voce, widget: string } }
+              - { label: "Prezzo", name: prezzo, widget: string, hint: "es. € 40" }
+              - { label: "Nota sotto il prezzo", name: nota, widget: string, required: false, hint: "es. a persona" }
+              - { label: "Metti in evidenza (card colorata)", name: evidenza, widget: boolean, default: false }
+              - { label: "Etichetta in alto", name: etichetta, widget: string, required: false, hint: "es. Il più scelto — lascia vuoto per non mostrarla" }
+          - { label: "Nota in fondo alla sezione", name: nota, widget: text, required: false }
+
+      # ------------------------------------------------------------------ PROMOZIONI
+      - name: promozioni
+        label: "🏷️ Promozioni"
+        file: content/promozioni.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string }
+          - label: "Promozioni attive"
+            name: promozioni
+            widget: list
+            label_singular: "promozione"
+            summary: "{{fields.titolo}} — {{fields.prezzo_scontato}}"
+            hint: "Se elimini tutte le promozioni, la sezione sparisce dal sito"
+            fields:
+              - { label: "Titolo", name: titolo, widget: string }
+              - { label: "Descrizione", name: descrizione, widget: string }
+              - { label: "Prezzo pieno (barrato)", name: prezzo_pieno, widget: string, required: false, hint: "es. 100 — lascia vuoto se non c'è" }
+              - { label: "Prezzo in promozione", name: prezzo_scontato, widget: string, hint: "es. 80" }
+              - { label: "Etichetta", name: etichetta, widget: string, required: false, hint: "es. -20% oppure Offerta limitata" }
+
+      # ------------------------------------------------------------------ HOME
+      - name: home
+        label: "🏠 Home (testo in alto e foto che si alternano)"
+        file: content/home.json
+        fields:
+          - label: "Parte alta"
+            name: hero
+            widget: object
+            fields:
+              - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+              - { label: "Titolo principale", name: titolo, widget: string, hint: *titolo-hint }
+              - { label: "Testo", name: testo, widget: text }
+              - { label: "Testo del pulsante", name: pulsante, widget: string }
+              - { label: "Messaggio WhatsApp precompilato", name: messaggio_whatsapp, widget: string }
+              - label: "Punti sotto il testo"
+                name: punti
+                widget: list
+                label_singular: "punto"
+                summary: "{{fields.testo}}"
+                fields:
+                  - *icona
+                  - { label: "Testo", name: testo, widget: string }
+          - label: "Foto che si alternano nell'arco"
+            name: foto
+            widget: list
+            label_singular: "foto"
+            summary: "{{fields.alt}}"
+            hint: "Meglio foto verticali"
+            fields: *foto-campi
+          - label: "Punti di forza (sotto la parte alta)"
+            name: punti_di_forza
+            widget: list
+            label_singular: "punto"
+            summary: "{{fields.titolo}}"
+            fields:
+              - *icona
+              - { label: "Titolo", name: titolo, widget: string }
+              - { label: "Testo", name: testo, widget: string }
+          - label: "Riquadro finale (prima dei contatti)"
+            name: chiusura
+            widget: object
+            fields:
+              - { label: "Titolo", name: titolo, widget: string, hint: *titolo-hint }
+              - { label: "Testo", name: testo, widget: text }
+
+      # ------------------------------------------------------------------ EVENTI
+      - name: eventi
+        label: "🥂 Feste & eventi in SPA"
+        file: content/eventi.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string, hint: *titolo-hint }
+          - { label: "Testo", name: testo, widget: text }
+          - { label: "Occasioni", name: occasioni, widget: list, field: { label: "Occasione", name: occasione, widget: string } }
+          - label: "Cosa comprende"
+            name: punti
+            widget: list
+            label_singular: "punto"
+            summary: "{{fields.titolo}}"
+            fields:
+              - *icona
+              - { label: "Titolo", name: titolo, widget: string }
+              - { label: "Testo", name: testo, widget: string }
+          - { label: "Testo del pulsante", name: pulsante, widget: string }
+          - { label: "Messaggio WhatsApp precompilato", name: messaggio_whatsapp, widget: string }
+          - { label: "Nota accanto al pulsante", name: nota, widget: string, required: false }
+          - { label: "Foto", name: foto, widget: object, fields: *foto-campi }
+
+      # ------------------------------------------------------------------ REGALO
+      - name: regalo
+        label: "🎁 Buono regalo"
+        file: content/regalo.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string, hint: *titolo-hint }
+          - { label: "Testo", name: testo, widget: text }
+          - { label: "Punti elenco", name: punti, widget: list, field: { label: "Punto", name: punto, widget: string } }
+          - { label: "Testo del pulsante", name: pulsante, widget: string }
+          - { label: "Messaggio WhatsApp precompilato", name: messaggio_whatsapp, widget: string }
+          - label: "Foto che si alternano"
+            name: foto
+            widget: list
+            label_singular: "foto"
+            summary: "{{fields.alt}}"
+            fields: *foto-campi
+
+      # ------------------------------------------------------------------ GALLERIA
+      - name: galleria
+        label: "📷 Galleria «Dentro il centro»"
+        file: content/galleria.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string }
+          - { label: "Testo", name: testo, widget: text }
+          - label: "Foto"
+            name: foto
+            widget: list
+            label_singular: "foto"
+            summary: "{{fields.alt}}"
+            hint: "La prima foto è quella grande. Trascina per cambiare l'ordine"
+            fields: *foto-campi
+
+      # ------------------------------------------------------------------ CHI SIAMO
+      - name: chi-siamo
+        label: "👩 Chi siamo"
+        file: content/chi-siamo.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string, hint: *titolo-hint }
+          - { label: "Testo", name: testo, widget: text, hint: "Lascia una riga vuota per iniziare un nuovo paragrafo" }
+          - { label: "Firma", name: firma, widget: string }
+          - { label: "Foto grande", name: foto_grande, widget: object, fields: *foto-campi }
+          - { label: "Foto piccola (tonda)", name: foto_piccola, widget: object, fields: *foto-campi }
+
+      # ------------------------------------------------------------------ RECENSIONI
+      - name: recensioni
+        label: "⭐ Recensioni"
+        file: content/recensioni.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string }
+          - label: "Recensioni"
+            name: recensioni
+            widget: list
+            label_singular: "recensione"
+            summary: "{{fields.nome}}"
+            hint: "Inserisci solo recensioni reali (es. copiate da Google). Se l'elenco è vuoto la sezione non compare"
+            fields:
+              - { label: "Testo", name: testo, widget: text }
+              - { label: "Nome (es. Giulia R.)", name: nome, widget: string }
+              - { label: "Stelle", name: stelle, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+
+      # ------------------------------------------------------------------ CONTATTI
+      - name: contatti
+        label: "📍 Contatti, orari e social"
+        file: content/contatti.json
+        fields:
+          - { label: "Nome del centro", name: nome_centro, widget: string }
+          - { label: "Telefono", name: telefono, widget: string, hint: "es. +39 347 009 6504" }
+          - { label: "Numero WhatsApp", name: whatsapp, widget: string, hint: "Il numero a cui arrivano le prenotazioni, con +39" }
+          - { label: "Email", name: email, widget: string, required: false }
+          - { label: "Via e numero civico", name: indirizzo, widget: string, required: false }
+          - { label: "CAP", name: cap, widget: string }
+          - { label: "Città", name: citta, widget: string }
+          - { label: "Provincia (sigla)", name: provincia, widget: string }
+          - label: "Mappa Google"
+            name: mappa_embed
+            widget: text
+            required: false
+            hint: "Su Google Maps cerca il centro → Condividi → Incorpora una mappa → Copia HTML, e incollalo qui"
+          - { label: "Link Instagram", name: instagram, widget: string, required: false }
+          - { label: "Link Facebook", name: facebook, widget: string, required: false }
+          - { label: "Partita IVA", name: partita_iva, widget: string, required: false }
+          - { label: "Link Privacy Policy", name: privacy, widget: string, required: false }
+          - { label: "Link Cookie Policy", name: cookie, widget: string, required: false }
+          - label: "Orari di apertura"
+            name: orari
+            widget: object
+            hint: "Per un giorno di chiusura togli la spunta «Aperto»"
+            fields:
+              - label: "Lunedì"
+                name: lunedi
+                widget: object
+                collapsed: true
+                fields: &orario
+                  - { label: "Aperto", name: aperto, widget: boolean, default: true }
+                  - { label: "Apertura", name: dalle, widget: string, required: false, hint: "es. 09:00",
+                      pattern: ['^$|^([01]\d|2[0-3]):[0-5]\d$', "Scrivi l'orario come 09:00"] }
+                  - { label: "Chiusura", name: alle, widget: string, required: false, hint: "es. 19:00",
+                      pattern: ['^$|^([01]\d|2[0-3]):[0-5]\d$', "Scrivi l'orario come 19:00"] }
+                  - { label: "Riapertura pomeriggio (solo se c'è la pausa pranzo)", name: dalle_2, widget: string, required: false,
+                      pattern: ['^$|^([01]\d|2[0-3]):[0-5]\d$', "Scrivi l'orario come 15:30"] }
+                  - { label: "Chiusura pomeriggio", name: alle_2, widget: string, required: false,
+                      pattern: ['^$|^([01]\d|2[0-3]):[0-5]\d$', "Scrivi l'orario come 19:30"] }
+              - { label: "Martedì", name: martedi, widget: object, collapsed: true, fields: *orario }
+              - { label: "Mercoledì", name: mercoledi, widget: object, collapsed: true, fields: *orario }
+              - { label: "Giovedì", name: giovedi, widget: object, collapsed: true, fields: *orario }
+              - { label: "Venerdì", name: venerdi, widget: object, collapsed: true, fields: *orario }
+              - { label: "Sabato", name: sabato, widget: object, collapsed: true, fields: *orario }
+              - { label: "Domenica", name: domenica, widget: object, collapsed: true, fields: *orario }

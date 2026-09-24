@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Solo per un periodo limitato",
+  "titolo": "Promozioni in corso",
+  "promozioni": [
+    {
+      "titolo": "Total Body",
+      "descrizione": "Trattamento corpo completo + pressoterapia.",
+      "prezzo_pieno": "100",
+      "prezzo_scontato": "80",
+      "etichetta": "-20%"
+    },
+    {
+      "titolo": "Rituale SPA di Coppia",
+      "descrizione": "Sauna + bagno turco + massaggio relax per 2 persone.",
+      "prezzo_pieno": "140",
+      "prezzo_scontato": "110",
+      "etichetta": "Offerta limitata"
+    }
+  ]
+}

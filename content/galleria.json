@@ -1,0 +1,47 @@
+{
+  "eyebrow": "Il nostro spazio",
+  "titolo": "Dentro il centro",
+  "testo": "Cabine trattamento e le tecnologie che usiamo ogni giorno: laser a diodo, pressoterapia, Cocoon e molto altro. Tocca una foto per ingrandirla.",
+  "foto": [
+    {
+      "src": "/images/web/struttura/ingresso.jpg",
+      "alt": "Ingresso del centro Immagine & Bellezza a Mussomeli",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/struttura/prima-stanza.jpg",
+      "alt": "Cabina trattamenti viso e corpo",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/struttura/stanza.jpg",
+      "alt": "Cabina trattamenti con lettino luminoso",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/struttura/laser-al-diodo-808nm.jpg",
+      "alt": "Laser a diodo 808 nm per l'epilazione",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/struttura/cocoon.jpg",
+      "alt": "Cocoon per trattamenti corpo",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/struttura/emsculpt.jpg",
+      "alt": "Macchinario Emsculpt per la tonificazione muscolare",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/struttura/presso22.jpg",
+      "alt": "Cabina per la pressoterapia",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/struttura/presso.jpg",
+      "alt": "Pressoterapia con protocollo Selvert",
+      "pos": ""
+    }
+  ]
+}

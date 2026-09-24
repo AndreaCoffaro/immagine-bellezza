@@ -1,0 +1,98 @@
+{
+  "eyebrow": "Area Benessere",
+  "titolo": "La nostra SPA, *un mondo a parte*",
+  "testo": "Luci soffuse, acqua calda e silenzio. Un percorso pensato per sciogliere le tensioni e ritrovare energia, da vivere da sola, con un'amica o in coppia.",
+  "caratteristiche": [
+    {
+      "icona": "sauna",
+      "titolo": "Sauna finlandese",
+      "testo": "Calore secco che rilassa i muscoli e purifica la pelle."
+    },
+    {
+      "icona": "steam",
+      "titolo": "Bagno turco",
+      "testo": "Vapore avvolgente che libera il respiro e ammorbidisce la pelle."
+    },
+    {
+      "icona": "wave",
+      "titolo": "Vasca idromassaggio",
+      "testo": "Getti e cascate d'acqua calda sotto luci cromatiche."
+    },
+    {
+      "icona": "lotus",
+      "titolo": "Zona relax",
+      "testo": "Lettini ergonomici per concludere il percorso in calma."
+    }
+  ],
+  "foto": [
+    {
+      "src": "/images/web/spa/vasca3.jpg",
+      "alt": "Due clienti rilassate nella vasca idromassaggio con cascate",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/sauna.jpg",
+      "alt": "Sauna finlandese in legno con luce calda",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/sauna-bagno.jpg",
+      "alt": "Sauna, bagno turco e lettino relax",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/vasca4.jpg",
+      "alt": "Vasca idromassaggio con cromoterapia rossa",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/vasca.jpg",
+      "alt": "Vasca idromassaggio con cascate e luci blu",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/vasca2.jpg",
+      "alt": "Vasca idromassaggio con cromoterapia verde",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/spa.jpg",
+      "alt": "Scorci dell'area SPA: candele, zona zen e idromassaggio",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/spa/massaggi.jpg",
+      "alt": "Cabina massaggi allestita con cigni di asciugamani e petali di rosa",
+      "pos": ""
+    }
+  ],
+  "percorsi": [
+    {
+      "nome": "Percorso SPA",
+      "descrizione": "Il percorso di benessere completo nella nostra area SPA.",
+      "include": [
+        "Sauna finlandese",
+        "Bagno turco",
+        "Vasca idromassaggio",
+        "Zona relax"
+      ],
+      "prezzo": "€ 40",
+      "nota": "a persona",
+      "evidenza": false,
+      "etichetta": ""
+    },
+    {
+      "nome": "Percorso SPA + massaggio",
+      "descrizione": "Il percorso SPA completato da un massaggio rilassante.",
+      "include": [
+        "Tutto il Percorso SPA",
+        "Massaggio rilassante"
+      ],
+      "prezzo": "€ 60",
+      "nota": "a persona",
+      "evidenza": true,
+      "etichetta": "Il più scelto"
+    }
+  ],
+  "nota": "Ti consigliamo di portare il costume da bagno. Per disponibilità e orari del percorso scrivici su WhatsApp."
+}

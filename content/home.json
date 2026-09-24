@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "eyebrow": "Centro Estetico & SPA · Mussomeli",
+    "titolo": "Il tuo rifugio di *bellezza* e benessere",
+    "testo": "Trattamenti viso e corpo, make-up professionale e un'area SPA con sauna, bagno turco e idromassaggio. Un luogo dove rallentare e prenderti cura di te.",
+    "pulsante": "Prenota su WhatsApp",
+    "messaggio_whatsapp": "Ciao! Vorrei prenotare un appuntamento.",
+    "punti": [
+      {
+        "icona": "sauna",
+        "testo": "Sauna"
+      },
+      {
+        "icona": "steam",
+        "testo": "Bagno turco"
+      },
+      {
+        "icona": "wave",
+        "testo": "Idromassaggio"
+      },
+      {
+        "icona": "lotus",
+        "testo": "Massaggi"
+      }
+    ]
+  },
+  "foto": [
+    {
+      "src": "/images/web/ragazze/whatsapp-image-2026-09-23-at-14-18-43-5.jpg",
+      "alt": "Cliente con trucco professionale e capelli ricci",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/ragazze/tre-ragazze.jpg",
+      "alt": "Sposa e damigelle truccate da Immagine & Bellezza",
+      "pos": "center 30%"
+    },
+    {
+      "src": "/images/web/ragazze/whatsapp-image-2026-09-23-at-14-18-43.jpg",
+      "alt": "Trucco occhi luminoso su capelli lunghi mossi",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/ragazze/rossa.jpg",
+      "alt": "Trucco in corso su una cliente dai capelli rossi",
+      "pos": "38% center"
+    },
+    {
+      "src": "/images/web/ragazze/whatsapp-image-2026-09-23-at-14-18-43-3.jpg",
+      "alt": "Trucco e acconciatura con onde morbide",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/ragazze/ragazza.jpg",
+      "alt": "Cliente con trucco smokey e capelli mossi",
+      "pos": "center top"
+    },
+    {
+      "src": "/images/web/ragazze/whatsapp-image-2026-09-23-at-14-18-43-4.jpg",
+      "alt": "Cliente rilassata sul lettino dopo il trattamento",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/ragazze/492197822-3027790277374033-8141545364743883346-n.jpg",
+      "alt": "Trucco elegante con rossetto rosso",
+      "pos": "center top"
+    },
+    {
+      "src": "/images/web/ragazze/whatsapp-image-2026-09-23-at-14-18-43-1.jpg",
+      "alt": "Trucco occhi intenso in cabina",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/ragazze/cliente.jpg",
+      "alt": "Momento di relax nella sauna",
+      "pos": ""
+    },
+    {
+      "src": "/images/web/ragazze/mamma.jpg",
+      "alt": "Clienti allo specchio dopo il trucco",
+      "pos": "30% center"
+    }
+  ],
+  "punti_di_forza": [
+    {
+      "icona": "leaf",
+      "titolo": "Prodotti professionali",
+      "testo": "Linee selezionate per viso e corpo, scelte per risultati visibili e duraturi."
+    },
+    {
+      "icona": "shield",
+      "titolo": "Igiene e sicurezza",
+      "testo": "Ambienti curati e strumenti sanificati a ogni trattamento."
+    },
+    {
+      "icona": "heart",
+      "titolo": "Su misura per te",
+      "testo": "Ascoltiamo le tue esigenze e costruiamo il trattamento giusto."
+    },
+    {
+      "icona": "whatsapp",
+      "titolo": "Prenoti in un attimo",
+      "testo": "Scrivici su WhatsApp: ti rispondiamo con il primo orario libero."
+    }
+  ],
+  "chiusura": {
+    "titolo": "Concediti una pausa. *Te la meriti.*",
+    "testo": "Scrivici su WhatsApp o chiamaci: troviamo insieme il giorno e il trattamento perfetto per te."
+  }
+}
