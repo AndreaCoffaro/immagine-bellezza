@@ -111,15 +111,29 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 header.site.brand-in-hero .logo-text{opacity:0;transform:translateX(-8px);pointer-events:none}
 .logo-text em{color:var(--bordeaux);font-weight:500}
 .logo-text small{font-family:var(--font-ui);font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--testo-soft);margin-top:5px}
-nav.main ul{display:flex;gap:clamp(18px,2.4vw,34px)}
+nav.main ul{display:flex;gap:clamp(16px,1.9vw,30px)}
 nav.main ul a{position:relative;white-space:nowrap;font-size:.98rem;font-weight:400;padding-block:6px}
 nav.main ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--bordeaux);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 nav.main ul a:hover::after,nav.main ul a.active::after{transform:scaleX(1)}
 nav.main ul a.active{color:var(--bordeaux)}
 .nav-mobile-cta{display:none}
 .header-actions{display:flex;align-items:center;gap:18px}
-.header-phone{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;color:var(--testo-soft)}
-.header-phone:hover{color:var(--bordeaux)}
+/* Telefono nella barra: cornetta in un cerchio + etichetta "Chiama ora" sopra il numero */
+.header-phone{display:inline-flex;align-items:center;gap:11px;flex:0 0 auto;color:var(--testo);line-height:1.15}
+.hp-ico{
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;
+  background:var(--rosa-cipria);color:var(--bordeaux);
+  box-shadow:0 0 0 0 rgba(132,44,86,.25);
+  transition:background .3s ease, color .3s ease, box-shadow .4s ease;
+}
+.hp-ico .ico{width:17px;height:17px}
+.hp-txt{display:flex;flex-direction:column;white-space:nowrap}
+.hp-txt small{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);margin-bottom:3px}
+.hp-txt span{font-size:.95rem;font-weight:500;letter-spacing:.02em;transition:color .3s ease}
+.header-phone:hover .hp-ico,.header-phone:focus-visible .hp-ico{background:var(--bordeaux);color:#fff;box-shadow:0 0 0 6px rgba(132,44,86,.12)}
+.header-phone:hover .hp-ico .ico{animation:squillo .6s ease}
+.header-phone:hover .hp-txt span{color:var(--bordeaux)}
+@keyframes squillo{0%,100%{transform:rotate(0)}20%{transform:rotate(-14deg)}40%{transform:rotate(12deg)}60%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}}
 .nav-toggle{display:none;width:44px;height:44px;position:relative}
 .nav-toggle span{position:absolute;left:11px;right:11px;height:1.5px;background:var(--testo);transition:transform .3s var(--ease), opacity .2s ease}
 .nav-toggle span:nth-child(1){top:15px}
@@ -129,7 +143,7 @@ nav.main ul a.active{color:var(--bordeaux)}
 .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
 .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
-@media (max-width:1240px){.header-phone span{display:none}}
+@media (max-width:1240px){.header-phone .hp-txt{display:none}}
 @media (max-width:1120px){
   :root{--header-h:76px}
   .logo-img{width:48px;height:48px}
