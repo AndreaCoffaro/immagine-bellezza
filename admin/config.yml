@@ -239,12 +239,24 @@ collections:
 
       # ------------------------------------------------------------------ GALLERIA
       - name: galleria
-        label: "📷 Dentro il centro (ambienti, apparecchiature e prodotti)"
+        label: "📷 Dentro il centro (apparecchiature, prodotti e foto degli ambienti)"
         file: content/galleria.json
         fields:
-          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
-          - { label: "Titolo", name: titolo, widget: string }
-          - { label: "Testo", name: testo, widget: text }
+          - label: "Schede apparecchiature e prodotti"
+            name: tecnologie
+            widget: list
+            label_singular: "scheda"
+            summary: "{{fields.nome}}"
+            hint: "Una scheda per ogni macchinario o linea di prodotti. «Aggiungi scheda» per crearne una nuova, ✕ per eliminarla, trascina le lineette ═ per cambiare l'ordine"
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Tipo di trattamento", name: categoria, widget: string, required: false, hint: "Scritta piccola sopra il nome, es. Epilazione" }
+              - { label: "Foto", name: foto, widget: object, fields: *foto-campi }
+              - { label: "Come funziona", name: descrizione, widget: text }
+              - { label: "Benefici", name: benefici, widget: list, field: { label: "Beneficio", name: beneficio, widget: string } }
+          - { label: "Schede — scritta piccola sopra il titolo", name: tecnologie_eyebrow, widget: string }
+          - { label: "Schede — titolo", name: tecnologie_titolo, widget: string, hint: *titolo-hint }
+          - { label: "Schede — testo introduttivo", name: tecnologie_testo, widget: text }
           - label: "Foto degli ambienti (ingresso e cabine)"
             name: foto
             widget: list
@@ -252,21 +264,9 @@ collections:
             summary: "{{fields.alt}}"
             hint: "La prima foto è quella grande. Trascina per cambiare l'ordine"
             fields: *foto-campi
-          - { label: "Apparecchiature — scritta piccola sopra il titolo", name: tecnologie_eyebrow, widget: string }
-          - { label: "Apparecchiature — titolo", name: tecnologie_titolo, widget: string, hint: *titolo-hint }
-          - { label: "Apparecchiature — testo", name: tecnologie_testo, widget: text }
-          - label: "Apparecchiature"
-            name: tecnologie
-            widget: list
-            label_singular: "apparecchiatura"
-            summary: "{{fields.nome}}"
-            hint: "Una scheda per ogni macchinario o linea di prodotti. Trascina per cambiare l'ordine"
-            fields:
-              - { label: "Nome", name: nome, widget: string }
-              - { label: "Tipo di trattamento", name: categoria, widget: string, required: false, hint: "Scritta piccola sopra il nome, es. Epilazione" }
-              - { label: "Foto", name: foto, widget: object, fields: *foto-campi }
-              - { label: "Come funziona", name: descrizione, widget: text }
-              - { label: "Benefici", name: benefici, widget: list, field: { label: "Beneficio", name: beneficio, widget: string } }
+          - { label: "Foto degli ambienti — scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Foto degli ambienti — titolo", name: titolo, widget: string }
+          - { label: "Foto degli ambienti — testo", name: testo, widget: text }
 
       # ------------------------------------------------------------------ CHI SIAMO
       - name: chi-siamo
