@@ -7,7 +7,7 @@
 
 backend:
   name: github
-  repo: UTENTE-GITHUB/immagine-bellezza   # DA COMPLETARE dopo aver creato il repository
+  repo: AndreaCoffaro/immagine-bellezza
   branch: main
   commit_messages:
     create: "Crea {{collection}} «{{slug}}»"
