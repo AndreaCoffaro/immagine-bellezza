@@ -25,6 +25,13 @@
       "pos": ""
     },
     {
+      "src": "/images/web/struttura/zona-caffe.jpg",
+      "nome": "Angolo caffè",
+      "zona": "accoglienza",
+      "alt": "Angolo caffè con macchina espresso, tazzine e bollitore per tisane",
+      "pos": ""
+    },
+    {
       "src": "/images/web/struttura/zona-manicure-pedicure.jpg",
       "nome": "Manicure e pedicure",
       "zona": "cabine",
@@ -53,10 +60,10 @@
       "pos": ""
     },
     {
-      "src": "/images/web/struttura/presso22.jpg",
+      "src": "/images/web/struttura/stanza2-pressoterapia.jpg",
       "nome": "Cabina pressoterapia",
       "zona": "cabine",
-      "alt": "Cabina per la pressoterapia",
+      "alt": "Cabina pressoterapia con gambali e apparecchiatura Vitale",
       "pos": ""
     },
     {
@@ -111,9 +118,9 @@
       "nome": "Pressoterapia",
       "categoria": "Drenaggio",
       "foto": {
-        "src": "/images/web/struttura/presso.jpg",
-        "alt": "Pressoterapia con gambali a compressione e prodotti Selvert",
-        "pos": ""
+        "src": "/images/web/struttura/stanza2-pressoterapia.jpg",
+        "alt": "Pressoterapia: lettino con gambali e apparecchiatura Vitale",
+        "pos": "center bottom"
       },
       "descrizione": "Gambali e fascia si gonfiano e si sgonfiano in sequenza, con una pressione che risale dai piedi verso l'alto e accompagna la circolazione.",
       "benefici": [
