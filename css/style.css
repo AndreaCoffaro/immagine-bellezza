@@ -434,7 +434,7 @@ body.menu-open{overflow:hidden}
 .gal-cap small{display:block;margin-bottom:5px;font-family:var(--font-ui);font-size:.62rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--oro-chiaro)}
 @media (max-width:980px){.grid-galleria{columns:2}}
 
-/* Foto in evidenza (es. zona mani e piedi): intera, grande, con testo e pulsante */
+/* Foto in evidenza (es. zona manicure e pedicure): intera, grande, con testo e pulsante */
 .gal-evidenza{
   display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;
   margin-bottom:clamp(20px,3vw,32px);padding:clamp(12px,1.4vw,18px);
