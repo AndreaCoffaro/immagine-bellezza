@@ -219,12 +219,8 @@ function renderServizi(){
           <a class="btn btn-primary btn-sm" href="${waLink(`Ciao! Vorrei informazioni / prenotare: ${c.categoria}.`)}" target="_blank" rel="noopener">${icon("whatsapp")}Prenota ${esc(c.categoria.toLowerCase())}</a>
         </div>
         <ul class="servizi-lista${n < 5 ? " single" : ""}">
-          ${servizi.map(s => {
-            const isSpecial = s.nome.toLowerCase().includes("sposa");
-            return `<li class="servizio-riga${isSpecial ? " special" : ""}">
-              ${isSpecial ? '<span class="badge">SERVIZIO SPECIALE</span>' : ""}
-              <span>${esc(s.nome)}</span><i aria-hidden="true"></i><strong>${esc(s.prezzo)}</strong></li>`;
-          }).join("")}
+          ${servizi.map(s => `<li class="servizio-riga">
+              <span>${esc(s.nome)}</span><i aria-hidden="true"></i><strong>${esc(s.prezzo)}</strong></li>`).join("")}
         </ul>
       </div>`;
     tabs.querySelectorAll(".tab").forEach((t, j) => {
