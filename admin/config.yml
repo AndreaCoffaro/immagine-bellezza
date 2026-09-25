@@ -237,6 +237,16 @@ collections:
             summary: "{{fields.alt}}"
             fields: *foto-campi
 
+      # ------------------------------------------------------------------ TRUCCO SPOSA
+      - name: sposa
+        label: "💄 Trucco sposa"
+        file: content/sposa.json
+        fields:
+          - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
+          - { label: "Titolo", name: titolo, widget: string, hint: *titolo-hint }
+          - { label: "Testo", name: testo, widget: text }
+          - { label: "Punti elenco", name: punti, widget: list, field: { label: "Punto", name: punto, widget: string } }
+
       # ------------------------------------------------------------------ GALLERIA
       - name: galleria
         label: "📷 Dentro il centro (apparecchiature, prodotti e foto degli ambienti)"

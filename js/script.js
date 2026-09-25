@@ -6,7 +6,7 @@
    Questo file si occupa solo di leggere quei dati e costruire la pagina.
    ========================================================================= */
 
-const FILE_CONTENUTI = ["contatti", "home", "listino", "spa", "promozioni", "eventi", "regalo", "chi-siamo", "galleria", "recensioni"];
+const FILE_CONTENUTI = ["contatti", "home", "listino", "spa", "promozioni", "eventi", "regalo", "sposa", "chi-siamo", "galleria", "recensioni"];
 const C = {};                      // qui finiscono i contenuti letti da /content
 let WHATSAPP = "393470096504";     // aggiornato da contatti.json
 
@@ -189,6 +189,9 @@ function renderListe(){
   const rp = get("regalo.punti");
   if(rp?.length) $("#regalo-punti").innerHTML = rp.map(p => `<li>${esc(p)}</li>`).join("");
 
+  const sp = get("sposa.punti");
+  if(sp?.length) $("#sposa-punti").innerHTML = sp.map(p => `<li>${esc(p)}</li>`).join("");
+
   const testo = get("chi_siamo.testo");
   if(testo) $("#chi-testo").innerHTML = testo.split(/\n\s*\n/).map(p => `<p>${fmt(p.trim())}</p>`).join("");
   const fg = get("chi_siamo.foto_grande"), fp = get("chi_siamo.foto_piccola");
@@ -219,7 +222,12 @@ function renderServizi(){
           <a class="btn btn-primary btn-sm" href="${waLink(`Ciao! Vorrei informazioni / prenotare: ${c.categoria}.`)}" target="_blank" rel="noopener">${icon("whatsapp")}Prenota ${esc(c.categoria.toLowerCase())}</a>
         </div>
         <ul class="servizi-lista${n < 5 ? " single" : ""}">
-          ${servizi.map(s => `<li class="servizio-riga"><span>${esc(s.nome)}</span><i aria-hidden="true"></i><strong>${esc(s.prezzo)}</strong></li>`).join("")}
+          ${servizi.map(s => {
+            const isSpecial = s.nome.toLowerCase().includes("sposa");
+            return `<li class="servizio-riga${isSpecial ? " special" : ""}">
+              ${isSpecial ? '<span class="badge">SERVIZIO SPECIALE</span>' : ""}
+              <span>${esc(s.nome)}</span><i aria-hidden="true"></i><strong>${esc(s.prezzo)}</strong></li>`;
+          }).join("")}
         </ul>
       </div>`;
     tabs.querySelectorAll(".tab").forEach((t, j) => {
