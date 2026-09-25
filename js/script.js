@@ -6,7 +6,7 @@
    Questo file si occupa solo di leggere quei dati e costruire la pagina.
    ========================================================================= */
 
-const FILE_CONTENUTI = ["contatti", "home", "listino", "spa", "promozioni", "eventi", "regalo", "sposa", "chi-siamo", "galleria", "recensioni"];
+const FILE_CONTENUTI = ["contatti", "home", "listino", "spa", "promozioni", "eventi", "regalo", "chi-siamo", "galleria", "recensioni"];
 const C = {};                      // qui finiscono i contenuti letti da /content
 let WHATSAPP = "393470096504";     // aggiornato da contatti.json
 
@@ -188,9 +188,6 @@ function renderListe(){
 
   const rp = get("regalo.punti");
   if(rp?.length) $("#regalo-punti").innerHTML = rp.map(p => `<li>${esc(p)}</li>`).join("");
-
-  const sp = get("sposa.punti");
-  if(sp?.length) $("#sposa-punti").innerHTML = sp.map(p => `<li>${esc(p)}</li>`).join("");
 
   const testo = get("chi_siamo.testo");
   if(testo) $("#chi-testo").innerHTML = testo.split(/\n\s*\n/).map(p => `<p>${fmt(p.trim())}</p>`).join("");
