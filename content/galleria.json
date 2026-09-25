@@ -8,91 +8,144 @@
       "nome": "Il centro",
       "zona": "accoglienza",
       "alt": "Esterno del centro Immagine & Bellezza in Via Caltanissetta a Mussomeli",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/struttura/corridoio.jpg",
       "nome": "Ingresso",
       "zona": "accoglienza",
       "alt": "Ingresso con mensole di prodotti e corridoio verso le cabine",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/struttura/sala-d-attesa.jpg",
       "nome": "Sala d'attesa",
       "zona": "accoglienza",
       "alt": "Sala d'attesa con divano e reception",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/struttura/zona-caffe.jpg",
       "nome": "Angolo caffè",
       "zona": "accoglienza",
       "alt": "Angolo caffè con macchina espresso, tazzine e bollitore per tisane",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
-      "src": "/images/web/struttura/zona-manicure-pedicure.jpg",
-      "nome": "Manicure e pedicure",
+      "src": "/images/web/struttura/zona-unghie-piedi.jpg",
+      "nome": "Zona unghie e piedi",
       "zona": "cabine",
-      "alt": "Zona manicure e pedicure con lettino e postazione unghie",
-      "pos": ""
+      "alt": "Zona unghie e piedi: lettino per pedicure e postazione manicure con lampada",
+      "pos": "",
+      "evidenza": true,
+      "testo": "Uno spazio luminoso e riservato dedicato a mani e piedi: manicure, pedicure curativa, semipermanente e ricostruzione unghie."
     },
     {
       "src": "/images/web/struttura/stanza1.jpg",
       "nome": "Cabina laser",
       "zona": "cabine",
       "alt": "Cabina con lettino e laser a diodo",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/struttura/stanza0.jpg",
       "nome": "Cabina corpo",
       "zona": "cabine",
       "alt": "Cabina corpo con capsula Cocoon e lettino",
-      "pos": ""
-    },
-    {
-      "src": "/images/web/struttura/stanza.jpg",
-      "nome": "Cabina viso e corpo",
-      "zona": "cabine",
-      "alt": "Cabina trattamenti con lettino luminoso",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/struttura/stanza2-pressoterapia.jpg",
       "nome": "Cabina pressoterapia",
       "zona": "cabine",
       "alt": "Cabina pressoterapia con gambali e apparecchiatura Vitale",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
+    },
+    {
+      "src": "/images/web/struttura/stanza3.jpg",
+      "nome": "Cabina viso",
+      "zona": "cabine",
+      "alt": "Cabina viso con lettino, specchio tondo e apparecchiatura per radiofrequenza",
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
+    },
+    {
+      "src": "/images/web/struttura/prima-stanza.jpg",
+      "nome": "Cabina estetica",
+      "zona": "cabine",
+      "alt": "Cabina trattamenti viso e corpo",
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
+    },
+    {
+      "src": "/images/web/struttura/stanza.jpg",
+      "nome": "Cabina con lettino luminoso",
+      "zona": "cabine",
+      "alt": "Cabina trattamenti con lettino luminoso",
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
+    },
+    {
+      "src": "/images/web/struttura/presso22.jpg",
+      "nome": "Pressoterapia",
+      "zona": "cabine",
+      "alt": "Lettino con gambali per la pressoterapia",
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/spa/vasca.jpg",
       "nome": "Idromassaggio",
       "zona": "spa",
       "alt": "Vasca idromassaggio con cascate e luci blu",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/spa/sauna.jpg",
       "nome": "Sauna finlandese",
       "zona": "spa",
       "alt": "Sauna finlandese in legno con luce calda",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/spa/sauna-bagno.jpg",
       "nome": "Sauna e bagno turco",
       "zona": "spa",
       "alt": "Sauna, bagno turco e lettino relax",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     },
     {
       "src": "/images/web/spa/massaggi.jpg",
       "nome": "Sala massaggi",
       "zona": "spa",
       "alt": "Sala massaggi dell'area SPA",
-      "pos": ""
+      "pos": "",
+      "evidenza": false,
+      "testo": ""
     }
   ],
   "tecnologie_eyebrow": "Professionali, per viso e corpo",
@@ -112,6 +165,21 @@
         "Riduzione progressiva e duratura dei peli superflui",
         "Addio a irritazioni e peli incarniti da ceretta e rasoio",
         "Per viso e corpo: gambe, inguine, ascelle e altre zone"
+      ]
+    },
+    {
+      "nome": "Radiofrequenza",
+      "categoria": "Viso e corpo",
+      "foto": {
+        "src": "/images/web/struttura/radiofrequenza.jpg",
+        "alt": "Apparecchiatura per radiofrequenza con manipoli",
+        "pos": ""
+      },
+      "descrizione": "Il manipolo scalda delicatamente gli strati profondi della pelle e stimola la produzione naturale di collagene ed elastina.",
+      "benefici": [
+        "Pelle più compatta, tonica e luminosa",
+        "Attenua rughe sottili e rilassamento cutaneo",
+        "Trattamento piacevole, senza tempi di recupero"
       ]
     },
     {

@@ -337,16 +337,31 @@ function initSpaRotazione(){
 const ZONE = { accoglienza:"Accoglienza", cabine:"Cabine", spa:"SPA" };
 
 function renderGalleria(){
-  const foto = (get("galleria.foto") || []).filter(f => f.src);
+  const tutte = (get("galleria.foto") || []).filter(f => f.src);
+  const foto = tutte.filter(f => !f.evidenza);
   const grid = $("#grid-galleria");
-  grid.innerHTML = foto.map(g => `
-    <button class="gal-foto" data-set="galleria" data-zona="${esc(g.zona || "")}" data-gallery="${imgUrl(g.src, 2000)}" aria-label="Ingrandisci: ${esc(g.nome || g.alt)}">
-      ${imgTag({ ...g, alt:g.alt || g.nome || "" }, 1000, 'loading="lazy"')}
-      ${g.nome ? `<span class="gal-cap">${g.zona && ZONE[g.zona] ? `<small>${ZONE[g.zona]}</small>` : ""}${esc(g.nome)}</span>` : ""}
-    </button>`).join("");
+  const bottone = (g, w, dentro = "") => `
+    <button class="gal-foto" data-set="galleria" data-zona="${esc(g.zona || "")}" data-nome="${esc(g.nome || g.alt)}" data-gallery="${imgUrl(g.src, 2000)}" aria-label="Ingrandisci: ${esc(g.nome || g.alt)}">
+      ${imgTag({ ...g, alt:g.alt || g.nome || "" }, w, 'loading="lazy"')}${dentro}
+    </button>`;
+  const zona = g => g.zona && ZONE[g.zona] ? ZONE[g.zona] : "";
+  grid.innerHTML = foto.map(g => bottone(g, 1000,
+    g.nome ? `<span class="gal-cap">${zona(g) ? `<small>${zona(g)}</small>` : ""}${esc(g.nome)}</span>` : "")).join("");
+
+  // Foto "in evidenza": riquadro grande, sempre intera (mai ritagliata), con testo e pulsante
+  $("#evidenza-galleria").innerHTML = tutte.filter(f => f.evidenza).map(g => `
+    <article class="gal-evidenza" data-zona="${esc(g.zona || "")}">
+      ${bottone(g, 1600)}
+      <div class="gal-evidenza-testo">
+        ${zona(g) ? `<span class="eyebrow">${zona(g)}</span>` : ""}
+        <h3>${fmt(g.nome || "")}</h3>
+        ${g.testo ? `<p>${esc(g.testo)}</p>` : ""}
+        <a class="btn btn-primary btn-sm" href="${waLink(`Ciao! Vorrei prenotare un appuntamento: ${g.nome || ""}.`)}" target="_blank" rel="noopener">${icon("whatsapp")}Prenota su WhatsApp</a>
+      </div>
+    </article>`).join("");
 
   // Filtri per zona: compaiono solo se le foto appartengono ad almeno due zone
-  const zone = Object.keys(ZONE).filter(z => foto.some(f => f.zona === z));
+  const zone = Object.keys(ZONE).filter(z => tutte.some(f => f.zona === z));
   const box = $("#zone-galleria");
   box.hidden = zone.length < 2;
   box.innerHTML = ["", ...zone].map(z =>
@@ -355,7 +370,7 @@ function renderGalleria(){
     const b = e.target.closest("button");
     if(!b) return;
     box.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
-    grid.querySelectorAll(".gal-foto").forEach(f => {
+    $$("#grid-galleria .gal-foto, .gal-evidenza").forEach(f => {
       f.hidden = !!b.dataset.zona && f.dataset.zona !== b.dataset.zona;
     });
     grid.scrollLeft = 0;
@@ -553,8 +568,9 @@ function initLightbox(){
     const set = trigger.dataset.set;
     items = set === "spa"
       ? fotoSpa().map(f => ({ src:imgUrl(f.src, 2000), alt:f.alt || "" }))
-      : $$(set ? `[data-set="${set}"]:not([hidden])` : "[data-gallery]:not([data-set])")
-          .map(b => ({ src:b.dataset.gallery, alt:b.querySelector(".gal-cap")?.lastChild?.textContent || b.querySelector("img")?.alt || "" }));
+      : $$(set ? `[data-set="${set}"]` : "[data-gallery]:not([data-set])")
+          .filter(b => !b.closest("[hidden]"))
+          .map(b => ({ src:b.dataset.gallery, alt:b.dataset.nome || b.querySelector("img")?.alt || "" }));
     show(Math.max(0, items.findIndex(it => it.src === trigger.dataset.gallery)));
     dlg.showModal();
   });

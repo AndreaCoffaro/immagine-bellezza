@@ -274,6 +274,9 @@ collections:
                   - { label: "Cabine (trattamenti, manicure e pedicure)", value: "cabine" }
                   - { label: "SPA", value: "spa" }
               - { label: "Foto", name: src, widget: image, choose_url: false }
+              - { label: "In evidenza", name: evidenza, widget: boolean, default: false, required: false,
+                  hint: "Attivalo per mostrare la foto in un riquadro grande sopra le altre, sempre intera (adatto ai collage di più foto), con testo e pulsante WhatsApp" }
+              - { label: "Testo (solo per le foto in evidenza)", name: testo, widget: text, required: false }
               - { label: "Descrizione della foto", name: alt, widget: string, required: false,
                   hint: "Breve descrizione di cosa si vede (serve a Google e a chi usa lettori vocali)" }
               - label: "Inquadratura sul cellulare"
