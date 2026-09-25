@@ -94,15 +94,6 @@
       "testo": ""
     },
     {
-      "src": "/images/web/struttura/stanza.jpg",
-      "nome": "Cabina con lettino luminoso",
-      "zona": "cabine",
-      "alt": "Cabina trattamenti con lettino luminoso",
-      "pos": "",
-      "evidenza": false,
-      "testo": ""
-    },
-    {
       "src": "/images/web/struttura/presso22.jpg",
       "nome": "Pressoterapia",
       "zona": "cabine",
@@ -240,6 +231,21 @@
         "Tonifica addome, glutei, braccia e cosce",
         "Rinforza e rassoda la muscolatura",
         "Nessuno sforzo e nessun tempo di recupero"
+      ]
+    },
+    {
+      "nome": "Vela Body Shape",
+      "categoria": "Rimodellamento corpo",
+      "foto": {
+        "src": "/images/web/struttura/vela-body-shape.jpg",
+        "alt": "Macchinario Vela Body Shape per il rimodellamento non invasivo",
+        "pos": ""
+      },
+      "descrizione": "Tecnologia RF ed ultrasuoni focati che rimodellano il corpo senza interventi chirurgici. Riduce grasso localizzato e tonifica la pelle.",
+      "benefici": [
+        "Riduce adiposità localizzate su addome, fianchi e glutei",
+        "Tonifica e rassoda la pelle",
+        "Risultati visibili senza downtime"
       ]
     },
     {
