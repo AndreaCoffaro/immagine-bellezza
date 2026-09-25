@@ -334,17 +334,64 @@ function initSpaRotazione(){
 }
 
 /* ---------- Galleria struttura ---------- */
+const ZONE = { accoglienza:"Accoglienza", cabine:"Cabine", spa:"SPA" };
+
 function renderGalleria(){
   const foto = (get("galleria.foto") || []).filter(f => f.src);
-  // La prima foto è grande (2x2); l'ultima si allarga per non lasciare buchi nella griglia a 3 colonne
-  const resto = (foto.length + 3) % 3;
-  $("#grid-galleria").innerHTML = foto.map((g, i) => {
-    const cls = i === foto.length - 1 && i > 0 ? (resto === 1 ? "full" : resto === 2 ? "wide" : "") : "";
-    return `
-    <button class="reveal ${cls}" data-gallery="${imgUrl(g.src, 2000)}" aria-label="Ingrandisci: ${esc(g.alt)}">
-      ${imgTag(g, i === 0 ? 1400 : 900, 'loading="lazy"')}
-    </button>`;
-  }).join("");
+  const grid = $("#grid-galleria");
+  grid.innerHTML = foto.map(g => `
+    <button class="gal-foto" data-set="galleria" data-zona="${esc(g.zona || "")}" data-gallery="${imgUrl(g.src, 2000)}" aria-label="Ingrandisci: ${esc(g.nome || g.alt)}">
+      ${imgTag({ ...g, alt:g.alt || g.nome || "" }, 1000, 'loading="lazy"')}
+      ${g.nome ? `<span class="gal-cap">${g.zona && ZONE[g.zona] ? `<small>${ZONE[g.zona]}</small>` : ""}${esc(g.nome)}</span>` : ""}
+    </button>`).join("");
+
+  // Filtri per zona: compaiono solo se le foto appartengono ad almeno due zone
+  const zone = Object.keys(ZONE).filter(z => foto.some(f => f.zona === z));
+  const box = $("#zone-galleria");
+  box.hidden = zone.length < 2;
+  box.innerHTML = ["", ...zone].map(z =>
+    `<button type="button" data-zona="${z}" aria-pressed="${z === ""}">${z ? ZONE[z] : "Tutto"}</button>`).join("");
+  box.onclick = e => {
+    const b = e.target.closest("button");
+    if(!b) return;
+    box.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    grid.querySelectorAll(".gal-foto").forEach(f => {
+      f.hidden = !!b.dataset.zona && f.dataset.zona !== b.dataset.zona;
+    });
+    grid.scrollLeft = 0;
+    grid.dispatchEvent(new Event("scroll"));
+  };
+  initCarosello(grid);
+}
+
+/* Su mobile galleria e schede diventano caroselli orizzontali: sotto c'è un .car-nav
+   con contatore, barra di avanzamento e frecce (su computer è nascosto dal CSS) */
+function initCarosello(track){
+  const nav = track.nextElementSibling;
+  if(!nav?.classList.contains("car-nav")) return;
+  const [count, bar, prev, next] = [".car-count", ".car-bar i", ".car-prev", ".car-next"].map(s => nav.querySelector(s));
+  const visibili = () => [...track.children].filter(el => !el.hidden);
+  const aggiorna = () => {
+    const el = visibili();
+    if(!el.length) return;
+    const passo = el[1] ? el[1].offsetLeft - el[0].offsetLeft : track.clientWidth;
+    const fine = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+    const i = fine ? el.length - 1 : Math.min(el.length - 1, Math.round(track.scrollLeft / Math.max(1, passo)));
+    count.textContent = `${i + 1} / ${el.length}`;
+    bar.style.width = `${(i + 1) / el.length * 100}%`;
+    prev.disabled = i === 0;
+    next.disabled = i === el.length - 1;
+  };
+  const scorri = dir => {
+    const el = visibili();
+    const passo = el[1] ? el[1].offsetLeft - el[0].offsetLeft : track.clientWidth;
+    track.scrollBy({ left:dir * passo, behavior:"smooth" });
+  };
+  prev.onclick = () => scorri(-1);
+  next.onclick = () => scorri(1);
+  let raf = 0;
+  track.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(aggiorna); }, { passive:true });
+  aggiorna();
 }
 
 /* ---------- Apparecchiature (schede sotto la galleria) ---------- */
@@ -365,6 +412,7 @@ function renderTecnologie(){
         <a class="tecno-cta" href="${waLink(`Ciao! Vorrei informazioni sui trattamenti con ${t.nome}.`)}" target="_blank" rel="noopener">${icon("whatsapp")}Chiedi informazioni</a>
       </div>
     </article>`).join("");
+  initCarosello($("#grid-tecnologie"));
 }
 
 /* ---------- Recensioni ---------- */
@@ -501,9 +549,12 @@ function initLightbox(){
     const trigger = e.target.closest("[data-gallery]");
     if(!trigger) return;
     // Foto SPA: si sfogliano tutte, anche quelle non visibili nel mosaico
-    items = trigger.dataset.set === "spa"
+    // Galleria: si sfogliano solo le foto della zona scelta, con il nome dell'ambiente come didascalia
+    const set = trigger.dataset.set;
+    items = set === "spa"
       ? fotoSpa().map(f => ({ src:imgUrl(f.src, 2000), alt:f.alt || "" }))
-      : $$("[data-gallery]:not([data-set])").map(b => ({ src:b.dataset.gallery, alt:b.querySelector("img")?.alt || "" }));
+      : $$(set ? `[data-set="${set}"]:not([hidden])` : "[data-gallery]:not([data-set])")
+          .map(b => ({ src:b.dataset.gallery, alt:b.querySelector(".gal-cap")?.lastChild?.textContent || b.querySelector("img")?.alt || "" }));
     show(Math.max(0, items.findIndex(it => it.src === trigger.dataset.gallery)));
     dlg.showModal();
   });

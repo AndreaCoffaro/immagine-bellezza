@@ -257,15 +257,38 @@ collections:
           - { label: "Schede — scritta piccola sopra il titolo", name: tecnologie_eyebrow, widget: string }
           - { label: "Schede — titolo", name: tecnologie_titolo, widget: string, hint: *titolo-hint }
           - { label: "Schede — testo introduttivo", name: tecnologie_testo, widget: text }
-          - label: "Foto degli ambienti (ingresso e cabine)"
+          - label: "Foto degli ambienti (esterno, accoglienza, cabine, SPA)"
             name: foto
             widget: list
             label_singular: "foto"
-            summary: "{{fields.alt}}"
-            hint: "La prima foto è quella grande. Trascina per cambiare l'ordine"
-            fields: *foto-campi
+            summary: "{{fields.nome}}"
+            hint: "Trascina le lineette ═ per cambiare l'ordine. Sul cellulare le foto si scorrono in quest'ordine, la prima è quella che si vede subito"
+            fields:
+              - { label: "Nome dell'ambiente", name: nome, widget: string, hint: "Compare sulla foto, es. Sala d'attesa, Cabina laser" }
+              - label: "Zona"
+                name: zona
+                widget: select
+                hint: "Serve per i pulsanti Accoglienza / Cabine / SPA sopra le foto"
+                options:
+                  - { label: "Accoglienza (esterno, ingresso, sala d'attesa)", value: "accoglienza" }
+                  - { label: "Cabine (trattamenti, manicure e pedicure)", value: "cabine" }
+                  - { label: "SPA", value: "spa" }
+              - { label: "Foto", name: src, widget: image, choose_url: false }
+              - { label: "Descrizione della foto", name: alt, widget: string, required: false,
+                  hint: "Breve descrizione di cosa si vede (serve a Google e a chi usa lettori vocali)" }
+              - label: "Inquadratura sul cellulare"
+                name: pos
+                widget: select
+                required: false
+                hint: "Sul cellulare le foto sono ritagliate in verticale: se si vede la parte sbagliata, scegli dove centrarla"
+                options:
+                  - { label: "Centro", value: "center" }
+                  - { label: "In alto", value: "center top" }
+                  - { label: "In basso", value: "center bottom" }
+                  - { label: "A sinistra", value: "left center" }
+                  - { label: "A destra", value: "right center" }
           - { label: "Foto degli ambienti — scritta piccola sopra il titolo", name: eyebrow, widget: string }
-          - { label: "Foto degli ambienti — titolo", name: titolo, widget: string }
+          - { label: "Foto degli ambienti — titolo", name: titolo, widget: string, hint: *titolo-hint }
           - { label: "Foto degli ambienti — testo", name: testo, widget: text }
 
       # ------------------------------------------------------------------ CHI SIAMO
