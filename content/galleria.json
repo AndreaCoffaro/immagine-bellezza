@@ -94,15 +94,6 @@
       "testo": ""
     },
     {
-      "src": "/images/web/struttura/presso22.jpg",
-      "nome": "Pressoterapia",
-      "zona": "cabine",
-      "alt": "Lettino con gambali per la pressoterapia",
-      "pos": "",
-      "evidenza": false,
-      "testo": ""
-    },
-    {
       "src": "/images/web/spa/vasca.jpg",
       "nome": "Idromassaggio",
       "zona": "spa",
