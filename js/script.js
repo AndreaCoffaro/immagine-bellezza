@@ -490,6 +490,9 @@ function initMenu(){
   toggle.addEventListener("click", () => setOpen(!nav.classList.contains("open")));
   nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setOpen(false)));
   document.addEventListener("keydown", e => { if(e.key === "Escape") setOpen(false); });
+  document.body.addEventListener("click", e => {
+    if(nav.classList.contains("open") && !nav.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+  });
   matchMedia("(min-width: 1121px)").addEventListener("change", e => { if(e.matches) setOpen(false); });
 }
 

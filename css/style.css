@@ -151,21 +151,25 @@ nav.main ul a.active{color:var(--bordeaux)}
   .header-phone{display:none}
   .nav-toggle{display:block}
   nav.main{
-    position:fixed;inset:var(--header-h) 0 0 0;z-index:59;
-    background:var(--crema);padding:28px clamp(18px,4vw,32px) calc(40px + env(safe-area-inset-bottom,0px));
+    position:fixed;inset:var(--header-h) auto 0 0;z-index:59;
+    width:clamp(260px,80vw,320px);
+    background:var(--crema);padding:28px 24px calc(40px + env(safe-area-inset-bottom,0px));
     display:flex;flex-direction:column;justify-content:space-between;gap:32px;
-    opacity:0;visibility:hidden;transform:translateY(-12px);
-    transition:opacity .3s ease, transform .3s var(--ease), visibility 0s linear .3s;
+    opacity:0;visibility:hidden;transform:translateX(-100%);
+    transition:transform .4s var(--ease), visibility 0s linear .4s;
     overflow-y:auto;
+    box-shadow:-2px 0 16px rgba(0,0,0,.12);
   }
   nav.main.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
   nav.main ul{flex-direction:column;gap:0}
-  nav.main ul a{display:block;font-family:var(--font-display);font-size:1.9rem;padding:10px 0;border-bottom:1px solid var(--bordo)}
+  nav.main ul a{display:block;font-family:var(--font-display);font-size:1.45rem;padding:16px 0;border-bottom:1px solid var(--bordo);transition:color .2s ease}
+  nav.main ul a:active{color:var(--bordeaux)}
   nav.main ul a::after{display:none}
-  .nav-mobile-cta{display:flex;flex-direction:column;gap:12px}
+  .nav-mobile-cta{display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:1px solid var(--bordo)}
 }
 @media (max-width:420px){.header-actions .btn-sm{display:none}}
 body.menu-open{overflow:hidden}
+body.menu-open::before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:58;pointer-events:auto}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;padding-block:clamp(40px,6vw,80px) clamp(64px,8vw,110px);overflow:hidden}
