@@ -22,6 +22,8 @@ local_backend:
   url: http://localhost:8000/api/v1
 
 locale: it
+site_url: https://immaginebellezzamantio.it
+display_url: https://immaginebellezzamantio.it
 logo_url: /images/web/logo.png
 media_folder: images/uploads
 public_folder: /images/uploads

@@ -108,19 +108,24 @@ function datiStrutturati(k, indirizzo){
       if(a && c) orari.push({ "@type":"OpeningHoursSpecification", dayOfWeek:giorniEn[g], opens:a, closes:c });
     });
   });
+  let s = $("#ld-attivita");
+  let base = {};
+  try { base = JSON.parse(s?.textContent || "{}"); } catch(e){}
   const ld = {
-    "@context":"https://schema.org", "@type":["BeautySalon", "DaySpa"],
+    ...base,
     name:`${k.nome_centro || "Immagine & Bellezza"} di Maria Rita Mantio`,
-    url:location.origin + "/", image:location.origin + "/images/logo.png",
-    telephone:k.telefono, email:k.email || undefined, priceRange:"€€",
+    telephone:k.telefono || base.telephone, email:k.email || base.email,
     address:{ "@type":"PostalAddress", streetAddress:k.indirizzo || undefined, addressLocality:k.citta, addressRegion:k.provincia, postalCode:k.cap, addressCountry:"IT" },
     openingHoursSpecification:orari,
     sameAs:[k.instagram, k.facebook].filter(Boolean),
+    ...(k.partita_iva ? { vatID:k.partita_iva } : {}),
   };
-  const s = document.createElement("script");
-  s.type = "application/ld+json";
+  if(!s){
+    s = document.createElement("script");
+    s.type = "application/ld+json";
+    document.head.appendChild(s);
+  }
   s.textContent = JSON.stringify(ld);
-  document.head.appendChild(s);
 }
 
 /* ---------- Orari + "Aperto ora" ---------- */
