@@ -5,6 +5,7 @@
    Font: Cormorant Garamond (titoli) + Jost (testo/UI)
    ========================================================= */
 :root{
+  color-scheme: light only;
   --bordeaux:       #842C56;   /* colore principale — dal logo */
   --bordeaux-scuro: #5E1F3D;
   --rosa-cipria:    #EAD7DE;
