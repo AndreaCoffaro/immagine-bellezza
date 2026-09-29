@@ -504,13 +504,10 @@ function initMenu(){
 function initScrollUI(){
   const header = $("header.site");
   const float = $(".wa-float");
-  const bar = $(".mobile-bar");
   const onScroll = () => {
     const y = window.scrollY;
     header.classList.toggle("scrolled", y > 8);
-    const show = y > 480;
-    float.classList.toggle("show", show);
-    bar.classList.toggle("show", show);
+    float.classList.toggle("show", y > 480);
   };
   addEventListener("scroll", onScroll, { passive:true });
   onScroll();
