@@ -195,10 +195,13 @@ function renderListe(){
   if(rp?.length) $("#regalo-punti").innerHTML = rp.map(p => `<li>${esc(p)}</li>`).join("");
 
   $("#chi-siamo").hidden = get("chi_siamo.visibile") !== true;
-  // bollino accanto alle foto in alto: se il titolo è vuoto non compare
-  const b = get("home.bollino"), card = $(".hero-card");
-  if(b) card.hidden = !b.titolo;
-  if(b?.titolo) card.innerHTML = `<strong>${esc(b.titolo)}</strong><span>${[esc(b.prima), b.prezzo ? `<b>${esc(b.prezzo)}</b>` : "", esc(b.nota)].filter(Boolean).join(" ")}</span>`;
+  // bollini sopra le foto in alto (al massimo due: il primo in basso, il secondo in alto a destra)
+  const bollini = get("home.bollini");
+  if(Array.isArray(bollini)){
+    $$(".hero-card").forEach(c => c.remove());
+    $("#hero-arch").insertAdjacentHTML("afterend", bollini.filter(b => b.titolo).slice(0, 2).map(b =>
+      `<div class="hero-card"><strong>${esc(b.titolo)}</strong><span>${[esc(b.prima), b.prezzo ? `<b>${esc(b.prezzo)}</b>` : "", esc(b.nota)].filter(Boolean).join(" ")}</span></div>`).join(""));
+  }
 
   const testo = get("chi_siamo.testo");
   if(testo) $("#chi-testo").innerHTML = testo.split(/\n\s*\n/).map(p => `<p>${fmt(p.trim())}</p>`).join("");

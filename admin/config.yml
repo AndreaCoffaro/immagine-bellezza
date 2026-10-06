@@ -181,14 +181,16 @@ collections:
             summary: "{{fields.alt}}"
             hint: "Meglio foto verticali"
             fields: *foto-campi
-          - label: "Bollino accanto alle foto"
-            name: bollino
-            widget: object
-            hint: "Il riquadro bianco sopra le foto in alto. Lascia vuoto il servizio per non mostrarlo"
+          - label: "Bollini sopra le foto"
+            name: bollini
+            widget: list
+            label_singular: "bollino"
+            summary: "{{fields.titolo}} — {{fields.prezzo}}"
+            hint: "I riquadri bianchi sopra le foto in alto: ne compaiono al massimo due (il primo in basso, il secondo in alto a destra). Elimina tutti per non mostrarne nessuno"
             fields:
-              - { label: "Servizio", name: titolo, widget: string, required: false, hint: "es. Trucco giorno o sera" }
+              - { label: "Servizio", name: titolo, widget: string, hint: "es. Trucco giorno o sera" }
               - { label: "Scritta prima del prezzo", name: prima, widget: string, required: false, hint: "es. da" }
-              - { label: "Prezzo", name: prezzo, widget: string, required: false, hint: "es. € 28" }
+              - { label: "Prezzo", name: prezzo, widget: string, required: false, hint: "es. € 28,00" }
               - { label: "Nota dopo il prezzo", name: nota, widget: string, required: false, hint: "es. a persona" }
             name: punti_di_forza
             widget: list
