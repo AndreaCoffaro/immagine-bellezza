@@ -122,7 +122,6 @@ collections:
             widget: list
             label_singular: "percorso"
             summary: "{{fields.nome}} — {{fields.prezzo}}"
-            hint: "Il primo percorso compare anche nella card in alto nella home"
             fields:
               - { label: "Nome", name: nome, widget: string }
               - { label: "Descrizione", name: descrizione, widget: string }
@@ -182,7 +181,15 @@ collections:
             summary: "{{fields.alt}}"
             hint: "Meglio foto verticali"
             fields: *foto-campi
-          - label: "Punti di forza (sotto la parte alta)"
+          - label: "Bollino accanto alle foto"
+            name: bollino
+            widget: object
+            hint: "Il riquadro bianco sopra le foto in alto. Lascia vuoto il servizio per non mostrarlo"
+            fields:
+              - { label: "Servizio", name: titolo, widget: string, required: false, hint: "es. Trucco giorno o sera" }
+              - { label: "Scritta prima del prezzo", name: prima, widget: string, required: false, hint: "es. da" }
+              - { label: "Prezzo", name: prezzo, widget: string, required: false, hint: "es. € 28" }
+              - { label: "Nota dopo il prezzo", name: nota, widget: string, required: false, hint: "es. a persona" }
             name: punti_di_forza
             widget: list
             label_singular: "punto"

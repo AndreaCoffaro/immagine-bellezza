@@ -195,6 +195,11 @@ function renderListe(){
   if(rp?.length) $("#regalo-punti").innerHTML = rp.map(p => `<li>${esc(p)}</li>`).join("");
 
   $("#chi-siamo").hidden = get("chi_siamo.visibile") !== true;
+  // bollino accanto alle foto in alto: se il titolo è vuoto non compare
+  const b = get("home.bollino"), card = $(".hero-card");
+  if(b) card.hidden = !b.titolo;
+  if(b?.titolo) card.innerHTML = `<strong>${esc(b.titolo)}</strong><span>${[esc(b.prima), b.prezzo ? `<b>${esc(b.prezzo)}</b>` : "", esc(b.nota)].filter(Boolean).join(" ")}</span>`;
+
   const testo = get("chi_siamo.testo");
   if(testo) $("#chi-testo").innerHTML = testo.split(/\n\s*\n/).map(p => `<p>${fmt(p.trim())}</p>`).join("");
   const fg = get("chi_siamo.foto_grande"), fp = get("chi_siamo.foto_piccola");
@@ -267,12 +272,6 @@ function renderSpa(){
         <a class="btn ${s.evidenza ? "btn-light" : "btn-ghost-light"} btn-sm" href="${waLink(`Ciao! Vorrei prenotare: ${s.nome}.`)}" target="_blank" rel="noopener">Prenota</a>
       </div>
     </article>`).join("");
-
-  // la card nell'hero mostra il primo percorso
-  const card = $(".hero-card");
-  if(percorsi[0] && card){
-    card.innerHTML = `<strong>${esc(percorsi[0].nome)}</strong><span>da <b>${esc(percorsi[0].prezzo)}</b> ${esc(percorsi[0].nota)}</span>`;
-  } else if(card) card.hidden = true;
 }
 
 /* ---------- Promozioni ---------- */
