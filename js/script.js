@@ -472,14 +472,22 @@ function initBollino(){
   card.hidden = !lista.length;
   if(!lista.length) return;
   const scritta = card.querySelector("strong");
-  scritta.textContent = lista[0];
-  if(lista.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  // larghezza fissa su quella della scritta più lunga, così il bollino non cambia misura a ogni cambio
+  const misura = () => {
+    scritta.style.minWidth = "";
+    const larghezze = lista.map(t => { scritta.textContent = t; return scritta.scrollWidth; });
+    scritta.style.minWidth = Math.max(...larghezze) + "px";
+    scritta.textContent = lista[i];
+  };
   let i = 0;
+  misura();
+  document.fonts?.ready.then(misura);
+  if(lista.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   setInterval(() => {
     if(document.hidden) return;
     scritta.classList.add("via");
-    setTimeout(() => { i = (i + 1) % lista.length; scritta.textContent = lista[i]; scritta.classList.remove("via"); }, 450);
-  }, 3500);
+    setTimeout(() => { i = (i + 1) % lista.length; scritta.textContent = lista[i]; scritta.classList.remove("via"); }, 1200);
+  }, 5000);
 }
 
 /* Hero: le foto vengono divise in tre colonne che scorrono all'infinito
