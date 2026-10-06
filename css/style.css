@@ -147,6 +147,8 @@ nav.main ul a.active{color:var(--bordeaux)}
 @media (max-width:1240px){.header-phone .hp-txt{display:none}}
 @media (max-width:1120px){
   :root{--header-h:76px}
+  /* il blur farebbe da contenitore al menu (position:fixed) e lo schiaccerebbe nell'altezza della barra */
+  header.site{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(250,246,241,.97)}
   .logo-img{width:48px;height:48px}
   .logo-text{font-size:1.35rem}
   .header-phone{display:none}
@@ -155,7 +157,7 @@ nav.main ul a.active{color:var(--bordeaux)}
     position:fixed;inset:var(--header-h) auto 0 0;z-index:59;
     width:clamp(260px,80vw,320px);
     background:var(--crema);padding:28px 24px calc(40px + env(safe-area-inset-bottom,0px));
-    display:flex;flex-direction:column;justify-content:space-between;gap:32px;
+    display:flex;flex-direction:column;justify-content:flex-start;gap:28px;
     opacity:0;visibility:hidden;transform:translateX(-100%);
     transition:transform .4s var(--ease), visibility 0s linear .4s;
     overflow-y:auto;
@@ -163,10 +165,10 @@ nav.main ul a.active{color:var(--bordeaux)}
   }
   nav.main.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
   nav.main ul{flex-direction:column;gap:0}
-  nav.main ul a{display:block;font-family:var(--font-display);font-size:1.45rem;padding:16px 0;border-bottom:1px solid var(--bordo);transition:color .2s ease}
+  nav.main ul a{display:block;font-family:var(--font-display);font-size:1.3rem;padding:12px 0;border-bottom:1px solid var(--bordo);transition:color .2s ease}
   nav.main ul a:active{color:var(--bordeaux)}
   nav.main ul a::after{display:none}
-  .nav-mobile-cta{display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:1px solid var(--bordo)}
+  .nav-mobile-cta{display:flex;flex-direction:column;gap:12px}
 }
 @media (max-width:420px){.header-actions .btn-sm{display:none}}
 body.menu-open{overflow:hidden}
