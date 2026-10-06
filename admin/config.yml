@@ -298,9 +298,10 @@ collections:
 
       # ------------------------------------------------------------------ CHI SIAMO
       - name: chi-siamo
-        label: "👩 Chi siamo"
+        label: "👩 Chi siamo (sezione sulla titolare)"
         file: content/chi-siamo.json
         fields:
+          - { label: "Mostra la sezione sul sito", name: visibile, widget: boolean, default: false, hint: "Togli la spunta per nascondere tutta la sezione (i testi e le foto restano salvati)" }
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
           - { label: "Titolo", name: titolo, widget: string, hint: *titolo-hint }
           - { label: "Testo", name: testo, widget: text, hint: "Lascia una riga vuota per iniziare un nuovo paragrafo" }

@@ -194,6 +194,7 @@ function renderListe(){
   const rp = get("regalo.punti");
   if(rp?.length) $("#regalo-punti").innerHTML = rp.map(p => `<li>${esc(p)}</li>`).join("");
 
+  $("#chi-siamo").hidden = get("chi_siamo.visibile") !== true;
   const testo = get("chi_siamo.testo");
   if(testo) $("#chi-testo").innerHTML = testo.split(/\n\s*\n/).map(p => `<p>${fmt(p.trim())}</p>`).join("");
   const fg = get("chi_siamo.foto_grande"), fp = get("chi_siamo.foto_piccola");
