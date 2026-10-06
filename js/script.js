@@ -467,11 +467,19 @@ function slideshow(box, foto, w, durata, prima = false){
     imgs[i].classList.add("on");
   }, durata);
 }
+/* Hero: le foto vengono divise in tre colonne che scorrono all'infinito
+   (ogni colonna è ripetuta due volte, così il giro ricomincia senza scatti) */
 function initHero(){
   const box = $("#hero-arch");
-  slideshow(box, (get("home.foto") || []).filter(f => f.src), 1000, 5500, true);
-  box?.removeAttribute("role");
-  box?.removeAttribute("aria-label");
+  let foto = (get("home.foto") || []).filter(f => f.src);
+  if(!box || !foto.length) return;
+  while(foto.length < 6) foto = foto.concat(foto);
+  const colonne = [[], [], []];
+  foto.forEach((f, k) => colonne[k % 3].push(f));
+  box.innerHTML = colonne.map((col, c) => {
+    const html = col.map((f, k) => imgTag(f, 500, c === 0 && k === 0 ? 'fetchpriority="high"' : 'loading="lazy"')).join("");
+    return `<div class="hero-col" style="--durata:${44 + c * 8}s">${html}${html.replace(/<img /g, '<img aria-hidden="true" ')}</div>`;
+  }).join("");
 }
 const initRegalo = () => slideshow($("#regalo-slides"), (get("regalo.foto") || []).filter(f => f.src), 1200, 4500);
 
