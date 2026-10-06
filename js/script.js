@@ -195,13 +195,7 @@ function renderListe(){
   if(rp?.length) $("#regalo-punti").innerHTML = rp.map(p => `<li>${esc(p)}</li>`).join("");
 
   $("#chi-siamo").hidden = get("chi_siamo.visibile") !== true;
-  // bollini sopra le foto in alto (al massimo due: il primo in basso, il secondo in alto a destra)
-  const bollini = get("home.bollini");
-  if(Array.isArray(bollini)){
-    $$(".hero-card").forEach(c => c.remove());
-    $("#hero-arch").insertAdjacentHTML("afterend", bollini.filter(b => b.titolo).slice(0, 2).map(b =>
-      `<div class="hero-card"><strong>${esc(b.titolo)}</strong><span>${[esc(b.prima), b.prezzo ? `<b>${esc(b.prezzo)}</b>` : "", esc(b.nota)].filter(Boolean).join(" ")}</span></div>`).join(""));
-  }
+  initBollino();
 
   const testo = get("chi_siamo.testo");
   if(testo) $("#chi-testo").innerHTML = testo.split(/\n\s*\n/).map(p => `<p>${fmt(p.trim())}</p>`).join("");
@@ -469,6 +463,25 @@ function slideshow(box, foto, w, durata, prima = false){
     imgs[i].classList.add("on");
   }, durata);
 }
+/* Bollino sotto le foto in alto: alterna le scritte scelte nel pannello (nessuna scritta = niente bollino) */
+function initBollino(){
+  const card = $("#hero-card");
+  const testi = get("home.bollino_testi");
+  if(!card || !Array.isArray(testi)) return;
+  const lista = testi.map(t => String(t || "").trim()).filter(Boolean);
+  card.hidden = !lista.length;
+  if(!lista.length) return;
+  const scritta = card.querySelector("strong");
+  scritta.textContent = lista[0];
+  if(lista.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let i = 0;
+  setInterval(() => {
+    if(document.hidden) return;
+    scritta.classList.add("via");
+    setTimeout(() => { i = (i + 1) % lista.length; scritta.textContent = lista[i]; scritta.classList.remove("via"); }, 450);
+  }, 3500);
+}
+
 /* Hero: le foto vengono divise in tre colonne che scorrono all'infinito
    (ogni colonna è ripetuta due volte, così il giro ricomincia senza scatti) */
 function initHero(){

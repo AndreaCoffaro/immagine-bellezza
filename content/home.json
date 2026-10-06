@@ -74,19 +74,10 @@
       "src": "/images/uploads/9477dedf-e237-429f-ba6e-0bab863149f6.png"
     }
   ],
-  "bollini": [
-    {
-      "titolo": "Trucco giorno o sera",
-      "prima": "",
-      "prezzo": "€ 28,00",
-      "nota": ""
-    },
-    {
-      "titolo": "Trucco sposa",
-      "prima": "",
-      "prezzo": "€ 180,00",
-      "nota": ""
-    }
+  "bollino_testi": [
+    "Trucco sposa",
+    "Trucco giorno e sera",
+    "Trattamenti viso e corpo"
   ],
   "punti_di_forza": [
     {
