@@ -1,13 +1,21 @@
 # Configurazione per Netlify (hosting del sito)
 [build]
   publish = "."
-  command = ""
+  # scrive testi, prezzi, orari e foto direttamente nella pagina (per Google): vedi prerender.py.
+  # Se non riuscisse, il sito viene pubblicato lo stesso.
+  command = "python3 prerender.py || echo 'prerender saltato'"
 
 # I contenuti e il pannello non devono restare in cache: le modifiche si vedono subito
 [[headers]]
   for = "/content/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# Le foto cambiano di rado: il browser le tiene per 7 giorni (pagine più veloci per chi torna)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
 
 [[headers]]
   for = "/admin/*"

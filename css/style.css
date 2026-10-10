@@ -59,6 +59,9 @@ h1{font-size:clamp(2.7rem,6vw,4.6rem);line-height:1.02}
 h2{font-size:clamp(2.1rem,4vw,3.1rem);line-height:1.08}
 h3{font-size:1.35rem;line-height:1.25}
 h1 em,h2 em{font-style:italic;color:var(--bordeaux)}
+/* hero: la scritta piccola fa parte del titolo principale (per Google) ma resta identica nell'aspetto */
+.hero-h1 .eyebrow{display:flex;font-family:var(--font-ui);line-height:1.4;letter-spacing:.2em;font-weight:500}
+.hero-h1 .hero-title{display:block}
 p{color:var(--testo-soft)}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;

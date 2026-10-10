@@ -11,13 +11,13 @@
      Città configurata: Mussomeli.
      Title ideale 50-60 caratteri, Meta Description 140-160 caratteri.
      ===================================================================== -->
-<title>Immagine & Bellezza di Maria Rita Mantio | Centro Estetico & SPA a Mussomeli</title>
-<meta name="description" content="Centro estetico e SPA a Mussomeli: sauna, bagno turco, idromassaggio, massaggi, trattamenti viso e corpo, laser, manicure e trucco sposa. Prenota su WhatsApp.">
+<title>Centro Estetico e SPA a Mussomeli | Immagine &amp; Bellezza</title>
+<meta name="description" content="Centro estetico e SPA a Mussomeli (CL) di Maria Rita Mantio: sauna, bagno turco, idromassaggio, trattamenti viso e corpo, laser, manicure e trucco sposa.">
 <link rel="canonical" href="https://immaginebellezzamantio.it/">
 
 <!-- Open Graph (condivisione social) -->
 <meta property="og:type" content="business.business">
-<meta property="og:title" content="Immagine & Bellezza di Maria Rita Mantio – Centro Estetico & SPA">
+<meta property="og:title" content="Centro Estetico e SPA a Mussomeli | Immagine &amp; Bellezza">
 <meta property="og:description" content="Area SPA con sauna, bagno turco e idromassaggio, trattamenti viso e corpo e make-up a Mussomeli.">
 <meta property="og:image" content="https://immaginebellezzamantio.it/images/web/spa/vasca3.jpg">
 <meta property="og:url" content="https://immaginebellezzamantio.it/">
@@ -39,15 +39,38 @@
   "description": "Centro estetico e SPA a Mussomeli: sauna, bagno turco, idromassaggio, massaggi, trattamenti viso e corpo, laser, manicure e trucco sposa.",
   "url": "https://immaginebellezzamantio.it/",
   "logo": "https://immaginebellezzamantio.it/images/web/logo.png",
-  "image": "https://immaginebellezzamantio.it/images/web/spa/vasca3.jpg",
+  "image": [
+    "https://immaginebellezzamantio.it/images/web/spa/vasca3.jpg",
+    "https://immaginebellezzamantio.it/images/web/spa/sauna.jpg",
+    "https://immaginebellezzamantio.it/images/web/struttura/ingresso.jpg",
+    "https://immaginebellezzamantio.it/images/web/ragazze/trucco-sposa-e-damigelle.jpg"
+  ],
   "telephone": "+39 347 009 6504",
   "email": "immaginebellezz@gmail.com",
   "priceRange": "€€",
   "founder": { "@type": "Person", "name": "Maria Rita Mantio" },
   "address": { "@type": "PostalAddress", "streetAddress": "Via Caltanissetta 66", "addressLocality": "Mussomeli", "addressRegion": "CL", "postalCode": "93014", "addressCountry": "IT" },
-  "geo": { "@type": "GeoCoordinates", "latitude": 37.5787, "longitude": 13.7541 },
-  "areaServed": ["Mussomeli", "Provincia di Caltanissetta"],
+  "geo": { "@type": "GeoCoordinates", "latitude": 37.57873, "longitude": 13.75415 },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Via+Caltanissetta+66,+93014+Mussomeli+CL",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+  ],
+  "areaServed": [{ "@type": "City", "name": "Mussomeli" }, { "@type": "AdministrativeArea", "name": "Provincia di Caltanissetta" }],
   "sameAs": ["https://www.instagram.com/mariaritamantio/", "https://www.facebook.com/mariarita.mantio.centroestetico"]
+}
+</script>
+<!-- Nome del sito mostrato da Google sopra il risultato -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://immaginebellezzamantio.it/#sito",
+  "name": "Immagine & Bellezza",
+  "alternateName": ["Immagine e Bellezza", "Immagine & Bellezza Mussomeli"],
+  "url": "https://immaginebellezzamantio.it/",
+  "inLanguage": "it-IT",
+  "publisher": { "@id": "https://immaginebellezzamantio.it/#attivita" }
 }
 </script>
 
@@ -129,8 +152,8 @@
           <span class="hero-brand-name">Immagine <em>&amp;</em> Bellezza</span>
           <span class="hero-brand-sub">di Maria Rita Mantio</span>
         </p>
-        <span class="eyebrow" data-t="home.hero.eyebrow">Centro Estetico &amp; SPA · Mussomeli</span>
-        <h1 data-t="home.hero.titolo">Il tuo rifugio di <em>bellezza</em> e benessere</h1>
+        <h1 class="hero-h1"><span class="eyebrow" data-t="home.hero.eyebrow">Centro Estetico &amp; SPA · Mussomeli</span>
+          <span class="hero-title" data-t="home.hero.titolo">Il tuo rifugio di <em>bellezza</em> e benessere</span></h1>
         <p class="lead" data-t="home.hero.testo">Trattamenti viso e corpo, make-up professionale e un'area SPA con sauna, bagno turco e idromassaggio. Un luogo dove rallentare e prenderti cura di te.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" data-wa="Ciao! Vorrei prenotare un appuntamento." data-wa-t="home.hero.messaggio_whatsapp" href="https://wa.me/393470096504"><svg class="ico"><use href="#i-whatsapp"/></svg><span data-t="home.hero.pulsante">Prenota su WhatsApp</span></a>
@@ -279,7 +302,7 @@
   <section id="chi-siamo" class="chi-siamo" hidden>
     <div class="wrap">
       <div class="chi-img reveal">
-        <img id="chi-foto-grande" src="images/web/ragazze/rossa.jpg" alt="Trucco professionale in corso nel centro Immagine & Bellezza" loading="lazy" style="object-position:38% center">
+        <img id="chi-foto-grande" src="images/web/ragazze/trucco-in-corso-capelli-rossi.jpg" alt="Trucco professionale in corso nel centro Immagine & Bellezza" loading="lazy" style="object-position:38% center">
         <img id="chi-foto-piccola" class="chi-img-small" src="images/web/struttura/prima-stanza.jpg" alt="Cabina trattamenti viso e corpo" loading="lazy">
       </div>
       <div class="chi-copy reveal">
@@ -343,15 +366,14 @@
         <span class="eyebrow">Vieni a trovarci</span>
         <h2>Dove siamo &amp; contatti</h2>
         <ul class="contatti-lista">
-          <li><svg class="ico"><use href="#i-pin"/></svg><div><strong>Indirizzo</strong><span data-c="indirizzo">93014 Mussomeli (CL)</span></div></li>
+          <li><svg class="ico"><use href="#i-pin"/></svg><div><strong>Indirizzo</strong><span data-c="indirizzo">Via Caltanissetta 66, 93014 Mussomeli (CL)</span></div></li>
           <li><svg class="ico"><use href="#i-phone"/></svg><div><strong>Telefono e WhatsApp</strong><a href="tel:+393470096504" data-c="telefono">+39 347 009 6504</a></div></li>
           <li><svg class="ico"><use href="#i-mail"/></svg><div><strong>Email</strong><a href="#" data-c="email"></a></div></li>
         </ul>
         <div class="orari">
           <h3><svg class="ico"><use href="#i-clock"/></svg>Orari di apertura <span class="stato" id="stato-apertura"></span></h3>
           <dl id="orari-lista">
-            <dt>Lunedì</dt><dd>Chiuso</dd>
-            <dt>Martedì – Venerdì</dt><dd>09:00 – 19:00</dd>
+            <dt>Lunedì – Venerdì</dt><dd>09:00 – 19:00</dd>
             <dt>Sabato</dt><dd>09:00 – 13:00</dd>
             <dt>Domenica</dt><dd>Chiuso</dd>
           </dl>

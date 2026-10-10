@@ -495,7 +495,7 @@ function initBollino(){
 function initHero(){
   const box = $("#hero-arch");
   let foto = (get("home.foto") || []).filter(f => f.src);
-  if(!box || !foto.length) return;
+  if(!box || !foto.length || "pronto" in box.dataset) return;   // già scritte da prerender.py
   while(foto.length < 6) foto = foto.concat(foto);
   const colonne = [[], [], []];
   foto.forEach((f, k) => colonne[k % 3].push(f));
