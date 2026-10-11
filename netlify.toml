@@ -26,6 +26,6 @@
 # Il vecchio indirizzo provvisorio porta al dominio vero (Google tiene una sola versione del sito)
 [[redirects]]
   from = "https://immaginebellezza.netlify.app/*"
-  to = "https://immaginebellezzamantio.it/:splat"
+  to = "https://www.immaginebellezzamantio.it/:splat"
   status = 301
   force = true

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRE-RENDER PER GOOGLE — lo esegue Netlify a ogni pubblicazione (vedi netlify.toml).
+PRE-RENDER PER GOOGLE — lo esegue Vercel a ogni pubblicazione (vedi vercel.json).
 
 Il sito costruisce testi, prezzi, orari e foto con JavaScript leggendo /content.
 Google lo esegue, ma in ritardo; altri motori di ricerca e gli assistenti AI spesso no.
@@ -9,18 +9,17 @@ apre la pagina (o la legge un motore di ricerca) li trova già pronti. Poi js/sc
 li aggiorna come sempre.
 
 Aggiorna anche i dati strutturati (scheda attività con orari e listino) e la sitemap.
-Non modifica i file del progetto su GitHub: lavora solo sulla copia che Netlify pubblica.
+Non modifica i file del progetto su GitHub: lavora solo sulla copia che viene pubblicata.
 Se qualcosa va storto lascia index.html com'era (il sito funziona comunque).
 
-Prova in locale:  python3 prerender.py --cartella /percorso/copia-del-sito --locale
+Prova in locale:  python3 prerender.py --cartella /percorso/copia-del-sito
 """
 import datetime, html, json, os, re, sys, urllib.parse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 if "--cartella" in sys.argv:
     ROOT = os.path.abspath(sys.argv[sys.argv.index("--cartella") + 1])
-SITO = "https://immaginebellezzamantio.it"
-SU_NETLIFY = "--locale" not in sys.argv   # online le foto passano dal servizio immagini di Netlify, come in js/script.js
+SITO = "https://www.immaginebellezzamantio.it"
 
 
 def leggi(nome):
@@ -62,10 +61,7 @@ def img_url(src, w):
         return ""
     if re.match(r"^https?:", src):
         return src
-    path = "/" + str(src).lstrip("/")
-    if SU_NETLIFY:
-        return f"/.netlify/images?url={urllib.parse.quote(path, safe='-_.!~*()')}&w={w}&q=80"
-    return path[1:]
+    return "/" + str(src).lstrip("/")
 
 def img_tag(f, w, extra=""):
     pos = f' style="object-position:{esc(f.get("pos"))}"' if f.get("pos") else ""

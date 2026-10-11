@@ -21,14 +21,12 @@ const soloCifre = s => String(s || "").replace(/[^\d]/g, "");
 const waLink = msg => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 const icon = (id, cls = "ico") => `<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
 
-/* Foto: online su Netlify vengono ridimensionate e convertite al volo (più leggere);
-   in anteprima locale si usa il file così com'è. */
-const SU_NETLIFY = location.protocol.startsWith("http") && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname);
+/* Foto: percorso diretto al file (le copie in images/web sono già alleggerite).
+   Il parametro w resta per compatibilità con le chiamate esistenti. */
 const imgUrl = (src, w = 1400) => {
   if(!src) return "";
   if(/^https?:/.test(src)) return src;
-  const path = "/" + String(src).replace(/^\/+/, "");
-  return SU_NETLIFY ? `/.netlify/images?url=${encodeURIComponent(path)}&w=${w}&q=80` : path.slice(1);
+  return "/" + String(src).replace(/^\/+/, "");
 };
 const objPos = f => f?.pos ? ` style="object-position:${esc(f.pos)}"` : "";
 const imgTag = (f, w, extra = "") => `<img src="${imgUrl(f.src, w)}" alt="${esc(f.alt)}"${objPos(f)} ${extra}>`;

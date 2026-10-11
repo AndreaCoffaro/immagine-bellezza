@@ -9,6 +9,8 @@ backend:
   name: github
   repo: AndreaCoffaro/immagine-bellezza
   branch: main
+  # login con GitHub tramite il sito Netlify (immaginebellezza.netlify.app): non eliminarlo da Netlify
+  site_domain: immaginebellezza.netlify.app
   commit_messages:
     create: "Crea {{collection}} «{{slug}}»"
     update: "Aggiorna {{collection}} «{{slug}}»"
@@ -22,8 +24,8 @@ local_backend:
   url: http://localhost:8000/api/v1
 
 locale: it
-site_url: https://immaginebellezzamantio.it
-display_url: https://immaginebellezzamantio.it
+site_url: https://www.immaginebellezzamantio.it
+display_url: https://www.immaginebellezzamantio.it
 logo_url: /images/web/logo.png
 media_folder: images/uploads
 public_folder: /images/uploads
