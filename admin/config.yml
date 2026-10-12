@@ -2,15 +2,18 @@
 # PANNELLO DI GESTIONE — Immagine & Bellezza (Decap CMS)
 # Ogni sezione qui sotto corrisponde a un file in /content.
 # Ogni volta che si preme "Pubblica", la modifica viene salvata su GitHub e
-# Netlify ripubblica il sito da solo in circa un minuto.
+# Vercel ripubblica il sito da solo in circa un minuto.
 # =============================================================================
 
 backend:
   name: github
   repo: AndreaCoffaro/immagine-bellezza
   branch: main
-  # login con GitHub tramite il sito Netlify (immaginebellezza.netlify.app): non eliminarlo da Netlify
-  site_domain: immaginebellezza.netlify.app
+  # login con GitHub tramite le funzioni del sito su Vercel (api/auth.js e api/callback.js).
+  # Richiede una OAuth App su GitHub con callback https://www.immaginebellezzamantio.it/api/callback
+  # e le variabili GITHUB_CLIENT_ID e GITHUB_CLIENT_SECRET nelle impostazioni del progetto su Vercel.
+  base_url: https://www.immaginebellezzamantio.it
+  auth_endpoint: api/auth
   commit_messages:
     create: "Crea {{collection}} «{{slug}}»"
     update: "Aggiorna {{collection}} «{{slug}}»"
