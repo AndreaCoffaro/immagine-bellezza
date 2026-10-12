@@ -47,7 +47,7 @@
       "alle_2": ""
     },
     "sabato": {
-      "aperto": true,
+      "aperto": false,
       "dalle": "09:00",
       "alle": "13:00",
       "dalle_2": "",
