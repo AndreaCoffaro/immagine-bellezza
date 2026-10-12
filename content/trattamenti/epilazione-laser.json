@@ -1,0 +1,61 @@
+{
+  "nome": "Epilazione laser",
+  "ordine": 3,
+  "pubblicata": true,
+  "titolo_seo": "Epilazione Laser a Mussomeli | Immagine & Bellezza",
+  "descrizione_seo": "Epilazione con laser a diodo 808 nm a Mussomeli (CL), per viso e corpo: € 30 a zona. Come funziona, quante sedute servono e come prepararsi.",
+  "eyebrow": "Epilazione · Mussomeli",
+  "h1": "Epilazione laser a Mussomeli",
+  "intro": "Con il laser a diodo 808 nm riduci progressivamente i peli superflui, zona per zona, e dici addio a irritazioni e peli incarniti da ceretta e rasoio.",
+  "foto": {
+    "src": "/images/web/struttura/laser-al-diodo-808nm.jpg",
+    "alt": "Laser a diodo 808 nm per l'epilazione nel centro estetico Immagine & Bellezza a Mussomeli",
+    "pos": "center top"
+  },
+  "sezioni": [
+    {
+      "titolo": "Come funziona il laser a diodo",
+      "testo": "La luce laser raggiunge la radice del pelo e ne indebolisce il bulbo, seduta dopo seduta. Il laser agisce sui peli in fase di crescita: per questo servono più sedute, distanziate tra loro, per trattare tutti i peli di una zona."
+    },
+    {
+      "titolo": "Per quali zone",
+      "testo": "Il trattamento è adatto a viso e corpo: gambe, inguine, ascelle, braccia e altre zone. Il prezzo è **€ 30 a zona**."
+    },
+    {
+      "titolo": "Come prepararsi alla seduta",
+      "testo": "- Radi la zona il giorno prima del trattamento: non usare ceretta o pinzetta nelle settimane precedenti, perché il laser ha bisogno della radice del pelo.\n- Evita l'esposizione al sole e le lampade abbronzanti nei giorni prima e dopo la seduta.\n- Arriva con la pelle pulita, senza creme o deodorante sulla zona da trattare.\n\nPrima della prima seduta ti diamo tutte le indicazioni personalizzate."
+    },
+    {
+      "titolo": "Quando il laser è sconsigliato",
+      "testo": "Il laser non è indicato in gravidanza, sulla pelle abbronzata o irritata e in presenza di alcune condizioni di salute o terapie. Per questo, prima di iniziare, facciamo sempre una breve valutazione e, nel dubbio, ti chiediamo il parere del tuo medico."
+    }
+  ],
+  "categorie_listino": [
+    "Laser"
+  ],
+  "prezzi_spa": false,
+  "faq": [
+    {
+      "domanda": "Quanto costa l'epilazione laser a Mussomeli?",
+      "risposta": "Da noi l'epilazione laser costa € 30 a zona."
+    },
+    {
+      "domanda": "Quante sedute di laser servono?",
+      "risposta": "Il numero varia in base alla zona, al tipo di pelo e alla pelle: di solito servono diverse sedute distanziate di alcune settimane. Lo valutiamo insieme alla prima seduta."
+    },
+    {
+      "domanda": "Il laser fa male?",
+      "risposta": "La sensibilità cambia da persona a persona e da zona a zona: molte persone descrivono una sensazione di calore o un leggero pizzicore, ben tollerabile."
+    },
+    {
+      "domanda": "Posso fare il laser d'estate?",
+      "risposta": "Sì, ma bisogna evitare il sole sulla zona trattata nei giorni prima e dopo la seduta. Per questo molte persone preferiscono iniziare in autunno o in inverno."
+    }
+  ],
+  "correlati": [
+    "ceretta-ed-epilazione",
+    "trattamenti-corpo",
+    "trattamenti-viso"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei informazioni su: epilazione laser."
+}

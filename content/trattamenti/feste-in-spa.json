@@ -1,0 +1,47 @@
+{
+  "nome": "Feste in SPA",
+  "ordine": 8,
+  "pubblicata": true,
+  "titolo_seo": "Feste in SPA e Addio al Nubilato a Mussomeli",
+  "descrizione_seo": "Compleanni, addio al nubilato e serate tra amiche nella SPA di Mussomeli (CL): percorso SPA di gruppo con aperitivo. Prezzi e disponibilità su richiesta.",
+  "eyebrow": "Feste & eventi · Mussomeli",
+  "h1": "Feste in SPA e addio al nubilato a Mussomeli",
+  "intro": "Un compleanno diverso dal solito, un addio al nubilato, una serata tra amiche: la nostra area SPA diventa la cornice della vostra festa. Acqua calda, luci soffuse e un brindisi tutti insieme.",
+  "foto": {
+    "src": "/images/web/spa/compleanno.jpg",
+    "alt": "Gruppo di amiche che festeggia nella vasca idromassaggio della SPA di Immagine & Bellezza a Mussomeli",
+    "pos": ""
+  },
+  "sezioni": [
+    {
+      "titolo": "Le occasioni",
+      "testo": "- Compleanni\n- Addio al nubilato\n- Anniversari\n- Serate tra amiche"
+    },
+    {
+      "titolo": "Cosa comprende",
+      "testo": "- **Percorso SPA di gruppo**: sauna, bagno turco e vasca idromassaggio per te e i tuoi ospiti.\n- **Aperitivo offerto**: bollicine e stuzzichini per brindare insieme.\n- **Atmosfera da ricordare**: candele, luci cromatiche e un ambiente curato in ogni dettaglio."
+    },
+    {
+      "titolo": "Come organizzare la festa",
+      "testo": "Scrivici su WhatsApp con la data, il numero di persone e l'occasione: ti rispondiamo con prezzi e disponibilità. Prima della festa leggi anche [cosa aspettarsi dalla prima volta in SPA](/blog/prima-volta-in-spa/)."
+    }
+  ],
+  "categorie_listino": [],
+  "prezzi_spa": false,
+  "faq": [
+    {
+      "domanda": "Quanto costa una festa in SPA?",
+      "risposta": "Il prezzo dipende dal numero di persone e da cosa desiderate: scrivici e ti prepariamo una proposta."
+    },
+    {
+      "domanda": "Si può organizzare un addio al nubilato in SPA?",
+      "risposta": "Sì, è una delle occasioni che organizziamo più volentieri: percorso SPA di gruppo e aperitivo per brindare con la sposa."
+    }
+  ],
+  "correlati": [
+    "spa",
+    "buono-regalo",
+    "trucco-sposa"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei organizzare una festa in SPA. Mi date qualche informazione su prezzi e disponibilità?"
+}

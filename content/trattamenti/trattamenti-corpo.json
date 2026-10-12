@@ -1,0 +1,65 @@
+{
+  "nome": "Trattamenti corpo",
+  "ordine": 2,
+  "pubblicata": true,
+  "titolo_seo": "Trattamenti Corpo a Mussomeli | Immagine & Bellezza",
+  "descrizione_seo": "Pressoterapia, Emsculpt, Vela Body Shape, Konmison e Cocoon a Mussomeli (CL): trattamenti corpo con tecnologie professionali. Prenota su WhatsApp.",
+  "eyebrow": "Corpo · Mussomeli",
+  "h1": "Trattamenti corpo a Mussomeli",
+  "intro": "Gambe più leggere, una pelle più tonica, un momento di relax: i nostri trattamenti corpo uniscono tecnologie professionali e prodotti selezionati, in un percorso costruito su di te.",
+  "foto": {
+    "src": "/images/web/struttura/stanza2-pressoterapia.jpg",
+    "alt": "Cabina per la pressoterapia del centro estetico Immagine & Bellezza a Mussomeli",
+    "pos": "center bottom"
+  },
+  "sezioni": [
+    {
+      "titolo": "Pressoterapia",
+      "testo": "Gambali e fascia si gonfiano e si sgonfiano in sequenza, con una pressione che risale dai piedi verso l'alto e accompagna la circolazione. È il trattamento ideale per chi cerca una sensazione di gambe più leggere e sgonfie.\n\nÈ disponibile anche con il **protocollo Selvert**, che abbina i prodotti professionali della linea Selvert Thermal."
+    },
+    {
+      "titolo": "Emsculpt",
+      "testo": "Campi elettromagnetici ad alta intensità provocano contrazioni muscolari profonde, senza alcuno sforzo da parte tua. È pensato per tonificare addome, glutei, braccia e cosce."
+    },
+    {
+      "titolo": "Vela Body Shape e Konmison",
+      "testo": "Due tecnologie per il rimodellamento del corpo senza interventi chirurgici.\n\n- **Vela Body Shape** unisce radiofrequenza e ultrasuoni focalizzati per lavorare sulle adiposità localizzate e sulla tonicità della pelle.\n- **Konmison** lavora i tessuti in profondità con rulli motorizzati e aspirazione, come un massaggio meccanico mirato su addome, fianchi, cosce e glutei."
+    },
+    {
+      "titolo": "Cocoon",
+      "testo": "Una capsula che avvolge il corpo in un calore dolce e costante, mentre la testa resta fuori e libera. Favorisce la sudorazione ed è un momento di profondo relax per corpo e mente."
+    },
+    {
+      "titolo": "Un percorso su misura",
+      "testo": "I risultati dei trattamenti corpo dipendono dalla persona, dalla costanza e dallo stile di vita. Per questo partiamo sempre da un colloquio: valutiamo insieme le tue esigenze e ti proponiamo un percorso realistico, senza promesse miracolose."
+    }
+  ],
+  "categorie_listino": [
+    "Trattamento corpo"
+  ],
+  "prezzi_spa": false,
+  "faq": [
+    {
+      "domanda": "Quanto costa la pressoterapia a Mussomeli?",
+      "risposta": "Una seduta di pressoterapia costa € 28; con il protocollo Selvert € 50. Trovi tutti i prezzi dei trattamenti corpo in questa pagina."
+    },
+    {
+      "domanda": "Quante sedute servono?",
+      "risposta": "Dipende dal trattamento e dall'obiettivo. In genere i trattamenti corpo si svolgono in cicli di più sedute: il numero esatto lo stabiliamo insieme dopo il primo colloquio."
+    },
+    {
+      "domanda": "Ci sono casi in cui i trattamenti corpo sono sconsigliati?",
+      "risposta": "Sì: ad esempio in gravidanza o in presenza di alcune condizioni di salute alcune tecnologie non sono indicate. Prima di iniziare ti facciamo qualche domanda e, nel dubbio, ti chiediamo di sentire il tuo medico."
+    },
+    {
+      "domanda": "Come posso prenotare?",
+      "risposta": "Scrivici su WhatsApp o chiamaci al +39 347 009 6504: ti rispondiamo con il primo orario disponibile."
+    }
+  ],
+  "correlati": [
+    "spa",
+    "trattamenti-viso",
+    "epilazione-laser"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei informazioni su: trattamenti corpo."
+}

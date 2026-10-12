@@ -1,0 +1,57 @@
+{
+  "nome": "Trucco sposa",
+  "ordine": 6,
+  "pubblicata": true,
+  "titolo_seo": "Trucco Sposa a Mussomeli | Immagine & Bellezza",
+  "descrizione_seo": "Trucco sposa e trucco per cerimonie a Mussomeli (CL): un make-up professionale che dura tutto il giorno. Trucco giorno o sera da € 28. Prenota su WhatsApp.",
+  "eyebrow": "Make-up · Mussomeli",
+  "h1": "Trucco sposa a Mussomeli",
+  "intro": "Il giorno più importante merita un trucco che ti somigli e che resti perfetto dalla cerimonia all'ultimo ballo. Truccare spose e cerimonie è una delle cose che amiamo di più.",
+  "foto": {
+    "src": "/images/web/ragazze/trucco-sposa-e-damigelle.jpg",
+    "alt": "Sposa e damigelle truccate dal centro estetico Immagine & Bellezza a Mussomeli",
+    "pos": "center 30%"
+  },
+  "sezioni": [
+    {
+      "titolo": "Il tuo trucco sposa",
+      "testo": "Partiamo da te: il tuo viso, il tuo stile, l'abito e l'atmosfera del matrimonio. Insieme scegliamo un trucco che valorizzi i tuoi lineamenti senza stravolgerli, pensato per stare bene dal vivo e nelle fotografie."
+    },
+    {
+      "titolo": "Damigelle, mamme e invitate",
+      "testo": "Nel giorno delle nozze possiamo truccare anche le persone a te più vicine: damigelle, mamme e invitate. Scrivici per organizzare tutto con calma."
+    },
+    {
+      "titolo": "Trucco per ogni occasione",
+      "testo": "Non solo matrimoni: proponiamo il **trucco giorno o sera** per cerimonie, feste, servizi fotografici e serate importanti."
+    },
+    {
+      "titolo": "Quando prenotare",
+      "testo": "Per il trucco sposa ti consigliamo di contattarci appena hai fissato la data, così da riservare il giorno e organizzare tutto con calma."
+    }
+  ],
+  "categorie_listino": [
+    "Trucco"
+  ],
+  "prezzi_spa": false,
+  "faq": [
+    {
+      "domanda": "Quanto costa il trucco sposa a Mussomeli?",
+      "risposta": "Il trucco sposa costa € 180. Il trucco giorno o sera per altre occasioni costa € 28."
+    },
+    {
+      "domanda": "Truccate anche damigelle e invitate?",
+      "risposta": "Sì, su richiesta: scrivici con il numero di persone e la data e ti diamo tutte le informazioni."
+    },
+    {
+      "domanda": "Con quanto anticipo devo prenotare il trucco sposa?",
+      "risposta": "Il prima possibile, appena hai la data del matrimonio: soprattutto nei mesi più richiesti le date si riempiono in fretta."
+    }
+  ],
+  "correlati": [
+    "trattamenti-viso",
+    "manicure-e-pedicure",
+    "feste-in-spa"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei informazioni su: trucco sposa."
+}

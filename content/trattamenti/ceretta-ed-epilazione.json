@@ -1,0 +1,58 @@
+{
+  "nome": "Ceretta ed epilazione",
+  "ordine": 4,
+  "pubblicata": true,
+  "titolo_seo": "Ceretta ed Epilazione a Mussomeli | Immagine & Bellezza",
+  "descrizione_seo": "Ceretta per viso e corpo a Mussomeli (CL), anche per uomo, ed elettrocoagulazione. Tutti i prezzi: gambe, inguine, ascelle, sopracciglia e altre zone.",
+  "eyebrow": "Epilazione · Mussomeli",
+  "h1": "Ceretta ed epilazione a Mussomeli",
+  "intro": "Epilazione con cera per viso e corpo, per donna e uomo, e rimozione mirata di piccoli inestetismi con l'elettrocoagulazione. Prezzi chiari per ogni zona.",
+  "foto": {
+    "src": "/images/web/struttura/stanza1.jpg",
+    "alt": "Cabina per ceretta ed epilazione del centro estetico Immagine & Bellezza a Mussomeli",
+    "pos": ""
+  },
+  "sezioni": [
+    {
+      "titolo": "Ceretta per viso e corpo",
+      "testo": "La ceretta rimuove il pelo dalla radice, per una pelle liscia più a lungo rispetto al rasoio. Trattiamo tutte le zone: gambe intere o mezza gamba, cosce, inguine parziale o totale, ascelle, braccia, glutei, pancia, sopracciglia e baffetto."
+    },
+    {
+      "titolo": "Ceretta uomo",
+      "testo": "Anche per lui: **schiena**, **petto e addome** e le altre zone su richiesta."
+    },
+    {
+      "titolo": "Elettrocoagulazione",
+      "testo": "Con un ago sottile e una piccola corrente controllata rimuoviamo in modo mirato piccoli inestetismi cutanei. Il trattamento si paga a tempo, al minuto."
+    },
+    {
+      "titolo": "Cosa fare prima e dopo la ceretta",
+      "testo": "- Il pelo deve essere lungo almeno qualche millimetro, indicativamente 4-5 mm.\n- Nelle 24 ore successive evita sole, sauna e bagno turco, e preferisci abiti morbidi sulla zona trattata.\n- Esfolia delicatamente la pelle nei giorni successivi per ridurre il rischio di peli incarniti.\n\nSe vuoi saperne di più, leggi la nostra guida su [cosa fare prima e dopo la ceretta](/blog/ceretta-cosa-fare-prima-e-dopo/)."
+    }
+  ],
+  "categorie_listino": [
+    "Epilazione",
+    "Elettrocoagulazione"
+  ],
+  "prezzi_spa": false,
+  "faq": [
+    {
+      "domanda": "Quanto costa la ceretta a Mussomeli?",
+      "risposta": "Ad esempio la cera intera (gambe, cosce e inguine parziale) costa € 25, le ascelle € 7 e le sopracciglia € 6. Trovi il listino completo in questa pagina."
+    },
+    {
+      "domanda": "Fate la ceretta anche per uomo?",
+      "risposta": "Sì: schiena, petto e addome e le altre zone su richiesta."
+    },
+    {
+      "domanda": "Meglio ceretta o laser?",
+      "risposta": "La ceretta dà un risultato immediato che dura qualche settimana; il laser riduce i peli in modo progressivo con un ciclo di sedute. Se vuoi, ti aiutiamo a scegliere in base alle tue esigenze."
+    }
+  ],
+  "correlati": [
+    "epilazione-laser",
+    "manicure-e-pedicure",
+    "trattamenti-viso"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei informazioni su: ceretta ed epilazione."
+}

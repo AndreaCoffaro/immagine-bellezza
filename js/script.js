@@ -203,6 +203,8 @@ function renderListe(){
 }
 
 /* ---------- Listino trattamenti (schede per categoria) ---------- */
+// categoria del listino → pagina dedicata (scritta da prerender.py nella pagina pubblicata)
+const PAGINE = (() => { try { return JSON.parse($("#mappa-pagine")?.textContent || "{}"); } catch(e){ return {}; } })();
 function renderServizi(){
   const categorie = (get("listino.categorie") || []).filter(c => c.categoria);
   const tabs = $("#tabs-servizi");
@@ -223,6 +225,7 @@ function renderServizi(){
           <h3>${esc(c.categoria)}</h3>
           <p>${esc(c.descrizione)}</p>
           <a class="btn btn-primary btn-sm" href="${waLink(`Ciao! Vorrei informazioni / prenotare: ${c.categoria}.`)}" target="_blank" rel="noopener">${icon("whatsapp")}Prenota ${esc(c.categoria.toLowerCase())}</a>
+          ${PAGINE[c.categoria] ? `<a class="btn btn-ghost btn-sm" href="${esc(PAGINE[c.categoria])}">Scopri di più ${icon("arrow")}</a>` : ""}
         </div>
         <ul class="servizi-lista${n < 5 ? " single" : ""}">
           ${servizi.map(s => `<li class="servizio-riga">

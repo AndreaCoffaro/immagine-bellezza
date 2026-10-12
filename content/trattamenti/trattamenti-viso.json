@@ -1,0 +1,69 @@
+{
+  "nome": "Trattamenti viso",
+  "ordine": 1,
+  "pubblicata": true,
+  "titolo_seo": "Trattamenti Viso a Mussomeli | Immagine & Bellezza",
+  "descrizione_seo": "Pulizia del viso, ossigenoterapia, radiofrequenza e needling a Mussomeli (CL). Prezzi chiari e consulenza sulla tua pelle. Prenota su WhatsApp.",
+  "eyebrow": "Viso · Mussomeli",
+  "h1": "Trattamenti viso a Mussomeli",
+  "intro": "Dalla pulizia del viso ai trattamenti con tecnologie professionali: ogni percorso parte da uno sguardo attento alla tua pelle, per scegliere insieme quello più adatto a te.",
+  "foto": {
+    "src": "/images/web/struttura/radiofrequenza.jpg",
+    "alt": "Apparecchiatura per radiofrequenza viso nel centro estetico Immagine & Bellezza a Mussomeli",
+    "pos": ""
+  },
+  "sezioni": [
+    {
+      "titolo": "Pulizia del viso",
+      "testo": "La pulizia del viso libera i pori da impurità e cellule morte e prepara la pelle a ricevere i trattamenti successivi. È il punto di partenza di qualsiasi routine di bellezza.\n\nProponiamo la **pulizia viso classica** e la **pulizia con peeling chimico**, che aggiunge un'esfoliazione più profonda per una pelle più uniforme e luminosa."
+    },
+    {
+      "titolo": "Ossigenoterapia",
+      "testo": "L'ossigenoterapia nebulizza sulla pelle ossigeno e principi attivi, con un effetto fresco e luminoso già dopo la seduta.\n\nPuò essere abbinata all'**acido glicolico**, per un'azione esfoliante, oppure all'**acido ialuronico**, per un'idratazione più intensa."
+    },
+    {
+      "titolo": "Radiofrequenza viso",
+      "testo": "Il manipolo scalda delicatamente gli strati profondi della pelle e stimola la produzione naturale di collagene ed elastina. È un trattamento piacevole, che non richiede tempi di recupero, pensato per chi desidera una pelle più compatta e tonica."
+    },
+    {
+      "titolo": "Needling",
+      "testo": "Il needling stimola la pelle con microaghi sottilissimi per favorirne il naturale rinnovamento. È disponibile anche nella versione **con esosomi**.\n\nPrima del trattamento valutiamo insieme la tua pelle, per capire se è il percorso giusto per te."
+    },
+    {
+      "titolo": "Ciglia e sopracciglia",
+      "testo": "Per completare lo sguardo: **laminazione ciglia**, per ciglia più curve e definite, e **tintura sopracciglia**."
+    },
+    {
+      "titolo": "Come scegliere il trattamento giusto",
+      "testo": "Ogni pelle è diversa. Se non sai da dove cominciare, scrivici: ti consigliamo il trattamento più adatto in base al tipo di pelle, alla stagione e al risultato che desideri."
+    }
+  ],
+  "categorie_listino": [
+    "Trattamento viso"
+  ],
+  "prezzi_spa": false,
+  "faq": [
+    {
+      "domanda": "Quanto costa una pulizia del viso a Mussomeli?",
+      "risposta": "Da noi la pulizia viso classica costa € 30 e quella con peeling chimico € 35. Trovi tutti i prezzi dei trattamenti viso in questa pagina."
+    },
+    {
+      "domanda": "Ogni quanto è consigliabile fare la pulizia del viso?",
+      "risposta": "Dipende dal tipo di pelle e dalla stagione: spesso si consiglia una pulizia ogni 4-6 settimane. Dopo la prima seduta ti diamo un'indicazione personalizzata."
+    },
+    {
+      "domanda": "I trattamenti viso hanno tempi di recupero?",
+      "risposta": "La maggior parte dei trattamenti, come la pulizia del viso, l'ossigenoterapia e la radiofrequenza, permette di tornare subito alle normali attività. Per il needling ti diamo indicazioni precise prima della seduta."
+    },
+    {
+      "domanda": "Come posso prenotare?",
+      "risposta": "Scrivici su WhatsApp o chiamaci al +39 347 009 6504: ti rispondiamo con il primo orario disponibile."
+    }
+  ],
+  "correlati": [
+    "trucco-sposa",
+    "epilazione-laser",
+    "trattamenti-corpo"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei informazioni su: trattamenti viso."
+}

@@ -1,0 +1,63 @@
+{
+  "nome": "SPA e percorso benessere",
+  "ordine": 7,
+  "pubblicata": true,
+  "titolo_seo": "SPA a Mussomeli: Sauna e Idromassaggio | Immagine & Bellezza",
+  "descrizione_seo": "SPA a Mussomeli (CL) con sauna finlandese, bagno turco, vasca idromassaggio e zona relax. Percorso SPA € 40 a persona, con massaggio € 60. Anche in coppia.",
+  "eyebrow": "Area benessere · Mussomeli",
+  "h1": "SPA a Mussomeli: sauna, bagno turco e idromassaggio",
+  "intro": "Luci soffuse, acqua calda e silenzio. Un percorso pensato per sciogliere le tensioni e ritrovare energia, da vivere da sola, con un'amica o in coppia.",
+  "foto": {
+    "src": "/images/web/spa/vasca3.jpg",
+    "alt": "Vasca idromassaggio con cascate nella SPA di Immagine & Bellezza a Mussomeli",
+    "pos": ""
+  },
+  "sezioni": [
+    {
+      "titolo": "Cosa trovi nella nostra SPA",
+      "testo": "- **Sauna finlandese**: calore secco che rilassa i muscoli.\n- **Bagno turco**: vapore avvolgente che ammorbidisce la pelle.\n- **Vasca idromassaggio**: getti e cascate d'acqua calda sotto luci cromatiche.\n- **Zona relax**: lettini ergonomici per concludere il percorso in calma."
+    },
+    {
+      "titolo": "Percorso SPA e massaggio",
+      "testo": "Il **Percorso SPA** comprende sauna, bagno turco, vasca idromassaggio e zona relax. Nella versione **Percorso SPA + massaggio** il percorso si completa con un massaggio rilassante."
+    },
+    {
+      "titolo": "SPA in coppia o con le amiche",
+      "testo": "La SPA è perfetta da condividere: un anniversario, una serata tra amiche o un regalo per qualcuno di speciale. Per i gruppi organizziamo anche [feste in SPA](/trattamenti/feste-in-spa/), e il percorso si può regalare con un [buono regalo](/trattamenti/buono-regalo/)."
+    },
+    {
+      "titolo": "Cosa portare",
+      "testo": "Ti consigliamo di portare il **costume da bagno**. Per disponibilità e orari del percorso scrivici su WhatsApp. Se è la tua prima volta, leggi la nostra guida: [prima volta in SPA, cosa aspettarsi](/blog/prima-volta-in-spa/)."
+    },
+    {
+      "titolo": "Quando chiedere prima al medico",
+      "testo": "Sauna e bagno turco sono generalmente sconsigliati in gravidanza e in presenza di problemi di cuore, pressione o circolazione. In caso di dubbi, chiedi un parere al tuo medico prima di prenotare."
+    }
+  ],
+  "categorie_listino": [],
+  "prezzi_spa": true,
+  "faq": [
+    {
+      "domanda": "Quanto costa la SPA a Mussomeli?",
+      "risposta": "Il Percorso SPA costa € 40 a persona; il Percorso SPA con massaggio € 60 a persona."
+    },
+    {
+      "domanda": "Cosa devo portare in SPA?",
+      "risposta": "Ti consigliamo di portare il costume da bagno. Per tutte le altre informazioni scrivici su WhatsApp prima della visita."
+    },
+    {
+      "domanda": "Posso venire in SPA in coppia?",
+      "risposta": "Sì, il percorso si può vivere da sola, con un'amica o in coppia. Scrivici per verificare la disponibilità nel giorno che preferisci."
+    },
+    {
+      "domanda": "Si può regalare un percorso SPA?",
+      "risposta": "Sì, con il nostro buono regalo puoi regalare il Percorso SPA, un massaggio o un trattamento a scelta."
+    }
+  ],
+  "correlati": [
+    "feste-in-spa",
+    "buono-regalo",
+    "trattamenti-corpo"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei informazioni su: il percorso SPA."
+}

@@ -384,3 +384,84 @@ collections:
               - { label: "Venerdì", name: venerdi, widget: object, collapsed: true, fields: *orario }
               - { label: "Sabato", name: sabato, widget: object, collapsed: true, fields: *orario }
               - { label: "Domenica", name: domenica, widget: object, collapsed: true, fields: *orario }
+
+  # ==================================================================== PAGINE DEI TRATTAMENTI
+  # Ogni pagina diventa https://www.immaginebellezzamantio.it/trattamenti/<nome-della-pagina>/
+  - name: trattamenti
+    label: "📄 Pagine dei trattamenti"
+    label_singular: "pagina"
+    description: "Una pagina per ogni trattamento importante: è quella che Google mostra a chi cerca, ad esempio, «trucco sposa Mussomeli». Testi originali e prudenti: niente promesse di risultati."
+    folder: content/trattamenti
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: nome
+    slug: "{{slug}}"
+    summary: "{{nome}}"
+    sortable_fields: [ordine, nome]
+    editor: { preview: false }
+    fields:
+      - { label: "Nome breve", name: nome, widget: string, hint: "es. Trucco sposa — usato nei link e nelle schede. L'indirizzo della pagina nasce da qui e non cambia più" }
+      - { label: "Pubblicata", name: pubblicata, widget: boolean, default: true, hint: "Togli la spunta per nascondere la pagina dal sito" }
+      - { label: "Ordine", name: ordine, widget: number, value_type: int, default: 10, hint: "Ordine nell'elenco dei trattamenti (1 = primo)" }
+      - { label: "Titolo per Google", name: titolo_seo, widget: string, hint: "Il titolo blu nei risultati di Google, max ~60 caratteri. Es. Trucco Sposa a Mussomeli | Immagine & Bellezza" }
+      - { label: "Descrizione per Google", name: descrizione_seo, widget: text, hint: "Il testo grigio sotto il titolo su Google, 140-160 caratteri" }
+      - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string, required: false, hint: "es. Make-up · Mussomeli" }
+      - { label: "Titolo della pagina", name: h1, widget: string, hint: "Servizio + città, es. Trucco sposa a Mussomeli" }
+      - { label: "Introduzione", name: intro, widget: text }
+      - { label: "Foto principale", name: foto, widget: object, fields: *foto-campi }
+      - label: "Sezioni del testo"
+        name: sezioni
+        widget: list
+        label_singular: "sezione"
+        summary: "{{fields.titolo}}"
+        fields:
+          - { label: "Titolo della sezione", name: titolo, widget: string }
+          - { label: "Testo", name: testo, widget: text, hint: &testo-hint "Riga vuota = nuovo paragrafo. Righe che iniziano con «- » = elenco puntato. **parola** = grassetto. [testo](/trattamenti/spa/) = link" }
+      - label: "Prezzi da mostrare (categorie del listino)"
+        name: categorie_listino
+        widget: list
+        required: false
+        field: { label: "Categoria", name: categoria, widget: string }
+        hint: "Scrivi il nome esatto della categoria del listino, es. Trattamento viso. I prezzi vengono presi dal listino e si aggiornano da soli"
+      - { label: "Mostra i prezzi dei percorsi SPA", name: prezzi_spa, widget: boolean, default: false, required: false }
+      - label: "Domande frequenti"
+        name: faq
+        widget: list
+        required: false
+        label_singular: "domanda"
+        summary: "{{fields.domanda}}"
+        hint: "Attenzione: se nelle risposte scrivi dei prezzi, aggiornali anche qui quando cambi il listino"
+        fields:
+          - { label: "Domanda", name: domanda, widget: string }
+          - { label: "Risposta", name: risposta, widget: text }
+      - { label: "Trattamenti correlati", name: correlati, widget: relation, collection: trattamenti, value_field: "{{slug}}", search_fields: [nome], display_fields: [nome], multiple: true, required: false }
+      - { label: "Messaggio WhatsApp precompilato", name: messaggio_whatsapp, widget: string, required: false }
+
+  # ==================================================================== BLOG
+  # Ogni articolo diventa https://www.immaginebellezzamantio.it/blog/<titolo-articolo>/
+  - name: blog
+    label: "✍️ Blog (consigli di bellezza)"
+    label_singular: "articolo"
+    description: "Articoli utili collegati ai trattamenti. Linguaggio prudente: niente promesse mediche o di risultati."
+    folder: content/blog
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: titolo
+    slug: "{{slug}}"
+    summary: "{{titolo}} ({{data}})"
+    sortable_fields: [data, titolo]
+    editor: { preview: false }
+    fields:
+      - { label: "Titolo", name: titolo, widget: string }
+      - { label: "Pubblicato", name: pubblicato, widget: boolean, default: true }
+      - { label: "Data", name: data, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Titolo per Google", name: titolo_seo, widget: string, required: false }
+      - { label: "Descrizione per Google", name: descrizione_seo, widget: text, hint: "140-160 caratteri" }
+      - { label: "Riassunto (nelle schede)", name: sommario, widget: text }
+      - { label: "Foto", name: foto, widget: object, fields: *foto-campi }
+      - { label: "Testo", name: testo, widget: text, hint: "Riga vuota = nuovo paragrafo. «## Titolo» = sottotitolo. Righe che iniziano con «- » = elenco. **parola** = grassetto. [testo](/trattamenti/spa/) = link" }
+      - { label: "Trattamenti collegati", name: correlati, widget: relation, collection: trattamenti, value_field: "{{slug}}", search_fields: [nome], display_fields: [nome], multiple: true, required: false }

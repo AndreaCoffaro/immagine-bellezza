@@ -5,3 +5,7 @@ images/spa/
 images/struttura/
 .claude/
 GUIDA-PUBBLICAZIONE.md
+
+# Pagine generate da prerender.py al momento della pubblicazione (non vanno salvate qui)
+/trattamenti/
+/blog/

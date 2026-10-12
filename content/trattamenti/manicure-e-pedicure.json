@@ -1,0 +1,54 @@
+{
+  "nome": "Manicure e pedicure",
+  "ordine": 5,
+  "pubblicata": true,
+  "titolo_seo": "Manicure e Pedicure a Mussomeli | Immagine & Bellezza",
+  "descrizione_seo": "Manicure, semipermanente, ricostruzione unghie in gel e pedicure estetica e curativa a Mussomeli (CL). Prezzi e prenotazione su WhatsApp.",
+  "eyebrow": "Mani e piedi · Mussomeli",
+  "h1": "Manicure e pedicure a Mussomeli",
+  "intro": "Mani curate e piedi in ordine, nella nostra zona dedicata a manicure e pedicure: dal semipermanente alla ricostruzione in gel, fino alla pedicure curativa.",
+  "foto": {
+    "src": "/images/web/struttura/zona-unghie-piedi.jpg",
+    "alt": "Zona manicure e pedicure del centro estetico Immagine & Bellezza a Mussomeli",
+    "pos": ""
+  },
+  "sezioni": [
+    {
+      "titolo": "Manicure e semipermanente",
+      "testo": "Dalla **manicure semplice** al **semipermanente**, fino allo smalto **rinforzato**. Su richiesta aggiungiamo il **french** o la sfumatura **baby boomer**."
+    },
+    {
+      "titolo": "Ricostruzione unghie in gel",
+      "testo": "Per unghie più lunghe e resistenti proponiamo la **ricostruzione** e la **copertura in gel**, con refill periodici per mantenerle sempre in ordine."
+    },
+    {
+      "titolo": "Pedicure estetica e curativa",
+      "testo": "La **pedicure curativa** si prende cura dei piedi in profondità: taglio delle unghie, rimozione di calli e duroni, pelle più morbida. Può essere completata con il semipermanente.\n\nSi tratta di un trattamento estetico: per problemi di salute del piede ti consigliamo di rivolgerti a un podologo o al tuo medico."
+    }
+  ],
+  "categorie_listino": [
+    "Manicure",
+    "Pedicure"
+  ],
+  "prezzi_spa": false,
+  "faq": [
+    {
+      "domanda": "Quanto costa il semipermanente a Mussomeli?",
+      "risposta": "Il semipermanente mani costa € 22 e quello per i piedi € 20. La rimozione del semipermanente costa € 8."
+    },
+    {
+      "domanda": "Quanto dura il semipermanente?",
+      "risposta": "In genere il semipermanente resta in ordine per due o tre settimane, a seconda della crescita dell'unghia e delle attività quotidiane."
+    },
+    {
+      "domanda": "Quanto costa la ricostruzione delle unghie?",
+      "risposta": "La ricostruzione costa € 55; la copertura in gel o il refill € 30."
+    }
+  ],
+  "correlati": [
+    "ceretta-ed-epilazione",
+    "trucco-sposa",
+    "trattamenti-viso"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei informazioni su: manicure e pedicure."
+}

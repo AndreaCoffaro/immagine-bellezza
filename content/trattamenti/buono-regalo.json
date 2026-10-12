@@ -1,0 +1,47 @@
+{
+  "nome": "Buono regalo",
+  "ordine": 9,
+  "pubblicata": true,
+  "titolo_seo": "Buono Regalo SPA a Mussomeli | Immagine & Bellezza",
+  "descrizione_seo": "Idea regalo a Mussomeli (CL): buono per il percorso SPA, un massaggio o un trattamento a scelta. Per compleanni, Natale, San Valentino e Festa della Mamma.",
+  "eyebrow": "Idee regalo · Mussomeli",
+  "h1": "Buono regalo SPA e trattamenti a Mussomeli",
+  "intro": "Compleanno, anniversario, San Valentino o semplicemente un grazie: un buono per il Percorso SPA, un massaggio o un trattamento a scelta è il regalo che si ricorda.",
+  "foto": {
+    "src": "/images/web/spa/massaggi.jpg",
+    "alt": "Cabina massaggi della SPA di Immagine & Bellezza a Mussomeli allestita per un buono regalo",
+    "pos": ""
+  },
+  "sezioni": [
+    {
+      "titolo": "Cosa puoi regalare",
+      "testo": "- Il **Percorso SPA**, con sauna, bagno turco, idromassaggio e zona relax\n- Un **massaggio**\n- Un **trattamento a scelta** dal nostro listino\n\nÈ perfetto anche da vivere in coppia."
+    },
+    {
+      "titolo": "Per ogni occasione",
+      "testo": "Un'idea regalo per la **Festa della Mamma**, **San Valentino**, **Natale**, un compleanno, un anniversario o per ringraziare qualcuno di speciale."
+    },
+    {
+      "titolo": "Come funziona",
+      "testo": "Scrivici su WhatsApp con cosa vuoi regalare: prepariamo il buono, pronto da ritirare in centro."
+    }
+  ],
+  "categorie_listino": [],
+  "prezzi_spa": true,
+  "faq": [
+    {
+      "domanda": "Cosa posso regalare con il buono?",
+      "risposta": "Il Percorso SPA, un massaggio o un trattamento a scelta. Se non sai cosa scegliere, ti aiutiamo noi."
+    },
+    {
+      "domanda": "Come ricevo il buono regalo?",
+      "risposta": "Il buono è pronto da ritirare in centro: scrivici su WhatsApp e ci accordiamo."
+    }
+  ],
+  "correlati": [
+    "spa",
+    "feste-in-spa",
+    "trattamenti-viso"
+  ],
+  "messaggio_whatsapp": "Ciao! Vorrei regalare un buono. Mi date qualche informazione?"
+}
