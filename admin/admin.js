@@ -68,16 +68,23 @@
         <footer class="admin-footer"><span>Immagine &amp; Bellezza · Il tuo spazio di gestione</span><button type="button" id="admin-open-editor">Pannello completo e account ${icon('arrow')}</button></footer>
       </main>
     </div>`;
-  const toolbar = document.createElement('nav');
-  toolbar.id = 'admin-editor-tools';
-  toolbar.setAttribute('aria-label', 'Scorciatoie di gestione');
-  toolbar.hidden = true;
-  toolbar.innerHTML = `<button type="button" data-home>${icon('grid')}Panoramica</button><button type="button" data-stats>${icon('chart')}Statistiche</button><button type="button" data-guide>${icon('book')}Guida</button><a href="/" target="_blank" rel="noopener">Visita il sito ↗</a>`;
   const guide = document.createElement('dialog');
   guide.id = 'admin-guide';
   guide.setAttribute('aria-labelledby', 'admin-guide-title');
   guide.innerHTML = `<div class="admin-guide-header"><span class="admin-eyebrow">POCHI PASSI, TUTTO QUI</span><button type="button" id="admin-close-guide" aria-label="Chiudi la guida">✕</button></div><h1 id="admin-guide-title">Aggiorna il sito, con calma.</h1><p>Scegli cosa cambiare. Al resto pensa il pannello.</p><ol><li><strong>Scegli la sezione</strong><p>Usa le schede nella panoramica. Per orari e telefono, ad esempio, apri “Contatti e orari”.</p></li><li><strong>Modifica i contenuti</strong><p>Cambia testi e prezzi. Per le foto scegli un’immagine dal computer. Nelle liste puoi aggiungere, rimuovere e riordinare gli elementi.</p></li><li><strong>Pubblica le modifiche</strong><p>In alto nell’editor scegli “Pubblica”, poi “Pubblica ora”. Se un campo obbligatorio manca, il pannello ti indica cosa completare.</p></li><li><strong>Controlla il risultato</strong><p>Apri “Visita il sito”. Attendi circa un minuto e ricarica la pagina per vedere gli aggiornamenti.</p></li></ol><details><summary>Un suggerimento per foto e testi</summary><p>Scegli foto nitide e compila la descrizione dell’immagine. Nei titoli che lo prevedono, scrivi *una parola* tra asterischi per evidenziarla in corsivo.</p></details><details><summary>Come funzionano le statistiche?</summary><p>Mostrano aperture delle pagine e clic sui contatti, per 7, 30 o 90 giorni. Non contano persone uniche. I dati iniziano dall’attivazione dell’archivio delle statistiche.</p></details><p class="admin-guide-note">${local ? 'Stai usando l’anteprima locale: i salvataggi modificano i file sul Mac. Per andare online serve il caricamento su GitHub.' : 'Le modifiche ai contenuti vengono pubblicate dal pannello: non serve aprire GitHub Desktop.'}</p>`;
-  document.body.append(panel, toolbar, guide);
+  const shell = document.createElement('div');
+  shell.id = 'admin-editor-shell';
+  shell.hidden = true;
+  shell.innerHTML = `<aside class="admin-sidebar">
+    <a class="admin-brand" href="/" target="_blank" rel="noopener"><img src="/images/web/logo.png" alt="" width="44" height="44"><span>Immagine &amp; Bellezza<small>IL TUO PANNELLO</small></span></a>
+    <nav aria-label="Navigazione del pannello"><button type="button" class="admin-nav" data-home>${icon('grid')}Panoramica</button><button type="button" class="admin-nav" data-stats>${icon('chart')}Statistiche</button><button type="button" class="admin-nav" data-guide>${icon('book')}Guida rapida</button></nav>
+    <span class="admin-nav-label">MODIFICA I CONTENUTI</span>
+    <nav id="admin-editor-sections" aria-label="Sezioni del sito"></nav>
+    <a class="admin-site-link" href="/" target="_blank" rel="noopener">Visita il sito <span aria-hidden="true">↗</span></a>
+  </aside>
+  <header class="admin-internal-topbar"><button type="button" data-home>Panoramica</button><span aria-hidden="true">/</span><span id="admin-route-label">Contenuti</span><button type="button" class="admin-internal-guide" data-guide>Hai bisogno di aiuto?</button></header>
+  <section class="admin-internal-heading" aria-labelledby="admin-internal-title"><div><h1 id="admin-internal-title" tabindex="-1">Contenuti del sito</h1><p id="admin-internal-description">Scegli cosa modificare e pubblica quando hai finito.</p></div><label id="admin-field-jump-label" hidden>Vai a un campo<select id="admin-field-jump"><option value="">Scegli il campo…</option></select></label></section>`;
+  document.body.append(panel, guide, shell);
   const $ = id => document.getElementById(id);
   const cards = [];
   for (const [slug, title, description, symbol, category, keywords] of sections) {
@@ -88,6 +95,10 @@
     a.innerHTML = `<span class="admin-icon">${icon(symbol)}</span><span class="admin-card-copy"><strong>${title}</strong><span>${description}</span></span><span class="admin-card-arrow">${icon('arrow')}</span>`;
     $('admin-sections').append(a);
     cards.push({ element: a, category, text: normalize(`${title} ${description} ${keywords}`) });
+    const shortcut = a.cloneNode(true);
+    shortcut.className = 'admin-nav';
+    shortcut.innerHTML = `${icon(symbol)}<span>${title}</span>`;
+    $('admin-editor-sections').append(shortcut);
   }
   $('admin-date').textContent = new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
   $('admin-date').dateTime = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome' }).format(new Date());
@@ -129,18 +140,18 @@
   function show(home, focus = false) {
     if (!authenticated()) return;
     panel.hidden = !home;
-    toolbar.hidden = home;
+    shell.hidden = home;
     document.body.dataset.adminView = home ? 'home' : 'editor';
     const cms = $('nc-root');
     if (cms) { cms.inert = home; cms.setAttribute('aria-hidden', String(home)); }
     if (focus && home) { panel.scrollTop = 0; $('admin-content').focus({ preventScroll: true }); }
-    if (focus && !home) toolbar.querySelector('button').focus();
+    if (focus && !home) $('admin-internal-title').focus({ preventScroll: true });
   }
   document.addEventListener('click', e => {
     const action = e.target.closest?.('[data-home], [data-contents], [data-stats], [data-guide], [data-edit]');
     if (!action) return;
     if (action.hasAttribute('data-home')) show(true, true);
-    if (action.hasAttribute('data-contents')) { $('admin-library-title').scrollIntoView({ behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }); $('admin-search').focus({ preventScroll: true }); }
+    if (action.hasAttribute('data-contents')) { show(true); $('admin-library-title').scrollIntoView({ behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }); $('admin-search').focus({ preventScroll: true }); }
     if (action.hasAttribute('data-stats')) $('open-stats')?.click();
     if (action.hasAttribute('data-guide')) guide.showModal();
     // Lascia al router Decap la protezione delle modifiche non salvate.
@@ -158,7 +169,7 @@
         // Un link diretto a un contenuto continua ad aprire quel contenuto.
         show(!/\/collections\/[^/]+\/(entries|new)(\/|$)/.test(location.hash));
       } else {
-        panel.hidden = toolbar.hidden = true;
+        panel.hidden = shell.hidden = true;
         delete document.body.dataset.adminView;
         if ($('nc-root')) { $('nc-root').inert = false; $('nc-root').removeAttribute('aria-hidden'); }
         if (guide.open) guide.close();
@@ -167,8 +178,31 @@
   }
   window.addEventListener('storage', sync);
   window.addEventListener('focus', sync);
+  function route() {
+    const parts = location.hash.replace(/^#\/?/, '').split('/');
+    let slug;
+    try { slug = decodeURIComponent(parts[3] || ''); } catch (_) { slug = ''; }
+    const collection = parts[0] === 'collections' ? parts[1] : '';
+    const section = sections.find(s => s[0] === (collection === 'sito' ? slug : collection));
+    const title = section?.[1] || (collection === 'sito' ? 'Contenuti del sito' : 'Gestione del sito');
+    const isEntry = parts[2] === 'entries' || parts[2] === 'new';
+    $('admin-route-label').textContent = title;
+    $('admin-internal-title').textContent = parts[2] === 'new' ? (collection === 'blog' ? 'Nuovo articolo' : 'Nuova pagina trattamento') : title;
+    $('admin-internal-description').textContent = isEntry
+      ? `${section?.[2] || 'Modifica i contenuti di questa pagina.'} Quando hai finito, scegli Pubblica in alto.`
+      : 'Scegli una voce per modificarla. Usa la ricerca per trovarla più velocemente.';
+    document.title = `${title} · Gestione Immagine & Bellezza`;
+    document.body.dataset.adminScreen = isEntry ? 'entry' : 'collection';
+    shell.querySelectorAll('[data-edit]').forEach(a => {
+      const selected = a.dataset.edit === section?.[0];
+      a.classList.toggle('active', selected);
+      if (selected) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('hashchange', route);
   // Un solo timer leggero per login/logout del CMS, senza dipendere dalle sue classi CSS.
   setInterval(sync, 1000);
   sync();
+  route();
   search();
 })();

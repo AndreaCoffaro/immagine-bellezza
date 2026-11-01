@@ -1,31 +1,31 @@
 /* Identità del pannello. Le regole dell'editor usano elementi stabili, non classi generate. */
 :root { color-scheme: light; --admin-ink: #30262c; --admin-muted: #786c73; --admin-wine: #842c56; --admin-border: #e9e1e5; --admin-paper: #fbf9f7; }
 body { margin: 0; background: var(--admin-paper); }
-#admin-dashboard, #admin-guide, #admin-editor-tools, #admin-welcome { font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--admin-ink); -webkit-font-smoothing: antialiased; }
-#admin-dashboard *, #admin-guide *, #admin-editor-tools *, #admin-welcome * { box-sizing: border-box; }
-#admin-dashboard [hidden], #admin-dashboard[hidden], #admin-editor-tools[hidden], #admin-welcome[hidden] { display: none !important; }
-#admin-dashboard button, #admin-guide button, #admin-editor-tools button { font: inherit; cursor: pointer; }
-#admin-dashboard a, #admin-editor-tools a { text-decoration: none; color: inherit; }
-#admin-dashboard svg, #admin-editor-tools svg { width: 21px; height: 21px; flex: 0 0 auto; }
-#admin-dashboard :is(button,a,input):focus-visible, #admin-guide :is(button,summary):focus-visible, #admin-editor-tools :is(button,a):focus-visible { outline: 3px solid #b7658c; outline-offset: 4px; }
+#admin-dashboard, #admin-guide, #admin-welcome, #admin-editor-shell { font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--admin-ink); -webkit-font-smoothing: antialiased; }
+#admin-dashboard *, #admin-guide *, #admin-welcome *, #admin-editor-shell * { box-sizing: border-box; }
+#admin-dashboard [hidden], #admin-dashboard[hidden], #admin-welcome[hidden] { display: none !important; }
+#admin-dashboard button, #admin-guide button { font: inherit; cursor: pointer; }
+#admin-dashboard a { text-decoration: none; color: inherit; }
+#admin-dashboard svg, #admin-editor-shell svg { width: 21px; height: 21px; flex: 0 0 auto; }
+#admin-dashboard :is(button,a,input):focus-visible, #admin-guide :is(button,summary):focus-visible { outline: 3px solid #b7658c; outline-offset: 4px; }
 #admin-dashboard { position: fixed; inset: 0; z-index: 900; overflow: auto; overscroll-behavior: contain; background: var(--admin-paper); }
 body[data-admin-view="home"] { overflow: hidden; }
 body[data-admin-view="home"] #nc-root { visibility: hidden; }
 body[data-admin-view] #open-stats { display: none; }
-#admin-dashboard .admin-sidebar { position: fixed; inset: 0 auto 0 0; display: flex; flex-direction: column; width: 248px; padding: 36px 22px 24px; background: #fff; border-right: 1px solid var(--admin-border); overflow-y: auto; }
-#admin-dashboard .admin-brand { display: flex; gap: 12px; align-items: center; margin: 0 0 48px; font-family: Georgia, serif; font-size: 17px; line-height: 1.3; }
-#admin-dashboard .admin-brand img { object-fit: contain; border-radius: 50%; }
-#admin-dashboard .admin-brand small { display: block; margin-top: 7px; font: 9px/1.4 -apple-system, sans-serif; letter-spacing: .17em; color: var(--admin-muted); }
-#admin-dashboard .admin-nav-label { margin: 0 15px 12px; font-size: 10px; letter-spacing: .15em; color: #8c8087; font-weight: 600; }
-#admin-dashboard nav { display: grid; gap: 6px; }
-#admin-dashboard .admin-nav { display: flex; align-items: center; gap: 12px; padding: 13px 15px; border: 0; border-radius: 10px; background: transparent; text-align: left; color: #6f626a; font-size: 14px; }
-#admin-dashboard .admin-nav:hover { background: #faf5f7; color: var(--admin-wine); }
-#admin-dashboard .admin-nav.active { color: var(--admin-wine); background: #f5eaf0; font-weight: 600; }
-#admin-dashboard .admin-sidebar-note { margin-top: auto; padding: 24px 15px; color: #79646e; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-sidebar { position: fixed; inset: 0 auto 0 0; display: flex; flex-direction: column; width: 248px; padding: 36px 22px 24px; background: #fff; border-right: 1px solid var(--admin-border); overflow-y: auto; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-brand { display: flex; gap: 12px; align-items: center; margin: 0 0 48px; font-family: Georgia, serif; font-size: 17px; line-height: 1.3; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-brand img { object-fit: contain; border-radius: 50%; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-brand small { display: block; margin-top: 7px; font: 9px/1.4 -apple-system, sans-serif; letter-spacing: .17em; color: var(--admin-muted); }
+:is(#admin-dashboard, #admin-editor-shell) .admin-nav-label { margin: 0 15px 12px; font-size: 10px; letter-spacing: .15em; color: #8c8087; font-weight: 600; }
+:is(#admin-dashboard, #admin-editor-shell) nav { display: grid; gap: 6px; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-nav { display: flex; align-items: center; gap: 12px; padding: 13px 15px; border: 0; border-radius: 10px; background: transparent; text-align: left; color: #6f626a; font-size: 14px; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-nav:hover { background: #faf5f7; color: var(--admin-wine); }
+:is(#admin-dashboard, #admin-editor-shell) .admin-nav.active { color: var(--admin-wine); background: #f5eaf0; font-weight: 600; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-sidebar-note { margin-top: auto; padding: 24px 15px; color: #79646e; }
 #admin-dashboard .admin-note-symbol { display: block; color: #ad8655; font-size: 33px; margin-bottom: 6px; }
-#admin-dashboard .admin-sidebar-note strong { font-family: Georgia, serif; font-weight: 400; font-size: 18px; }
-#admin-dashboard .admin-sidebar-note p { margin-top: 10px; font-size: 12px; max-width: 150px; }
-#admin-dashboard .admin-site-link { display: flex; justify-content: space-between; padding: 18px 15px 0; border-top: 1px solid var(--admin-border); font-size: 13px; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-sidebar-note strong { font-family: Georgia, serif; font-weight: 400; font-size: 18px; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-sidebar-note p { margin-top: 10px; font-size: 12px; max-width: 150px; }
+:is(#admin-dashboard, #admin-editor-shell) .admin-site-link { display: flex; justify-content: space-between; padding: 18px 15px 0; border-top: 1px solid var(--admin-border); font-size: 13px; }
 #admin-dashboard .admin-workspace { margin-left: 248px; }
 #admin-dashboard .admin-topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 77px; padding: 18px 42px; background: #fff9; border-bottom: 1px solid var(--admin-border); font-size: 12px; color: var(--admin-muted); }
 #admin-dashboard .admin-topbar strong { color: var(--admin-ink); font-weight: 500; }
@@ -98,10 +98,6 @@ body[data-admin-view] #open-stats { display: none; }
 #admin-guide details { padding: 15px 0; border-top: 1px solid var(--admin-border); }
 #admin-guide summary { cursor: pointer; font-size: 13px; font-weight: 600; }
 #admin-guide .admin-guide-note { padding: 15px; background: #f1e5eb; border-radius: 9px; color: #6e3b52; }
-#admin-editor-tools { position: fixed; left: 50%; transform: translateX(-50%); bottom: max(14px, env(safe-area-inset-bottom)); display: flex; align-items: center; gap: 5px; z-index: 800; max-width: calc(100vw - 24px); width: max-content; padding: 7px; border-radius: 14px; border: 1px solid #d9c5cf; background: #fff; box-shadow: 0 7px 35px #35202c24; }
-#admin-editor-tools button, #admin-editor-tools a { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 13px; background: transparent; border: 0; border-radius: 8px; color: var(--admin-wine); font-size: 12px; white-space: nowrap; }
-#admin-editor-tools button:hover, #admin-editor-tools a:hover { background: #f6edf1; }
-#admin-editor-tools svg { width: 17px; height: 17px; }
 #admin-welcome { position: absolute; z-index: 10; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 15px; min-height: 88px; padding: 18px 30px; background: #fff; border-bottom: 1px solid var(--admin-border); }
 #admin-welcome img { object-fit: contain; }
 #admin-welcome strong { display: block; font: 22px/1.3 Georgia, serif; }
@@ -112,16 +108,16 @@ body[data-admin-view] #open-stats { display: none; }
 #nc-root :is(input,textarea,select):focus-visible { outline: 2px solid #b7658c; outline-offset: 2px; }
 body[data-admin-view="editor"] #nc-root { padding-bottom: 95px; }
 @media (min-width: 1600px) { #admin-dashboard main { padding-top: 48px; } #admin-dashboard .admin-section-card { padding: 24px 20px; } }
-@media (max-width: 1180px) { #admin-dashboard .admin-sidebar { width: 215px; padding-inline: 16px; } #admin-dashboard .admin-workspace { margin-left: 215px; } #admin-dashboard main { padding-inline: 26px; } #admin-dashboard .admin-topbar { padding-inline: 26px; } #admin-dashboard .admin-section-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } #admin-dashboard time { display: none; } #admin-dashboard .admin-brand { font-size: 15px; gap: 8px; } }
+@media (max-width: 1180px) { :is(#admin-dashboard, #admin-editor-shell) .admin-sidebar { width: 215px; padding-inline: 16px; } #admin-dashboard .admin-workspace { margin-left: 215px; } #admin-dashboard main { padding-inline: 26px; } #admin-dashboard .admin-topbar { padding-inline: 26px; } #admin-dashboard .admin-section-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } #admin-dashboard time { display: none; } :is(#admin-dashboard, #admin-editor-shell) .admin-brand { font-size: 15px; gap: 8px; } }
 @media (max-width: 760px) {
-  #admin-dashboard .admin-sidebar { position: static; width: auto; padding: 16px 20px 0; border-right: 0; border-bottom: 1px solid var(--admin-border); }
-  #admin-dashboard .admin-brand { font-size: 18px; margin-bottom: 18px; }
-  #admin-dashboard .admin-brand img { width: 36px; height: 36px; }
-  #admin-dashboard .admin-brand small { font-size: 8px; margin-top: 3px; }
-  #admin-dashboard .admin-nav-label, #admin-dashboard .admin-sidebar-note, #admin-dashboard .admin-site-link, #admin-dashboard .admin-topbar { display: none; }
-  #admin-dashboard nav { display: flex; overflow-x: auto; gap: 2px; margin-inline: -8px; }
-  #admin-dashboard .admin-nav { padding: 12px 10px; border-radius: 7px 7px 0 0; font-size: 11px; gap: 6px; white-space: nowrap; }
-  #admin-dashboard .admin-nav svg { width: 16px; height: 16px; }
+  :is(#admin-dashboard, #admin-editor-shell) .admin-sidebar { position: static; width: auto; padding: 16px 20px 0; border-right: 0; border-bottom: 1px solid var(--admin-border); }
+  :is(#admin-dashboard, #admin-editor-shell) .admin-brand { font-size: 18px; margin-bottom: 18px; }
+  :is(#admin-dashboard, #admin-editor-shell) .admin-brand img { width: 36px; height: 36px; }
+  :is(#admin-dashboard, #admin-editor-shell) .admin-brand small { font-size: 8px; margin-top: 3px; }
+  :is(#admin-dashboard, #admin-editor-shell) .admin-nav-label, :is(#admin-dashboard, #admin-editor-shell) .admin-sidebar-note, :is(#admin-dashboard, #admin-editor-shell) .admin-site-link, #admin-dashboard .admin-topbar { display: none; }
+  :is(#admin-dashboard, #admin-editor-shell) nav { display: flex; overflow-x: auto; gap: 2px; margin-inline: -8px; }
+  :is(#admin-dashboard, #admin-editor-shell) .admin-nav { padding: 12px 10px; border-radius: 7px 7px 0 0; font-size: 11px; gap: 6px; white-space: nowrap; }
+  :is(#admin-dashboard, #admin-editor-shell) .admin-nav svg { width: 16px; height: 16px; }
   #admin-dashboard .admin-workspace { margin-left: 0; }
   #admin-dashboard main { padding: 28px 20px 24px; }
   #admin-dashboard .admin-heading { margin-bottom: 24px; }
@@ -145,8 +141,6 @@ body[data-admin-view="editor"] #nc-root { padding-bottom: 95px; }
   #admin-dashboard .admin-publish-tip button { margin-left: 0; padding: 0; }
   #admin-dashboard .admin-footer { flex-wrap: wrap; gap: 3px; }
   #admin-dashboard .admin-skip { left: 20px; }
-  #admin-editor-tools { gap: 0; }
-  #admin-editor-tools button, #admin-editor-tools a { flex-direction: column; gap: 3px; padding: 7px 11px; font-size: 10px; }
   #admin-welcome { padding: 15px; gap: 10px; }
   #admin-welcome strong { font-size: 17px; }
   #admin-welcome span { max-width: 180px; font-size: 10px; }
