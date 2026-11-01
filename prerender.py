@@ -404,6 +404,7 @@ def documento(testa, inizio, piede, titolo, descrizione, url, foto_src, ld_html,
 
 {piede}
 <script src="/js/pagina.js"></script>
+<script defer src="/js/analytics.js"></script>
 </body>
 </html>
 """
@@ -694,7 +695,17 @@ def main():
         sitemap(file)
     except Exception as e:
         print(f"[prerender] sitemap non aggiornata: {e}")
+    manifest_analytics(file)
     print(f"[prerender] pronti: {len(file)} pagine e sitemap.xml")
+
+
+def manifest_analytics(percorsi):
+    """Whitelist delle pagine pubbliche: l'API non accetta percorsi arbitrari."""
+    pagine = sorted('/' + p.removesuffix('index.html') for p in percorsi)
+    os.makedirs(os.path.join(ROOT, 'lib'), exist_ok=True)
+    with open(os.path.join(ROOT, 'lib', 'analytics-pages.json'), 'w', encoding='utf-8') as f:
+        json.dump(pagine, f, ensure_ascii=False, indent=2)
+        f.write('\n')
 
 
 if __name__ == "__main__":
