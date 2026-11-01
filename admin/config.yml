@@ -43,7 +43,7 @@ collections:
 
       # ------------------------------------------------------------------ LISTINO
       - name: listino
-        label: "💆 Listino trattamenti e prezzi"
+        label: "Listino e prezzi"
         file: content/listino.json
         fields:
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
@@ -52,6 +52,7 @@ collections:
           - label: "Categorie"
             name: categorie
             widget: list
+            collapsed: true
             summary: "{{fields.categoria}}"
             label_singular: "categoria"
             hint: "Trascina per cambiare l'ordine delle schede"
@@ -61,6 +62,7 @@ collections:
               - label: "Trattamenti"
                 name: servizi
                 widget: list
+                collapsed: true
                 label_singular: "trattamento"
                 summary: "{{fields.nome}} — {{fields.prezzo}}"
                 fields:
@@ -69,7 +71,7 @@ collections:
 
       # ------------------------------------------------------------------ SPA
       - name: spa
-        label: "🧖 Area SPA (percorsi, prezzi e foto)"
+        label: "Area SPA"
         file: content/spa.json
         fields:
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
@@ -78,6 +80,7 @@ collections:
           - label: "Cosa trovi nella SPA"
             name: caratteristiche
             widget: list
+            collapsed: true
             label_singular: "elemento"
             summary: "{{fields.titolo}}"
             fields:
@@ -104,6 +107,7 @@ collections:
           - label: "Foto (mosaico che si alterna)"
             name: foto
             widget: list
+            collapsed: true
             label_singular: "foto"
             summary: "{{fields.alt}}"
             hint: "Le prime 4 compaiono subito, poi si alternano tutte"
@@ -125,6 +129,7 @@ collections:
           - label: "Percorsi e prezzi"
             name: percorsi
             widget: list
+            collapsed: true
             label_singular: "percorso"
             summary: "{{fields.nome}} — {{fields.prezzo}}"
             fields:
@@ -139,7 +144,7 @@ collections:
 
       # ------------------------------------------------------------------ PROMOZIONI
       - name: promozioni
-        label: "🏷️ Promozioni"
+        label: "Promozioni"
         file: content/promozioni.json
         fields:
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
@@ -147,6 +152,7 @@ collections:
           - label: "Promozioni attive"
             name: promozioni
             widget: list
+            collapsed: true
             label_singular: "promozione"
             summary: "{{fields.titolo}} — {{fields.prezzo_scontato}}"
             hint: "Se elimini tutte le promozioni, la sezione sparisce dal sito"
@@ -159,7 +165,7 @@ collections:
 
       # ------------------------------------------------------------------ HOME
       - name: home
-        label: "🏠 Home (testo in alto e foto che si alternano)"
+        label: "Pagina iniziale"
         file: content/home.json
         fields:
           - label: "Parte alta"
@@ -174,6 +180,7 @@ collections:
               - label: "Punti sotto il testo"
                 name: punti
                 widget: list
+                collapsed: true
                 label_singular: "punto"
                 summary: "{{fields.testo}}"
                 fields:
@@ -182,6 +189,7 @@ collections:
           - label: "Foto che si alternano nell'arco"
             name: foto
             widget: list
+            collapsed: true
             label_singular: "foto"
             summary: "{{fields.alt}}"
             hint: "Meglio foto verticali"
@@ -194,6 +202,7 @@ collections:
           - label: "Punti di forza (sotto la parte alta)"
             name: punti_di_forza
             widget: list
+            collapsed: true
             label_singular: "punto"
             summary: "{{fields.titolo}}"
             fields:
@@ -209,7 +218,7 @@ collections:
 
       # ------------------------------------------------------------------ EVENTI
       - name: eventi
-        label: "🥂 Feste & eventi in SPA"
+        label: "Feste ed eventi"
         file: content/eventi.json
         fields:
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
@@ -219,6 +228,7 @@ collections:
           - label: "Cosa comprende"
             name: punti
             widget: list
+            collapsed: true
             label_singular: "punto"
             summary: "{{fields.titolo}}"
             fields:
@@ -232,7 +242,7 @@ collections:
 
       # ------------------------------------------------------------------ REGALO
       - name: regalo
-        label: "🎁 Buono regalo"
+        label: "Buoni regalo"
         file: content/regalo.json
         fields:
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
@@ -244,18 +254,20 @@ collections:
           - label: "Foto che si alternano"
             name: foto
             widget: list
+            collapsed: true
             label_singular: "foto"
             summary: "{{fields.alt}}"
             fields: *foto-campi
 
       # ------------------------------------------------------------------ GALLERIA
       - name: galleria
-        label: "📷 Dentro il centro (apparecchiature, prodotti e foto degli ambienti)"
+        label: "Foto e ambienti"
         file: content/galleria.json
         fields:
           - label: "Schede apparecchiature e prodotti"
             name: tecnologie
             widget: list
+            collapsed: true
             label_singular: "scheda"
             summary: "{{fields.nome}}"
             hint: "Una scheda per ogni macchinario o linea di prodotti. «Aggiungi scheda» per crearne una nuova, ✕ per eliminarla, trascina le lineette ═ per cambiare l'ordine"
@@ -271,6 +283,7 @@ collections:
           - label: "Foto degli ambienti (esterno, accoglienza, cabine, SPA)"
             name: foto
             widget: list
+            collapsed: true
             label_singular: "foto"
             summary: "{{fields.nome}}"
             hint: "Trascina le lineette ═ per cambiare l'ordine. Sul cellulare le foto si scorrono in quest'ordine, la prima è quella che si vede subito"
@@ -307,7 +320,7 @@ collections:
 
       # ------------------------------------------------------------------ CHI SIAMO
       - name: chi-siamo
-        label: "👩 Chi siamo (sezione sulla titolare)"
+        label: "Chi siamo"
         file: content/chi-siamo.json
         fields:
           - { label: "Mostra la sezione sul sito", name: visibile, widget: boolean, default: false, hint: "Togli la spunta per nascondere tutta la sezione (i testi e le foto restano salvati)" }
@@ -320,7 +333,7 @@ collections:
 
       # ------------------------------------------------------------------ RECENSIONI
       - name: recensioni
-        label: "⭐ Recensioni"
+        label: "Recensioni"
         file: content/recensioni.json
         fields:
           - { label: "Scritta piccola sopra il titolo", name: eyebrow, widget: string }
@@ -328,6 +341,7 @@ collections:
           - label: "Recensioni"
             name: recensioni
             widget: list
+            collapsed: true
             label_singular: "recensione"
             summary: "{{fields.nome}}"
             hint: "Inserisci solo recensioni reali (es. copiate da Google). Se l'elenco è vuoto la sezione non compare"
@@ -338,7 +352,7 @@ collections:
 
       # ------------------------------------------------------------------ CONTATTI
       - name: contatti
-        label: "📍 Contatti, orari e social"
+        label: "Contatti e orari"
         file: content/contatti.json
         fields:
           - { label: "Nome del centro", name: nome_centro, widget: string }
@@ -388,7 +402,7 @@ collections:
   # ==================================================================== PAGINE DEI TRATTAMENTI
   # Ogni pagina diventa https://www.immaginebellezzamantio.it/trattamenti/<nome-della-pagina>/
   - name: trattamenti
-    label: "📄 Pagine dei trattamenti"
+    label: "Pagine dei trattamenti"
     label_singular: "pagina"
     description: "Una pagina per ogni trattamento importante: è quella che Google mostra a chi cerca, ad esempio, «trucco sposa Mussomeli». Testi originali e prudenti: niente promesse di risultati."
     folder: content/trattamenti
@@ -414,6 +428,7 @@ collections:
       - label: "Sezioni del testo"
         name: sezioni
         widget: list
+        collapsed: true
         label_singular: "sezione"
         summary: "{{fields.titolo}}"
         fields:
@@ -429,6 +444,7 @@ collections:
       - label: "Domande frequenti"
         name: faq
         widget: list
+        collapsed: true
         required: false
         label_singular: "domanda"
         summary: "{{fields.domanda}}"
@@ -442,7 +458,7 @@ collections:
   # ==================================================================== BLOG
   # Ogni articolo diventa https://www.immaginebellezzamantio.it/blog/<titolo-articolo>/
   - name: blog
-    label: "✍️ Blog (consigli di bellezza)"
+    label: "Blog e consigli"
     label_singular: "articolo"
     description: "Articoli utili collegati ai trattamenti. Linguaggio prudente: niente promesse mediche o di risultati."
     folder: content/blog

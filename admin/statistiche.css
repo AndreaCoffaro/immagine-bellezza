@@ -23,6 +23,17 @@
 #site-stats .stats-scroll { max-height: 300px; overflow: auto; }
 #site-stats summary { cursor: pointer; color: #842c56; }
 #site-stats footer { margin-top: 24px; color: #655961; font-size: 13px; }
+#site-stats .stats-intro { margin: 9px 0 0; color: #786c73; font-size: 13px; max-width: 520px; }
+#site-stats header small { font-size: 10px; letter-spacing: .14em; font-weight: 600; }
+#site-stats h1 { margin-top: 6px; font-family: Georgia, serif; font-weight: 400; }
+#site-stats .stats-cards article:first-child { background: #842c56; color: #fff; border-color: #842c56; }
+#site-stats .stats-cards article:first-child strong { color: #fff; }
+#site-stats .stats-cards article:first-child p { color: #f4dfe8; }
+#site-stats article p { margin: 4px 0 0; color: #786c73; font-size: 12px; }
+#site-stats article h2 { margin-bottom: 8px; }
+#site-stats #stats-status { padding: 13px 16px; border: 1px solid #e7dfe3; border-radius: 9px; background: #fff; font-size: 13px; overflow-wrap: anywhere; }
+#site-stats button:disabled { opacity: .6; cursor: wait; }
+#stats-chart-dates { display: flex; justify-content: space-between; gap: 8px; color: #786c73; font-size: 10px; margin: -8px 0 18px; }
 @media (max-width: 760px) {
   #site-stats { padding: 18px; }
   #site-stats h1 { font-size: 23px; }

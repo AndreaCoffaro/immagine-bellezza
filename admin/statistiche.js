@@ -10,19 +10,26 @@
   dialog.id = 'site-stats';
   dialog.setAttribute('aria-labelledby', 'stats-title');
   dialog.innerHTML = `
-    <header><div><small>Immagine &amp; Bellezza</small><h1 id="stats-title">Statistiche del sito</h1></div><button type="button" id="close-stats">Torna ai contenuti</button></header>
+    <header><div><small>IL TUO SITO, IN NUMERI</small><h1 id="stats-title">Come sta andando il sito?</h1><p class="stats-intro">Scopri quali pagine interessano di più e come ti contattano le persone.</p></div><button type="button" id="close-stats">Chiudi statistiche</button></header>
     <div class="stats-controls"><label>Periodo <select id="stats-days"><option value="7">Ultimi 7 giorni</option><option value="30" selected>Ultimi 30 giorni</option><option value="90">Ultimi 90 giorni</option></select></label><button type="button" id="refresh-stats">Aggiorna</button></div>
     <p id="stats-status" role="status" aria-live="polite"></p>
     <div id="stats-results" hidden>
-      <div class="stats-cards"><article><h2>Visualizzazioni</h2><strong id="stats-views"></strong></article><article><h2>Clic WhatsApp</h2><strong id="stats-whatsapp"></strong></article><article><h2>Clic telefono</h2><strong id="stats-phone"></strong></article><article><h2>Clic email</h2><strong id="stats-email"></strong></article></div>
-      <section><h2>Visualizzazioni giorno per giorno</h2><div id="stats-chart" aria-hidden="true"></div><details><summary>Leggi i dati giornalieri</summary><div class="stats-scroll"><table><thead><tr><th scope="col">Giorno</th><th scope="col">Visualizzazioni</th></tr></thead><tbody id="stats-daily"></tbody></table></div></details></section>
+      <div class="stats-cards"><article><h2>Visualizzazioni</h2><strong id="stats-views"></strong><p>Aperture delle pagine</p></article><article><h2>Clic WhatsApp</h2><strong id="stats-whatsapp"></strong><p>Interesse a scriverti</p></article><article><h2>Clic telefono</h2><strong id="stats-phone"></strong><p>Interesse a chiamarti</p></article><article><h2>Clic email</h2><strong id="stats-email"></strong><p>Interesse a contattarti</p></article></div>
+      <section><h2>Visualizzazioni giorno per giorno</h2><div id="stats-chart" aria-hidden="true"></div><div id="stats-chart-dates" aria-hidden="true"></div><details><summary>Leggi i dati giornalieri</summary><div class="stats-scroll"><table><thead><tr><th scope="col">Giorno</th><th scope="col">Visualizzazioni</th></tr></thead><tbody id="stats-daily"></tbody></table></div></details></section>
       <div class="stats-tables"><section><h2>Pagine più viste</h2><table><thead><tr><th scope="col">Pagina</th><th scope="col">Visualizzazioni</th></tr></thead><tbody id="stats-pages"></tbody></table></section><section><h2>Provenienza</h2><table><thead><tr><th scope="col">Origine</th><th scope="col">Visualizzazioni</th></tr></thead><tbody id="stats-sources"></tbody></table></section><section><h2>Dispositivi</h2><table><thead><tr><th scope="col">Tipo</th><th scope="col">Visualizzazioni</th></tr></thead><tbody id="stats-devices"></tbody></table></section></div>
     </div>
-    <footer>Le visualizzazioni contano le aperture delle pagine, comprese le visite ripetute: non sono persone uniche. I clic sui contatti non confermano una prenotazione. Date e giorni nel fuso orario di Roma. Dati disponibili dall’attivazione, conservati per 100 giorni. Esclusi i bot riconosciuti, chi richiede di non essere tracciato e i browser con accesso admin salvato.</footer>`;
+    <footer><details><summary>Come leggere questi numeri</summary><p>Le visualizzazioni contano le aperture delle pagine, comprese le visite ripetute: non sono persone uniche. I clic sui contatti non confermano una prenotazione. Date e giorni nel fuso orario di Roma. Dati disponibili dall’attivazione, conservati per 100 giorni. Esclusi i bot riconosciuti, chi richiede di non essere tracciato e i browser con accesso admin salvato.</p></details></footer>`;
   document.body.append(button, dialog);
   const $ = id => dialog.querySelector(`#${id}`);
   const format = n => Number(n).toLocaleString('it-IT');
   const date = d => new Date(`${d}T12:00:00Z`).toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' });
+  function pageName(path) {
+    if (path === '/') return 'Pagina iniziale';
+    if (path === '/blog/') return 'Blog';
+    if (path === '/trattamenti/') return 'Tutti i trattamenti';
+    const title = path.split('/').filter(Boolean).at(-1).replace(/-/g, ' ');
+    return title.charAt(0).toUpperCase() + title.slice(1);
+  }
   let active = null;
   let lastToken = '';
   function token() {
@@ -45,16 +52,22 @@
   }
   function clear() {
     $('stats-results').hidden = true;
-    for (const id of ['views', 'whatsapp', 'phone', 'email', 'chart', 'daily', 'pages', 'sources', 'devices']) $('stats-' + id).replaceChildren();
+    for (const id of ['views', 'whatsapp', 'phone', 'email', 'chart', 'chart-dates', 'daily', 'pages', 'sources', 'devices']) $('stats-' + id).replaceChildren();
   }
   async function load() {
     active?.abort();
     const controller = new AbortController();
     active = controller;
     clear();
+    dialog.setAttribute('aria-busy', 'true');
+    $('refresh-stats').disabled = true;
+    $('refresh-stats').textContent = 'Caricamento…';
     $('stats-status').textContent = 'Caricamento delle statistiche…';
     if (local) {
       $('stats-status').textContent = 'L’anteprima locale non raccoglie accessi. Le statistiche reali saranno disponibili sul sito Vercel dopo aver collegato Redis: vedi STATISTICHE.md nella cartella del sito.';
+      dialog.setAttribute('aria-busy', 'false');
+      $('refresh-stats').disabled = false;
+      $('refresh-stats').textContent = 'Aggiorna';
       return;
     }
     try {
@@ -65,11 +78,11 @@
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Impossibile caricare le statistiche.');
-      if (token() !== currentToken || !dialog.open) return;
+      if (token() !== currentToken || !dialog.open || controller.signal.aborted) return;
       $('stats-views').textContent = format(data.totals.view);
       for (const event of ['whatsapp', 'phone', 'email']) $('stats-' + event).textContent = format(data.totals[event]);
       rows('stats-daily', data.daily.map(d => [date(d.date), d.views]));
-      for (const group of ['pages', 'sources', 'devices']) rows('stats-' + group, Object.entries(data[group]).sort((a, b) => b[1] - a[1]));
+      for (const group of ['pages', 'sources', 'devices']) rows('stats-' + group, Object.entries(data[group]).sort((a, b) => b[1] - a[1]).map(([label, count]) => [group === 'pages' ? pageName(label) : label, count]));
       const max = Math.max(1, ...data.daily.map(d => d.views));
       $('stats-chart').replaceChildren();
       for (const d of data.daily) {
@@ -79,12 +92,23 @@
         bar.title = `${date(d.date)}: ${format(d.views)}`;
         $('stats-chart').append(bar);
       }
+      for (const d of [data.daily[0], data.daily[Math.floor(data.daily.length / 2)], data.daily.at(-1)]) {
+        const label = document.createElement('span');
+        label.textContent = date(d.date);
+        $('stats-chart-dates').append(label);
+      }
       $('stats-results').hidden = false;
       $('stats-status').textContent = data.totals.view
         ? `Dal ${date(data.daily[0].date)} al ${date(data.daily.at(-1).date)} · aggiornato alle ${new Date().toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome' })}`
         : 'Nessuna visualizzazione registrata in questo periodo. I dati iniziano dall’attivazione della raccolta.';
     } catch (error) {
       if (error.name !== 'AbortError') $('stats-status').textContent = error.message;
+    } finally {
+      if (active === controller) {
+        dialog.setAttribute('aria-busy', 'false');
+        $('refresh-stats').disabled = false;
+        $('refresh-stats').textContent = 'Aggiorna';
+      }
     }
   }
   function sync() {

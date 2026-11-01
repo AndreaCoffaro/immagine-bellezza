@@ -1,6 +1,7 @@
 # Statistiche degli accessi
 
-Nel pannello `/admin`, dopo il login GitHub, compare il pulsante **Statistiche del sito**.
+Nel pannello `/admin`, dopo il login GitHub, la panoramica contiene la voce **Statistiche**
+e la scheda **Come va il sito?**. Nell'editor le statistiche sono disponibili dalla barra in basso.
 Il pannello mostra periodi di 7, 30 e 90 giorni, visualizzazioni giornaliere, pagine
 più viste, provenienza delle visualizzazioni, dispositivi e clic su WhatsApp, telefono
 ed email. Il pulsante **Aggiorna** rilegge i dati.
