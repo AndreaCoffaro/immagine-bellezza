@@ -1,0 +1,69 @@
+/* Ingresso della home — modifica indipendente e reversibile.
+   Per tornare all'aspetto precedente basta rimuovere da index.html
+   il collegamento a css/home-ingresso.css. Nessuna dipendenza da JavaScript.
+   Le sottopagine continuano a usare soltanto style.css. */
+
+@media (prefers-reduced-motion: no-preference){
+  body:not(.sottopagina) header.site > .wrap{
+    animation:home-dissolvenza .65s ease-out both;
+  }
+
+  .hero .hero-brand,
+  .hero .hero-h1 > .eyebrow,
+  .hero .hero-title,
+  .hero .lead,
+  .hero .hero-actions,
+  .hero .hero-facts{
+    animation:home-ingresso .85s cubic-bezier(.22,.61,.36,1) both;
+    animation-delay:var(--ingresso-ritardo,0s);
+  }
+
+  .hero .hero-brand{--ingresso-ritardo:.10s}
+  .hero .hero-h1 > .eyebrow{--ingresso-ritardo:.20s}
+  .hero .hero-title{--ingresso-ritardo:.30s}
+  .hero .lead{--ingresso-ritardo:.42s}
+  .hero .hero-actions{--ingresso-ritardo:.54s}
+  .hero .hero-facts{--ingresso-ritardo:.66s}
+
+  .hero .hero-visual{
+    animation:home-foto 1.2s cubic-bezier(.22,.61,.36,1) .16s both;
+  }
+
+  /* Su mobile le foto sono prima del testo: aprono la sequenza.
+     La durata resta breve anche sugli schermi piccoli. */
+  @media (max-width:900px){
+    .hero .hero-visual{animation-delay:0s;animation-duration:.95s}
+    .hero .hero-brand{--ingresso-ritardo:.18s}
+    .hero .hero-h1 > .eyebrow{--ingresso-ritardo:.26s}
+    .hero .hero-title{--ingresso-ritardo:.34s}
+  }
+
+  /* I pulsanti diventano subito visibili se raggiunti con la tastiera. */
+  .hero .hero-actions:focus-within{animation:none}
+}
+
+@keyframes home-dissolvenza{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes home-ingresso{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes home-foto{
+  from{opacity:0;transform:translateY(24px) scale(.975)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@media print{
+  body:not(.sottopagina) header.site > .wrap,
+  .hero .hero-brand,
+  .hero .hero-h1 > .eyebrow,
+  .hero .hero-title,
+  .hero .lead,
+  .hero .hero-actions,
+  .hero .hero-facts,
+  .hero .hero-visual{animation:none}
+}
