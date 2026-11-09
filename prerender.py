@@ -198,7 +198,7 @@ def hero(doc):
     for c, col in enumerate(colonne):
         h = "".join(img_tag(f, 500, 'fetchpriority="high"' if c == 0 and k == 0 else 'loading="lazy"') for k, f in enumerate(col))
         copia = h.replace("<img ", '<img aria-hidden="true" ')
-        out += f'<div class="hero-col" style="--durata:{44 + c * 8}s">{h}{copia}</div>'
+        out += f'<span class="hero-col" style="--durata:{44 + c * 8}s">{h}{copia}</span>'
     doc = sostituisci_interno(doc, "hero-arch", out)
     return doc.replace('id="hero-arch"', 'id="hero-arch" data-pronto', 1)
 

@@ -148,7 +148,7 @@ nav.main ul a.active{color:var(--bordeaux)}
 .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 @media (max-width:1240px){.header-phone .hp-txt{display:none}}
-@media (max-width:1120px){
+@media (max-width:1240px){
   :root{--header-h:76px}
   /* il blur farebbe da contenitore al menu (position:fixed) e lo schiaccerebbe nell'altezza della barra */
   header.site{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(250,246,241,.97)}
@@ -206,6 +206,7 @@ body.menu-open::before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.
 }
 /* Tre colonne di foto che scorrono piano in verticale, sfumate in alto e in basso */
 .hero-arch{
+  width:100%;text-align:left;cursor:zoom-in;
   display:grid;grid-template-columns:repeat(3,1fr);gap:14px;height:min(620px,72vh);overflow:hidden;
   -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 86%,transparent 100%);
           mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 86%,transparent 100%);
@@ -217,6 +218,9 @@ body.menu-open::before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.
 .hero-col img:nth-child(3n+1){border-radius:70px 22px 22px 22px}
 .hero-col img:nth-child(3n+2){aspect-ratio:3/3.4;border-radius:22px 22px 70px 22px}
 .hero-arch:hover .hero-col{animation-play-state:paused}
+.hero-arch:focus-visible .hero-col{animation-play-state:paused}
+.hero-gallery-hint{position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:2;pointer-events:none;white-space:nowrap;background:var(--crema);color:var(--bordeaux-scuro);border:1px solid var(--bordo);border-radius:999px;padding:8px 16px;font-size:.73rem;letter-spacing:.04em;box-shadow:var(--ombra-s)}
+.hero-gallery-hint>span{margin-left:8px}
 @keyframes sale{to{transform:translateY(calc(-50% - 7px))}}
 .hero-seal{display:none}
 .hero-card{
@@ -547,6 +551,7 @@ body.menu-open::before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.
   display:none;align-items:center;justify-content:center;
 }
 .lightbox[open]{display:flex}
+body:has(.lightbox[open]){overflow:hidden}
 .lightbox::backdrop{background:rgba(20,14,17,.92)}
 .lightbox figure{max-width:min(92vw,1200px);max-height:86vh;display:flex;flex-direction:column;align-items:center;gap:12px}
 .lightbox img{max-height:80vh;width:auto;border-radius:var(--radius-s);animation:fadeUp .35s var(--ease)}
@@ -647,6 +652,60 @@ footer.site .basso{display:flex;margin-top:48px;padding-top:22px;border-top:1px 
 
 /* Link Privacy · Cookie nel footer (compaiono solo se inseriti nel pannello) */
 [data-legali] > span:not([hidden]) + span:not([hidden])::before{content:" · "}
+
+/* ---------- Trucco Sposa: racconto fotografico ---------- */
+.spose{background:#F2E6E5;position:relative;overflow:hidden}
+.spose-intestazione{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(132,44,86,.2);padding-bottom:20px;margin-bottom:clamp(36px,5vw,64px)}
+.spose-intestazione .eyebrow{margin:0}
+.spose-dettaglio{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--testo-soft);text-align:right}
+.spose-storia{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,76px);align-items:center}
+.spose-racconto h2{font-size:clamp(3.7rem,7.6vw,6.8rem);line-height:.9;letter-spacing:-.04em;margin-bottom:28px}
+.spose-racconto h2 em{display:block;margin-left:clamp(30px,5vw,70px);font-weight:400}
+.spose-racconto .spose-promessa{font-family:var(--font-display);font-size:clamp(1.7rem,2.7vw,2.3rem);line-height:1.15;color:var(--bordeaux-scuro);margin-bottom:24px}
+.spose-racconto>p:not(.spose-promessa){max-width:43ch;margin-bottom:16px}
+.spose-racconto .btn{margin-top:14px}
+.spose-scopri{display:block;width:fit-content;margin-top:20px;font-size:.85rem;color:var(--bordeaux);border-bottom:1px solid rgba(132,44,86,.35);padding-bottom:4px}
+.spose-scopri:hover{border-color:var(--bordeaux)}
+.spose-ritratti{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,26px);align-items:start}
+.spose-ritratto{margin-top:clamp(60px,10vw,140px)}
+.spose button[data-gallery]{display:block;width:100%;overflow:hidden;cursor:zoom-in}
+.spose button[data-gallery] img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.spose button[data-gallery]:hover img{transform:scale(1.035)}
+.spose-abito button{aspect-ratio:2/3;border-radius:140px 140px 0 0}
+.spose-ritratto button{aspect-ratio:3/4;border-radius:0 0 100px 0}
+.spose-ritratto img{object-position:center 38%}
+.spose figcaption{font-family:var(--font-display);font-style:italic;font-size:1.18rem;color:var(--bordeaux-scuro);margin-top:12px}
+.spose-preparativi{margin-top:clamp(48px,7vw,88px);padding-top:28px;border-top:1px solid rgba(132,44,86,.2)}
+.spose-preparativi-titolo{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px}
+.spose-preparativi-titolo>span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bordeaux)}
+.spose-preparativi-titolo>p{font-family:var(--font-display);font-size:1.65rem;font-style:italic;color:var(--bordeaux-scuro)}
+.spose-sequenza{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(12px,2vw,26px)}
+.spose-sequenza figure{grid-column:span 2}
+.spose-sequenza figure:nth-last-child(-n+2){grid-column:span 3}
+.spose-sequenza button{aspect-ratio:4/3}
+.spose-sequenza img{object-position:center 38%}
+.spose-sequenza figure:nth-child(2){padding-top:32px}
+@media (max-width:760px){
+  .spose-storia{grid-template-columns:1fr;gap:38px}
+  .spose-racconto h2{font-size:clamp(4rem,16vw,6rem)}
+  .spose-racconto h2 em{display:inline;margin-left:.12em}
+  .spose-ritratti{max-width:540px;width:100%;margin-inline:auto}
+  .spose-ritratto{margin-top:64px}
+  .spose-dettaglio{max-width:150px;line-height:1.7;font-size:.6rem}
+  .spose-preparativi-titolo{display:block}
+  .spose-preparativi-titolo>p{margin-top:6px}
+  .spose-sequenza{grid-template-columns:1fr 1fr}
+  .spose-sequenza figure,.spose-sequenza figure:nth-last-child(-n+2){grid-column:auto}
+  .spose-sequenza figure:last-child{grid-column:1/-1}
+  .spose-sequenza figure:first-child button{aspect-ratio:4/3}
+  .spose-sequenza figure:nth-child(2){padding-top:0}
+  .spose-sequenza figcaption{font-size:1rem}
+}
+@media (max-width:380px){
+  .spose-racconto h2 em{display:block;margin-left:32px}
+  .spose-intestazione{align-items:flex-start;gap:10px}
+  .spose-intestazione .eyebrow{font-size:.65rem;letter-spacing:.12em}
+}
 
 /* ---------- Home: link alle pagine dei trattamenti (sotto il listino) ---------- */
 .link-trattamenti:empty{display:none}

@@ -26,6 +26,11 @@
   },
   "foto": [
     {
+      "src": "/images/web/ragazze/trucco-capelli-ramati.webp",
+      "alt": "Trucco occhi luminoso e labbra nude su una cliente dai capelli ramati mossi",
+      "pos": "center 35%"
+    },
+    {
       "src": "/images/web/ragazze/trucco-professionale-capelli-ricci.jpg",
       "alt": "Cliente con trucco professionale e capelli ricci",
       "pos": ""

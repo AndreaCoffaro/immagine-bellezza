@@ -502,7 +502,7 @@ function initHero(){
   foto.forEach((f, k) => colonne[k % 3].push(f));
   box.innerHTML = colonne.map((col, c) => {
     const html = col.map((f, k) => imgTag(f, 500, c === 0 && k === 0 ? 'fetchpriority="high"' : 'loading="lazy"')).join("");
-    return `<div class="hero-col" style="--durata:${44 + c * 8}s">${html}${html.replace(/<img /g, '<img aria-hidden="true" ')}</div>`;
+    return `<span class="hero-col" style="--durata:${44 + c * 8}s">${html}${html.replace(/<img /g, '<img aria-hidden="true" ')}</span>`;
   }).join("");
 }
 const initRegalo = () => slideshow($("#regalo-slides"), (get("regalo.foto") || []).filter(f => f.src), 1200, 4500);
@@ -591,13 +591,14 @@ function initLightbox(){
   if(!dlg || typeof dlg.showModal !== "function") return;
   const img = dlg.querySelector("img");
   const cap = dlg.querySelector("figcaption");
-  let items = [], idx = 0;
+  let items = [], idx = 0, isTrucchi = false;
 
   const show = i => {
     idx = (i + items.length) % items.length;
     img.src = items[idx].src;
     img.alt = items[idx].alt;
-    cap.textContent = img.alt;
+    cap.textContent = isTrucchi ? `Trucchi · ${idx + 1} / ${items.length} — ${img.alt}` : img.alt;
+    cap.setAttribute("aria-live", "polite");
   };
   document.addEventListener("click", e => {
     const trigger = e.target.closest("[data-gallery]");
@@ -605,12 +606,22 @@ function initLightbox(){
     // Foto SPA: si sfogliano tutte, anche quelle non visibili nel mosaico
     // Galleria: si sfogliano solo le foto della zona scelta, con il nome dell'ambiente come didascalia
     const set = trigger.dataset.set;
-    items = set === "spa"
+    isTrucchi = set === "trucchi";
+    // Il carosello ripete le foto per lo scorrimento continuo: nella galleria
+    // ogni foto compare una sola volta, anche prima del caricamento dei JSON.
+    const fotoTrucchi = get("home.foto") || [...trigger.querySelectorAll('img:not([aria-hidden="true"])')]
+      .map(f => ({src:f.getAttribute("src"), alt:f.alt}));
+    items = isTrucchi
+      ? [...new Map(fotoTrucchi.filter(f => f.src).map(f => [imgUrl(f.src), {src:imgUrl(f.src), alt:f.alt || ""}])).values()]
+      : set === "spa"
       ? fotoSpa().map(f => ({ src:imgUrl(f.src, 2000), alt:f.alt || "" }))
       : $$(set ? `[data-set="${set}"]` : "[data-gallery]:not([data-set])")
           .filter(b => !b.closest("[hidden]"))
           .map(b => ({ src:b.dataset.gallery, alt:b.dataset.nome || b.querySelector("img")?.alt || "" }));
-    show(Math.max(0, items.findIndex(it => it.src === trigger.dataset.gallery)));
+    if(!items.length) return;
+    const clickedSrc = isTrucchi ? e.target.closest("img")?.getAttribute("src") : null;
+    show(Math.max(0, items.findIndex(it => it.src === (clickedSrc || trigger.dataset.gallery))));
+    dlg.setAttribute("aria-label", isTrucchi ? "Galleria dei trucchi" : "Visualizzatore foto");
     dlg.showModal();
   });
   dlg.querySelector(".lb-close").addEventListener("click", () => dlg.close());
